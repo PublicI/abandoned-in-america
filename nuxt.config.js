@@ -67,11 +67,14 @@ module.exports = {
      ** Global CSS
      */
     css: ['~/assets/css/site.css', '~/assets/css/main.css'],
+    serverMiddleware: [
+        // API middleware
+        '~/server/index.js'
+    ],
     /*
      ** Add axios globally
      */
     build: {
-        vendor: ['axios'],
         /*
          ** Run ESLINT on save
          */

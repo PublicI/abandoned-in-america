@@ -1,0 +1,36 @@
+<template>
+        <div class="refer" v-html="data.text"></div>
+</template>
+
+<script>
+export default {
+    props: ['data'],
+    name: 'Refer'
+};
+</script>
+
+<style>
+.refer {
+    font-size: 16px;
+    width: 250px;
+    float: right;
+    padding-bottom: 10px;
+    margin-right: 80px;
+    margin-left: 10px;
+    line-height: 132%;
+    color: rgb(100,100,100);
+}
+.refer a, .refer a:visited {
+    color: #FFB957 !important;
+}
+@media (max-width: 650px) {
+    .refer {
+        width: 100%;
+        float: none;
+        margin-right: 0;
+        margin-left: 0;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+</style>

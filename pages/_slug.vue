@@ -1,0 +1,105 @@
+<template>
+    <section>
+        <div v-if="doc">
+
+            <projectNav :data="doc.series" />
+
+            <ledeart :data="doc" />
+
+            <social :data="doc" />
+
+            <byline :data="doc" />
+
+            <div class="partner centralColumn" v-if="doc.partner">{{doc.partner}}</div>
+
+            <sections :data="doc" />
+
+            <next :data="doc.next" v-if="doc.next" />
+
+        </div>
+    </section>
+</template>
+
+<script>
+import Logo from '~/components/Logo.vue';
+import Nav from '~/components/Nav.vue';
+import LedeArt from '~/components/LedeArt.vue';
+import Sections from '~/components/Sections.vue';
+import Byline from '~/components/Byline.vue';
+import Next from '~/components/Next.vue';
+import Social from '~/components/Social.vue';
+
+export default {
+    name: 'slug',
+    components: {
+        Logo,
+        projectNav: Nav,
+        ledeart: LedeArt,
+        Sections,
+        Byline,
+        Next,
+        Social
+    },
+    async asyncData ({ app, params }) {
+        let data = await app.$axios.$get(`/docs/${params.slug}.json`);
+        
+        return {
+            doc: data
+        };
+    },
+    head () {
+        return {
+            title: `${this.doc.hed} | Center for Public Integrity`,
+            meta: [
+                {
+                    hid: 'description',
+                    name: 'description',
+                    content: this.doc.subhed + '.'
+                },
+                {
+                    name: 'twitter:image',
+                    content: `https://apps.publicintegrity.org/${this.doc.series.slug}/${this.doc.image.location.replace('img', 'resized').replace(/\.(jpg|png)$/, '-1440.$1')}`
+                },
+                {
+                    property: 'og:image',
+                    content: `https://apps.publicintegrity.org/${this.doc.series.slug}/${this.doc.image.location.replace('img', 'resized').replace(/\.(jpg|png)$/, '-1440.$1')}`
+                },
+                {
+                    property: 'article:modified_time',
+                    content: this.doc.published
+                },
+                {
+                    property: 'article:published_time',
+                    content: this.doc.published
+                },
+                {
+                    property: 'og:title',
+                    content: this.doc.hed
+                },
+                {
+                    name: 'title',
+                    content: this.doc.hed
+                },
+                {
+                    property: 'og:description',
+                    content: this.doc.subhed
+                },
+                {
+                    property: 'og:url',
+                    content: `https://apps.publicintegrity.org/${this.doc.series.slug}/${this.doc.slug}/`
+                }]
+        };
+    }
+};
+</script>
+
+<style>
+.partner {
+    color: rgb(150,150,150);
+    font-style: italic;
+    margin-bottom: 20px;
+    line-height: 120%;
+    font-size: 90%;
+}
+</style>
+
