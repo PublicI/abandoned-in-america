@@ -42,5 +42,8 @@
         "eslint-plugin-promise": "^4.0.1",
         "eslint-plugin-standard": "^4.0.0",
         "s3-deploy": "^1.1.1"
+    },
+    "engines": {
+        "node": "10.7.0"
     }
 }
