@@ -1,7 +1,7 @@
 /* global Typekit:false */
 
 const config = {
-    kitId: 'wnz3ozp',
+    kitId: 'eht7lvk',
     scriptTimeout: 3000,
     async: true
 };
