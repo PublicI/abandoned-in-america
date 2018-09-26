@@ -55,7 +55,7 @@ pipeline:
     secrets: [ slack_webhook ]
     template: >
       {{#success build.status}}
-        published https://apps.publicintegrity.org/access-denied/
+        published https://apps.publicintegrity.org/abandoned-in-america/
       {{else}}
-        failed publishing https://apps.publicintegrity.org/access-denied/
+        failed publishing https://apps.publicintegrity.org/abandoned-in-america/
       {{/success}}

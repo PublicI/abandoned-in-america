@@ -5,7 +5,7 @@ module.exports = {
      ** Headers of the page
      */
     head: {
-        title: 'access-denied',
+        title: 'Abandoned in America',
         meta: [
             { charset: 'utf-8' },
             {
