@@ -71,18 +71,20 @@ export default {
 <style>
 .column .cls-1 {
     /* fill: rgba(130,130,130,0.8); */
-    fill: rgba(180,180,180,1);
+    fill: white;
     /* transition: 1s; */
 }
 .highlight .cls-1 {
     fill: rgba(180,180,180,1);
     /* fill: rgba(130,130,130,1); */
 }
+/*
 .logo:hover .column .cls-1 {
     fill: rgba(130,130,130,1);
 }
+*/
 .cls-2 {
-    fill: #fff;
+    fill: #E74C3C;
 }
 
 .cls-3 {

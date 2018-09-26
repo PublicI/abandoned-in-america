@@ -55,7 +55,7 @@ h1 {
 h2 {
     /* font-family: almaq-refined,sans-serif; */
     text-transform: uppercase;
-    text-shadow: 2px 2px 2px black;
+    /* text-shadow: 2px 2px 2px black; */
     /* color: #323232; */
     max-width: 1300px;
     color: white;

@@ -50,7 +50,11 @@
 
                 <h1>{{doc.hed}}</h1>
 
+                <!--
+
                 <div class="introLink"><a href="#intro">{{doc.promo}} &darr;</a><br><span style="font-size:23px;line-height:26px">or pick a break:</span></div>
+
+                -->
 
                 <div class="iconButtonsContainer">
 
@@ -311,7 +315,7 @@ export default {
     /* color: #303030; */
     /*color: #252221; */
     color: white;
-    text-shadow: 2px 2px 2px black;
+    /* text-shadow: 2px 2px 2px black; */
     padding-left: 30px;
     padding-top: 8px;
 }
