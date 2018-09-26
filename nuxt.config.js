@@ -49,10 +49,9 @@ module.exports = {
         { src: '~/plugins/chartbeat.js', ssr: false }
     ],
     axios: {
-        baseURL: process.server
-            ? `http://${process.env.HOST || 'localhost'}:${process.env.PORT ||
-                  3000}`
-            : `/${pkg.name}/`
+        host: process.env.HOST || 'localhost',
+        prefix: `/${pkg.name}/`,
+        port: process.env.PORT || 3000
     },
     generate: {
         minify: {
