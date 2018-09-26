@@ -51,7 +51,8 @@ module.exports = {
     axios: {
         host: process.env.HOST || 'localhost',
         prefix: `/${pkg.name}/`,
-        port: process.env.PORT || 3000
+        port: process.env.PORT || 3000,
+        https: true
     },
     generate: {
         minify: {
