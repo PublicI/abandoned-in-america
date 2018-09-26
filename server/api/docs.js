@@ -165,23 +165,23 @@ function getData(doc, cb) {
 
     oauth2Client.request(
         {
-            method: 'GET',
-            uri: getExportLink(doc.id)
+            // method: 'GET',
+            url: getExportLink(doc.id)
         },
-        (err, body) => {
+        (err, { data }) => {
             if (err) {
                 cb(err);
                 return;
             }
 
-            parseGoogleDoc(body, (err, result) => {
+            parseGoogleDoc(data, (err, result) => {
                 if (err) {
                     cb(err);
                     return;
                 }
 
                 bodyCache.set(doc.id, JSON.stringify(result));
-                /*
+/*
                 if ('slug' in result) {
                     slugCache.set(result.slug, doc.id);
                 }
@@ -191,8 +191,7 @@ function getData(doc, cb) {
                         slugCache.set(part.slug, part.id);
                     });
                 }
-                */
-
+*/
                 cb(null, result);
             });
         }
