@@ -17,6 +17,8 @@ pipeline:
 
   generate:
     image: node:8.12.0
+    environment:
+      - HOST=access-denied.apps.fivetwentyseven.com
     commands:
       - yarn generate
 
