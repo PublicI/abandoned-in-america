@@ -279,7 +279,7 @@ router.get('/docs/index.json', function(req, res, next) {
     });
 });
 
-router.get('/docs/:slug', function(req, res, next) {
+router.get('/docs/:slug.json', function(req, res, next) {
     const slug = req.params.slug;
 
     retrieve(slug, (err, doc) => {

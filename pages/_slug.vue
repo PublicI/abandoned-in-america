@@ -41,7 +41,7 @@ export default {
         Social
     },
     async asyncData ({ app, params }) {
-        let data = await app.$axios.$get(`/docs/${params.slug}.json`);
+        let data = await app.$axios.$get(`/api/docs/${params.slug}.json`);
         
         return {
             doc: data
