@@ -22,6 +22,10 @@
             <stlouis :data="section" v-if="section.type === 'st_louis_locator'" :class="section.align" />
 
             <standingrock :data="section" v-if="section.type === 'standing_rock_locator'" :class="section.align" />
+
+            <fresno :data="section" v-if="section.type === 'fresno_locator'" :class="section.align" />
+
+            <westfresno :data="section" v-if="section.type === 'west_fresno_locator'" :class="section.align" />
         </div>
     </div>
 </template>
@@ -38,6 +42,8 @@ import Yazoo from '~/components/YazooLocator.vue';
 import Robeson from '~/components/RobesonLocator.vue';
 import StLouis from '~/components/StLouisLocator.vue';
 import StandingRock from '~/components/StandingRockLocator.vue';
+import Fresno from '~/components/FresnoLocator.vue';
+import WestFresno from '~/components/WestFresnoLocator.vue';
 
 export default {
     components: {
@@ -50,7 +56,10 @@ export default {
         Snippet,
         Yazoo,
         Robeson,
-        StandingRock
+        stlouis: StLouis,
+        standingrock: StandingRock,
+        fresno: Fresno,
+        westfresno: WestFresno
     },
     props: ['data'],
     name: 'Sections'

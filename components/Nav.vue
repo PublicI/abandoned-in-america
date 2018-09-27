@@ -81,10 +81,10 @@ a, a:visited {
     color: white;
     cursor: pointer;
 }
-/*
+
 a.current, a.current:visited {
-    color: #E74C3C;
-}*/
+    color: black;
+}
 .hideOnDesktop {
     display: none;
 }

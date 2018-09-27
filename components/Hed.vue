@@ -38,15 +38,16 @@ export default {
 }
 h1 {
     /* font-family: adonis-web,serif; */
-    font-size: 8vw;
-    line-height: 8vw;
+    font-size: 5vw;
+    line-height: 5vw;
     /* text-shadow: 2px 2px 2px black; */
     max-width: 1300px;
     color: white;
     position: relative;
     font-family: tablet-gothic-narrow,Helvetica Neue,Helvetica,Arial,sans-serif;
-    font-weight: 300;
+    font-weight: 400;
     color: black;
+    padding-top: 10px;
 }
 .deathInThe {
     font-size: 5vw;

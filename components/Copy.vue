@@ -22,7 +22,7 @@ export default {
     margin-top: 30px;
 }
 .copy p {
-    font-family: "nimbus-sans","Comic Sans";
+    font-family: "ff-tisa-web-pro","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 400;
     line-height: 29px;
     font-size: 19px;
