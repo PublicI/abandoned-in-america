@@ -3,7 +3,7 @@
         <div class="part" v-for="part in data.parts" :style="'background-image:url(' + part.image.replace('img', 'resized').replace(/\.(jpg|png)$/, '-1440.$1') + ');background-size:cover'">
             <nuxt-link :to="part.slug">
                 <div class="text">
-                    <h2>{{part.name}}</h2>
+                    <!-- <h2>{{part.name}}</h2> -->
                     <h1>{{part.hed}}</h1>
                 </div>
 
