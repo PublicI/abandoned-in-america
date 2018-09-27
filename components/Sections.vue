@@ -75,16 +75,16 @@ export default {
     width: 15%;
     float: left;
     clear: left;
-    margin-right: 1.5% !important;
-    margin-left: 1.5% !important;
+    margin-right: 7% !important;
+    margin-left: 7% !important;
 }
 
 .right {
     width: 15%;
     float: right;
     clear: right;
-    margin-right: 1.5% !important;
-    margin-left: 1.5% !important;
+    margin-right: 7% !important;
+    margin-left: 7% !important;
 }
 @media (max-width: 650px) {
     .left {
