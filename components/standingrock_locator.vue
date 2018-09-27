@@ -1,5 +1,5 @@
 <template>
-    <svg :viewBox="viewDim">
+    <svg :viewBox="'0 0 '+width+' '+height">
         <svg :width="width" :height="height">
             <path class="res" :d="res" />
             <path class="highlight" :d="highlight" />
@@ -32,7 +32,7 @@ export default {
         let projection = d3.geoConicConformal()
             .parallels([47 + 26 / 60, 48 + 44 / 60])
             .rotate([100 + 30 / 60, 0])
-            .fitSize([width,height],outline); // INCLUDE STANIDNG ROCK OUTLINE SOMEHOW
+            .fitSize([width,height],outline);
 
         let path = d3.geoPath()
             .projection(projection);
@@ -43,16 +43,12 @@ export default {
         let state = path(ndShape.features[0]);
         let res = path(srShape.features[0]);
         let highlight = path(srHighlight.features[0]);
-
-        let viewDim = "0 0 "+width.toString()+" "+height.toString();
-        console.log(viewDim)
         return {
             width,
             height,
             state,
             res,
-            highlight,
-            viewDim
+            highlight
         }
     }
 };

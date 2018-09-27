@@ -2,7 +2,7 @@
     <svg :viewBox="'0 0 '+width+' '+height">
         <svg :width="width" :height="height">
             <path class="state" :d="state" />
-            <path class="county" :d="county" />
+            <circle class="city" :cx="projected[0]" :cy="projected[1]" r="10" />
         </svg>
     </svg>
 </template>
@@ -10,8 +10,8 @@
 <script>
 import * as d3 from 'd3';
 import * as topojson from 'topojson-client';
-import nc from '~/assets/nc_silhouette.json';
-import robeson from '~/assets/robeson_county.json';
+import tx from '~/assets/tx_silhouette.json';
+import presidio from '~/assets/presidio_coords.csv';
 
 export default {
 
@@ -19,33 +19,36 @@ export default {
         let width = 800;
         let height = 600;
 
-        let ncShape = topojson.feature(nc, nc.objects.nc_silhouette);
-        let rbShape = topojson.feature(robeson, robeson.objects.robeson_county);
+        let txShape = topojson.feature(tx, tx.objects.texas);
 
         let projection = d3.geoConicConformal()
-            .parallels([34 + 20 / 60, 36 + 10 / 60])
-            .rotate([79, 0])
-            .fitSize([width,height],ncShape);
+            .parallels([26 + 10 / 60, 27 + 50 / 60])
+            .rotate([98 + 30 / 60, 0])
+            .fitSize([width,height],txShape);
 
         let path = d3.geoPath()
             .projection(projection);
 
-        let state = path(ncShape.features[0]);
-        let county = path(rbShape.features[0]);
-        let viewDim = "0 0 "+width.toString()+" "+height.toString()
-        console.log(viewDim)
+        let state = path(txShape.features[0]);
+
+        let coords = presidio.split(',')
+                        .map(coord => +coord)
+                        .reverse();
+
+        let projected = projection(coords);
+
         return {
             width,
             height,
             state,
-            county,
+            projected
         }
     }
 };
 
 </script>
 
-<style>
+<style scoped>
 
 .state {
     fill: white;
@@ -53,7 +56,7 @@ export default {
     stroke-width: 2px;
 }
 
-.county {
+.city {
     fill: red;   
 }
 

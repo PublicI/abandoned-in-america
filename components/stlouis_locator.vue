@@ -10,8 +10,8 @@
 <script>
 import * as d3 from 'd3';
 import * as topojson from 'topojson-client';
-import ms from '~/assets/ms_silhouette.json';
-import yazoo from '~/assets/yazoo_coords.csv';
+import mo from '~/assets/mo_silhouette.json';
+import stlouis from '~/assets/stlouis_coords.csv';
 
 export default {
 
@@ -19,18 +19,18 @@ export default {
         let width = 800;
         let height = 600;
 
-        let msShape = topojson.feature(ms, ms.objects.ms_silhouette);
+        let moShape = topojson.feature(mo, mo.objects.mo_silhouette);
 
         let projection = d3.geoTransverseMercator()
-            .rotate([88 + 50 / 60, -29 - 30 / 60])
-            .fitSize([width,height],msShape);
+            .rotate([90 + 30 / 60, -35 - 50 / 60])
+            .fitSize([width,height],moShape);
 
         let path = d3.geoPath()
             .projection(projection);
 
-        let state = path(msShape.features[0]);
+        let state = path(moShape.features[0]);
 
-        let coords = yazoo.split(',')
+        let coords = stlouis.split(',')
                         .map(coord => +coord)
                         .reverse();
 
