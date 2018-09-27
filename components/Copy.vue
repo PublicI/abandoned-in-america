@@ -22,17 +22,22 @@ export default {
     margin-top: 30px;
 }
 .copy p {
-    font-family: "ff-tisa-web-pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "nimbus-sans","Comic Sans";
+    font-weight: 400;
     line-height: 29px;
     font-size: 19px;
+    line-height: 26px;
+    color: rgb(50,50,50);
 }
 .copy h3 {
     color: black;
     text-shadow: none;
 }
 .lede p {
+    /*
     line-height: 34px;
     font-size: 25px;
+    */
 }
 .lede p:first-child:first-letter {
   color: #E74C3C;

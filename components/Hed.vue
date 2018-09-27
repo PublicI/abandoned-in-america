@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="hed">
+        <div class="hed centralColumn">
             <div>
                 <h1>{{data.hed}}</h1>
                 <!--
@@ -9,10 +9,12 @@
                     <div>Trench</div>
                 </h1>
                 -->
+                <!--
                 <h3 class="hideOnMobile">{{data.subhed}}</h3>
+                -->
             </div>
         </div>
-        <h3 class="hideOnDesktop">{{data.subhed}}</h3>
+        <!-- <h3 class="hideOnDesktop">{{data.subhed}}</h3> -->
     </div>
 </template>
 
@@ -24,19 +26,20 @@ export default {
 </script>
 
 <style scoped>
+/*
 .hed {
     position: absolute;
     z-index: 300;
     top: 32%;
     left: 38%;
-}
+}*/
 .hideOnDesktop {
     display: none;
 }
 h1 {
     /* font-family: adonis-web,serif; */
-    font-size: 10vw;
-    line-height: 10vw;
+    font-size: 8vw;
+    line-height: 8vw;
     /* text-shadow: 2px 2px 2px black; */
     max-width: 1300px;
     color: white;

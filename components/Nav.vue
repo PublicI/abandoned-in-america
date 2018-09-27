@@ -82,17 +82,18 @@ a, a:visited {
     cursor: pointer;
 }
 a.current, a.current:visited {
-    color: #FFB957;
+    color: #E74C3C;
 }
 .hideOnDesktop {
     display: none;
 }
 @media (max-width: 900px) {
+    /*
     .nav {
         padding-top: 20px;
         padding-left: 0;
         padding-left: 35px;
-    }
+    }*/
     ul {
         position: relative;
         display: block;

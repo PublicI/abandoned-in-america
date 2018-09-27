@@ -68,7 +68,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .column .cls-1 {
     /* fill: rgba(130,130,130,0.8); */
     fill: white;
@@ -94,11 +94,15 @@ export default {
     width: 100%;
     height: 51px;
     max-width: 200px;
+    /*
     position: absolute;
     top: 0;
-    left: 0;
+    left: 0; */
     padding: 5px;
     z-index: 350;
+}
+a, a:visited {
+    padding: 0 !important;
 }
 @media (max-width: 900px) {
     .logo {

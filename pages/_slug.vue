@@ -4,7 +4,7 @@
 
             <projectNav :data="doc.series" />
 
-            <ledeart :data="doc" />
+            <hed :data="doc" />
 
             <social :data="doc" />
 
@@ -14,7 +14,7 @@
 
             <sections :data="doc" />
 
-            <next :data="doc.next" v-if="doc.next" />
+            <parts :data="doc.series" />
 
         </div>
     </section>
@@ -28,6 +28,8 @@ import Sections from '~/components/Sections.vue';
 import Byline from '~/components/Byline.vue';
 import Next from '~/components/Next.vue';
 import Social from '~/components/Social.vue';
+import Hed from '~/components/Hed.vue';
+import Parts from '~/components/Parts.vue';
 
 export default {
     name: 'slug',
@@ -38,7 +40,9 @@ export default {
         Sections,
         Byline,
         Next,
-        Social
+        Social,
+        Hed,
+        Parts
     },
     async asyncData ({ app, params }) {
         let data = await app.$axios.$get(`/api/docs/${params.slug}.json`);

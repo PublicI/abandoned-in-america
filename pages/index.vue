@@ -1,17 +1,13 @@
 <template>
     <section>
         <div v-if="doc">
-            <!--
             <projectNav :data="doc" />
-            -->
 
+<!--
             <logo />
+-->
 
-            <!--
-
-            <ledeart :data="doc" />
-
-            -->
+            <hed :data="doc" />
 
             <!--
 
@@ -43,76 +39,20 @@
             
             -->
 
-
-
-            <div class="iconButtons">
-                <h4 style="color: white">{{doc.section}}</h4>
-
-                <h1>{{doc.hed}}</h1>
-
-                <!--
-
-                <div class="introLink"><a href="#intro">{{doc.promo}} &darr;</a><br><span style="font-size:23px;line-height:26px">or pick a break:</span></div>
-
-                -->
-
-                <div class="iconButtonsContainer">
-
-                    <div v-for="section in doc.sections" v-if="section.type == 'extender'" class="iconButtonContainer">
-                        <a :href="'#' + section.slug.replace(/ /g,'-').toLowerCase()" class="iconLink">&nbsp;</a>
-                        <div class="iconButton">
-                            <icon :data="section" />
-                            <a :href="'#' + section.slug.replace(/ /g,'-').toLowerCase()">{{section.slug}}</a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
             <a name="intro" />
 
+            <!--
             <div class="centralColumn">
                 <h2>{{doc.subhed}}</h2>
             </div>
+            -->
 
             <byline :data="doc" />
 
 
             <sections :data="doc" />
 
-            <div class="parts">
-                <div class="part" v-for="part in doc.parts" :style="'background-image:url(' + part.image.replace('img', 'resized').replace(/\.(jpg|png)$/, '-1440.$1') + ');background-size:cover'">
-                    <nuxt-link :to="part.slug">
-                        <div class="scrim"></div>
-
-                        <div class="text">
-                            <h2>{{part.name}}</h2>
-                            <h1>{{part.hed}}</h1>
-                        </div>
-
-                        <!--
-                        <img :src="part.image" class="image">
-                        --> 
-                    </nuxt-link>
-                </div>
-<!--
-                <div class="part">
-                    <div class="scrim"></div>
-
-                    <div class="text">
-                        <h1 style="color:black;text-shadow:none">{{doc.name}}</h1>
-                    </div>
-
-                    <img :src="doc.image.location" class="image">
-                </div>
--->
-            </div>
-
-            <!--
-            <no-ssr>
-                <back-to-top text="See all the breaks"></back-to-top>
-            </no-ssr>
-            -->
+            <parts :data="doc" />
 
         </div>
     </section>
@@ -126,19 +66,19 @@ import Byline from '~/components/Byline.vue';
 import Social from '~/components/Social.vue';
 import Nav from '~/components/Nav.vue';
 import LedeArt from '~/components/LedeArt.vue';
-import Icon from '~/components/Icon.vue';
+import Parts from '~/components/Parts.vue';
 
 export default {
     name: 'index',
     components: {
-        Icon,
         Hed,
         Logo,
         Sections,
         Byline,
         Social,
         projectNav: Nav,
-        ledeart: LedeArt
+        ledeart: LedeArt,
+        Parts
     },
     async asyncData ({ app, params }) {
         let data = await app.$axios.$get('/api/docs/index.json');
