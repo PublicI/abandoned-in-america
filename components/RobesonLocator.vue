@@ -1,5 +1,5 @@
 <template>
-    <svg :viewBox="viewDim">
+    <svg :viewBox="'0 0 '+width+' '+height">
         <svg :width="width" :height="height">
             <path class="state" :d="state" />
             <path class="county" :d="county" />
@@ -39,7 +39,6 @@ export default {
             height,
             state,
             county,
-            viewDim
         }
     }
 };

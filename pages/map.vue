@@ -1,18 +1,22 @@
 <template>
-    <yazoo />
+    <presidio />
 </template>
 
 <script>
 //import fresno from '~/components/fresno.vue'
-import robeson from '~/components/robeson_locator.vue'
-import standingRock from '~/components/standing_rock_locator.vue'
-import yazoo from '~/components/yazoo_locator.vue'
+import robeson from '~/components/RobesonLocator.vue'
+import standingRock from '~/components/StandingRockLocator.vue'
+import yazoo from '~/components/YazooLocator.vue'
+import presidio from '~/components/PresidioLocator.vue'
+import stLouis from '~/components/StLouisLocator.vue'
 export default {
     components: {
 //        fresno
         yazoo,
         standingRock,
-        robeson
+        robeson,
+        presidio,
+        stLouis
     }
 };
 </script>
