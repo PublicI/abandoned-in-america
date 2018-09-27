@@ -16,8 +16,8 @@ import yazoo from '~/assets/yazoo_coords.csv';
 export default {
 
     data() {
-        let width = 800;
-        let height = 600;
+        let width = 600;
+        let height = 800;
 
         let msShape = topojson.feature(ms, ms.objects.ms_silhouette);
 

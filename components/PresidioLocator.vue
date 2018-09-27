@@ -17,7 +17,7 @@ export default {
 
     data() {
         let width = 800;
-        let height = 600;
+        let height = 800;
 
         let txShape = topojson.feature(tx, tx.objects.texas);
 

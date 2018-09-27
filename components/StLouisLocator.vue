@@ -16,8 +16,8 @@ import stlouis from '~/assets/stlouis_coords.csv';
 export default {
 
     data() {
-        let width = 800;
-        let height = 600;
+        let width = 600;
+        let height = 800;
 
         let moShape = topojson.feature(mo, mo.objects.mo_silhouette);
 
