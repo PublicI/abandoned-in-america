@@ -14,6 +14,8 @@
             <refer :data="section" v-if="section.type === 'refer'" />
 
             <quote :data="section" v-if="section.type === 'quote'" />
+
+            <yazoo :data="section" v-if="section.type === 'yazoo_locator'" :class="section.align" />
         </div>
     </div>
 </template>
@@ -26,6 +28,7 @@ import Timeline from '~/components/Timeline.vue';
 import Refer from '~/components/Refer.vue';
 import Quote from '~/components/Quote.vue';
 import Snippet from '~/components/Snippet.vue';
+import Yazoo from '~/components/yazoo_locator.vue';
 
 export default {
     components: {
@@ -35,7 +38,8 @@ export default {
         Timeline,
         Refer,
         Quote,
-        Snippet
+        Snippet,
+        Yazoo
     },
     props: ['data'],
     name: 'Sections'
@@ -43,5 +47,34 @@ export default {
 </script>
 
 <style scoped>
+.left {
+    width: 23%;
+    float: left;
+    clear: left;
+    margin-right: 1.5% !important;
+    margin-left: 1.5% !important;
+}
 
+.right {
+    width: 23%;
+    float: right;
+    clear: right;
+    margin-right: 1.5% !important;
+    margin-left: 1.5% !important;
+}
+@media (max-width: 650px) {
+    .left {
+        width: 100%;
+        float: none;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+    }
+
+    .right {
+        width: 100%;
+        float: none;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+    }
+}
 </style>

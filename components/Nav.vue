@@ -50,7 +50,7 @@ export default {
     z-index: 300;*/
     font-size: 16px;
     line-height: 130%;
-    background-color: rgb(60, 60, 60);
+    background-color: #E74C3C;
     width: 100%;
 }
 .series {
@@ -81,9 +81,10 @@ a, a:visited {
     color: white;
     cursor: pointer;
 }
+/*
 a.current, a.current:visited {
     color: #E74C3C;
-}
+}*/
 .hideOnDesktop {
     display: none;
 }

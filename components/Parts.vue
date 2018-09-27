@@ -41,6 +41,7 @@ export default {
     float: left;
     margin: 1%;
     overflow: hidden;
+    border: 1px solid black;
 }
 .part .text {
     position: absolute;

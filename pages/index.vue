@@ -301,50 +301,6 @@ h2 {
     position:absolute;
     z-index:200;
 }
-/*
-.stickyImage.unblur {
-    filter:blur(0);
-
-}*/
-.parts {
-    max-width: 1500px;
-    margin-left: auto;
-    margin-right: auto;
-}
-.part .image {
-    width: auto;
-    height: 100%;
-}
-.part a .image {
-    cursor: pointer;
-}
-.part {
-    height: 230px;
-    width: 30%;
-    position: relative;
-    margin-bottom: 20px;
-    float: left;
-    margin: 1%;
-    overflow: hidden;
-}
-.part .text {
-    position: absolute;
-    bottom: 0;
-    left: 10px;
-    padding: 20px;
-}
-.part .text h1 {
-    font-size: 30px;
-    line-height: 110%;
-}
-.part .text h2 {
-    font-size: 20px;
-    line-height: 120%;
-}
-.part:hover a .text h2, .part:hover a .text h1 {
-    text-decoration: underline;
-    text-decoration-color:#FFB957
-}
 
 @media (max-width: 900px) {
     .iconButtons h1 {
