@@ -58,7 +58,8 @@ module.exports = {
         minify: {
             collapseWhitespace: false,
             removeEmptyAttributes: false
-        }
+        },
+        routes: ['/fresno']
     },
     router: {
         base: `/${pkg.name}/`
