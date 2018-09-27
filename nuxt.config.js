@@ -59,7 +59,7 @@ module.exports = {
             collapseWhitespace: false,
             removeEmptyAttributes: false
         },
-        routes: ['/fresno']
+        routes: ['/fresno','/yazoo']
     },
     router: {
         base: `/${pkg.name}/`
