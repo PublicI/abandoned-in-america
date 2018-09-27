@@ -26,6 +26,8 @@
             <fresno :data="section" v-if="section.type === 'fresno_locator'" :class="section.align" />
 
             <westfresno :data="section" v-if="section.type === 'west_fresno_locator'" :class="section.align" />
+
+            <presidio :data="section" v-if="section.type === 'presidio_locator'" :class="section.align" />
         </div>
     </div>
 </template>
@@ -44,6 +46,7 @@ import StLouis from '~/components/StLouisLocator.vue';
 import StandingRock from '~/components/StandingRockLocator.vue';
 import Fresno from '~/components/FresnoLocator.vue';
 import WestFresno from '~/components/WestFresnoLocator.vue';
+import Presidio from '~/components/PresidioLocator.vue';
 
 export default {
     components: {
@@ -59,7 +62,8 @@ export default {
         stlouis: StLouis,
         standingrock: StandingRock,
         fresno: Fresno,
-        westfresno: WestFresno
+        westfresno: WestFresno,
+        Presidio
     },
     props: ['data'],
     name: 'Sections'
