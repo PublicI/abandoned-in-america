@@ -16,6 +16,12 @@
             <quote :data="section" v-if="section.type === 'quote'" />
 
             <yazoo :data="section" v-if="section.type === 'yazoo_locator'" :class="section.align" />
+
+            <robeson :data="section" v-if="section.type === 'robeson_locator'" :class="section.align" />
+
+            <stlouis :data="section" v-if="section.type === 'st_louis_locator'" :class="section.align" />
+
+            <standingrock :data="section" v-if="section.type === 'standing_rock_locator'" :class="section.align" />
         </div>
     </div>
 </template>
@@ -29,6 +35,9 @@ import Refer from '~/components/Refer.vue';
 import Quote from '~/components/Quote.vue';
 import Snippet from '~/components/Snippet.vue';
 import Yazoo from '~/components/YazooLocator.vue';
+import Robeson from '~/components/RobesonLocator.vue';
+import StLouis from '~/components/StLouisLocator.vue';
+import StandingRock from '~/components/StandingRockLocator.vue';
 
 export default {
     components: {
@@ -39,7 +48,9 @@ export default {
         Refer,
         Quote,
         Snippet,
-        Yazoo
+        Yazoo,
+        Robeson,
+        StandingRock
     },
     props: ['data'],
     name: 'Sections'
