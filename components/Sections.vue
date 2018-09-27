@@ -28,7 +28,7 @@ import Timeline from '~/components/Timeline.vue';
 import Refer from '~/components/Refer.vue';
 import Quote from '~/components/Quote.vue';
 import Snippet from '~/components/Snippet.vue';
-import Yazoo from '~/components/yazoo_locator.vue';
+import Yazoo from '~/components/YazooLocator.vue';
 
 export default {
     components: {
@@ -48,7 +48,7 @@ export default {
 
 <style scoped>
 .left {
-    width: 23%;
+    width: 15%;
     float: left;
     clear: left;
     margin-right: 1.5% !important;
@@ -56,7 +56,7 @@ export default {
 }
 
 .right {
-    width: 23%;
+    width: 15%;
     float: right;
     clear: right;
     margin-right: 1.5% !important;
