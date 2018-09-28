@@ -1,5 +1,5 @@
 <template>
-    <westFresno />
+    <stLouisHud />
 </template>
 
 <script>
@@ -11,6 +11,7 @@ import presidio from '~/components/PresidioLocator.vue'
 import stLouis from '~/components/StLouisLocator.vue'
 import fresno from '~/components/FresnoLocator.vue'
 import westFresno from '~/components/WestFresnoLocator.vue'
+import stLouisHud from '~/components/StLouisHud.vue'
 export default {
     components: {
         westFresno,
@@ -19,7 +20,8 @@ export default {
         standingRock,
         robeson,
         presidio,
-        stLouis
+        stLouis,
+        stLouisHud
     }
 };
 </script>
