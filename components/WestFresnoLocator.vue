@@ -64,14 +64,14 @@ export default {
 
 .roadWest {
     fill: none;
-    stroke: white;
-    stroke-width: .5px;
+    stroke: pink;
+    stroke-width: 1px;
 }
 
 .roadNotWest {
     fill: none;
     stroke: grey;
-    stroke-width: .5px;
+    stroke-width: 1px;
 }
 
 .highlight {
