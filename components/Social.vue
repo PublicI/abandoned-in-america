@@ -32,7 +32,7 @@ export default {
     font-size: 12px;
     line-height: 12px;
     padding-bottom: 20px;
-    padding-top: 5px;
+    /* padding-top: 5px; */
     float: right;
     padding-right: 10px;
     position: relative;
