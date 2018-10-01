@@ -1,7 +1,6 @@
 <template>
     <div :class="(data.size ? data.size : 'centralColumn') + ' ' + data.align">
-        <img :src="data.location" style="width:100%;height: auto">
-        <!-- :srcset="encodeURI(data.location.replace('img','resized').replace(/\.(jpg|png)$/,'-2880.$1')) + '  2880w, ' + encodeURI(data.location.replace('img','resized').replace(/\.(jpg|png)$/,'-1440.$1')) + '  1440w, ' + encodeURI(data.location.replace('img','resized').replace(/\.(jpg|png)$/,'-720.$1')) + '   720w'" -->
+        <img :src="data.location" :srcset="encodeURI(data.location.replace('img','resized').replace(/\.(jpg|png)$/,'-2880.$1')) + '  2880w, ' + encodeURI(data.location.replace('img','resized').replace(/\.(jpg|png)$/,'-1440.$1')) + '  1440w, ' + encodeURI(data.location.replace('img','resized').replace(/\.(jpg|png)$/,'-720.$1')) + '   720w'" style="width:100%;height: auto">
 
         <div class="cutline"><span>{{data.cutline}}</span><br><span class="credit" v-html="data.credit"></span></div>
     </div>

@@ -72,19 +72,19 @@ export default {
 
 <style scoped>
 .left {
-    width: 15%;
+    width: 23%;
     float: left;
     clear: left;
-    margin-right: 7% !important;
-    margin-left: 7% !important;
+    margin-right: 1.5% !important;
+    margin-left: 1.5% !important;
 }
 
 .right {
-    width: 15%;
+    width: 23%;
     float: right;
     clear: right;
-    margin-right: 7% !important;
-    margin-left: 7% !important;
+    margin-right: 1.5% !important;
+    margin-left: 1.5% !important;
 }
 @media (max-width: 650px) {
     .left {
