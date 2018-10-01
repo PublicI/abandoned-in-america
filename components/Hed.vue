@@ -9,9 +9,7 @@
                     <div>Trench</div>
                 </h1>
                 -->
-                <!--
-                <h3 class="hideOnMobile">{{data.subhed}}</h3>
-                -->
+                <h2>{{data.subhed}}</h2>
             </div>
         </div>
         <!-- <h3 class="hideOnDesktop">{{data.subhed}}</h3> -->
@@ -58,14 +56,6 @@ h1 {
     position: absolute;
     top: -5px;
     left: 15%;
-}
-h2 {
-    /* font-family: almaq-refined,sans-serif; */
-    text-transform: uppercase;
-    /* text-shadow: 2px 2px 2px black; */
-    /* color: #323232; */
-    max-width: 1300px;
-    color: white;
 }
 h3 {
     color: white;
