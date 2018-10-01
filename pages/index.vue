@@ -7,7 +7,7 @@
             <logo />
 -->
 
-            <hed :data="doc" />
+            <ledeArt :data="doc" />
 
             <!--
 
@@ -65,8 +65,8 @@ import Sections from '~/components/Sections.vue';
 import Byline from '~/components/Byline.vue';
 import Social from '~/components/Social.vue';
 import Nav from '~/components/Nav.vue';
-import LedeArt from '~/components/LedeArt.vue';
 import Parts from '~/components/Parts.vue';
+import LedeArt from '~/components/LedeArt.vue';
 
 export default {
     name: 'index',
@@ -77,7 +77,7 @@ export default {
         Byline,
         Social,
         projectNav: Nav,
-        ledeart: LedeArt,
+        ledeArt: LedeArt,
         Parts
     },
     async asyncData ({ app, params }) {
