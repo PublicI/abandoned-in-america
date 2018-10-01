@@ -95,19 +95,29 @@ h3 {
     }
 }
 @media (max-width: 500px) {
+    h1 {
+        /* font-family: adonis-web,serif; */
+        font-size: 10vw;
+        line-height: 10vw;
+    }
+    h2 {
+        font-size: 20px;
+        line-height: 22px;
+    }
     .hideOnMobile {
         display: none;
     }
     .hideOnDesktop {
         display: block;
     }
+    /*
     h3 {
         position: relative;
         top: -20px;
         left: 10px;
         font-size: 18px;
         line-height: 20px;
-    }
+    }*/
     .hed {
         top: 24%;
     }
