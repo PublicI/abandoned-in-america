@@ -23,6 +23,7 @@ export default {
 }
 .copy p {
     font-family: "ff-tisa-web-pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "nimbus-sans",sans-serif;
     font-weight: 400;
     line-height: 29px;
     font-size: 19px;
@@ -30,6 +31,9 @@ export default {
     color: rgb(50,50,50);
 }
 .copy h3 {
+    font-family: "balboa",sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
     color: black;
     text-shadow: none;
 }

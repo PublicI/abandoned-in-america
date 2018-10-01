@@ -45,6 +45,9 @@ h1 {
     color: white;
     position: relative;
     font-family: tablet-gothic-narrow,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-family: "balboa",sans-serif;
+    text-transform: uppercase;
+    -webkit-font-smoothing: antialiased;
     font-weight: 400;
     color: black;
     padding-top: 10px;

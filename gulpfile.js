@@ -36,7 +36,6 @@ gulp.task('resize-img', () =>
             base: 'static/img/'
         })
         .pipe(rename(function (path) {
-            console.log(path);
             if (path.extname == '.JPG') {
                 path.extname = ".jpg";
             }
