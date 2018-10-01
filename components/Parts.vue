@@ -1,6 +1,6 @@
 <template>
     <div class="parts">
-        <div class="part" v-for="part in data.parts" :style="'background-image:url(' + encodeURI(part.image.replace('img', 'resized').replace(/\.(jpg|png)$/, '-1440.$1')) + ');background-size:cover'">
+        <div class="part" v-for="part in data.parts" :style="'background-image:url(/abandoned-in-america/' + encodeURI(part.image.replace('img', 'resized').replace(/\.(jpg|png)$/, '-1440.$1')) + ');background-size:cover'">
             <nuxt-link :to="part.slug">
                 <div class="text">
                     <!-- <h2>{{part.name}}</h2> -->
