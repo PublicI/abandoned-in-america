@@ -50,6 +50,9 @@ h1 {
     color: black;
     padding-top: 10px;
 }
+h2 {
+    color: #3c3c3c;
+}
 .deathInThe {
     font-size: 5vw;
     line-height: 5vw;
