@@ -44,6 +44,9 @@ module.exports = {
             }
         ]
     ],
+    render: {
+        ssr: false
+    },
     plugins: [
         { src: '~/plugins/pym.js', ssr: false },
         { src: '~/plugins/typekit.js', ssr: false },
