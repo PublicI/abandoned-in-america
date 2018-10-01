@@ -52,8 +52,9 @@ export default {
 .part .text h1 {
     font-size: 30px;
     line-height: 110%;
-    color: white;
-    background-color: #E74C3C;
+    color: black;
+    padding: 4px;
+    background-color: white;
 }
 .part .text h2 {
     font-size: 20px;
