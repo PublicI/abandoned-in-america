@@ -25,23 +25,17 @@ export default {
         let path = d3.geoPath()
             .projection(projection);
 
-
-        function processShapes(features,projF) {
-            let container = []
-            for (let i = 0; i < features.length; i++) {
-                let newObject = {}
-                newObject.feature = projF(features[i])
-                newObject.percentSubsidized = features[i].properties.stlouis__6
-                container.push(newObject)
-            }
-            return container
-        }
-
         let colorScale = d3.scaleLinear()
             .domain([0, 0.5])
             .range(["pink", "red"])
 
-        let processed = processShapes(stlouisShapes.features,path);
+        let processed = stlouisShapes.features.map(feature => {
+            return {
+                feature: path(feature),
+                percentSubsidized: feature.properties.stlouis__6
+            };
+        });
+
         return {
             width,
             height,
