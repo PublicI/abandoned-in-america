@@ -1,18 +1,13 @@
 <template>
     <div>
-        <div class="hed centralColumn">
+        <div :class="'hed centralColumn' + (data.image.location !== '' ? ' floatedHed' : '')">
             <div>
-                <h1>{{data.hed}}</h1>
-                <!--
-                <h1>
-                    <div class="deathInThe">Death in the</div>
-                    <div>Trench</div>
-                </h1>
-                -->
+                <h1 v-if="data.slug !== 'abandoned-in-america'">{{data.hed}}</h1>
+                <h1 v-if="data.slug === 'abandoned-in-america'" style="font-size:10vw;line-height: 8.4vw;color: #E74C3C">ABANDONED IN AMERICA</h1>
+
                 <h2>{{data.subhed}}</h2>
             </div>
         </div>
-        <!-- <h3 class="hideOnDesktop">{{data.subhed}}</h3> -->
     </div>
 </template>
 
@@ -24,13 +19,22 @@ export default {
 </script>
 
 <style scoped>
-/*
-.hed {
+.floatedHed {
     position: absolute;
-    z-index: 300;
-    top: 32%;
-    left: 38%;
-}*/
+    top: 5vw;
+    left: 5vw;
+}
+.floatedHed h1 {
+    text-shadow: 1px 1px 1px #565656;
+    color: white;
+}
+.outline {
+    text-shadow:
+   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;
+}
 .hideOnDesktop {
     display: none;
 }
