@@ -76,7 +76,7 @@ export default {
     left: 5vw;
 }
 .floatedHed h1 {
-    text-shadow: 1px 1px 1px #565656;
+    /* text-shadow: 1px 1px 1px #565656; */
     color: white;
 }
 .outline {
