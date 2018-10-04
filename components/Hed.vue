@@ -3,7 +3,7 @@
         <div :class="'hed centralColumn' + (data.image.location !== '' ? ' floatedHed' : '')">
             <div>
                 <h1 v-if="data.slug !== 'abandoned-in-america'">{{data.hed}}</h1>
-                <h1 v-if="data.slug === 'abandoned-in-america'" style="font-size:9vw;line-height: 8.4vw;color: #E74C3C"><span class="rotate5">A</span><span class="rotateNegative5">B</span><span class="inlineBlock">A</span><span class="rotate5">N</span><span class="rotateNegative5">D</span><span class="inlineBlock">O</span><span class="rotate5">N</span><span class="rotateNegative5">E</span><span class="inlineBlock">D</span> IN AMERICA</h1>
+                <h1 v-if="data.slug === 'abandoned-in-america'" :class="rotatedClass" style="font-size:9vw;line-height: 8.4vw;color: #E74C3C"><span class="rotate5">A</span><span class="rotateNegative5">B</span><span class="inlineBlock">A</span><span class="rotate5">N</span><span class="rotateNegative5">D</span><span class="inlineBlock">O</span><span class="rotate5">N</span><span class="rotateNegative5">E</span><span class="inlineBlock">D</span> IN AMERICA</h1>
 
                 <h2>{{data.subhed}}</h2>
             </div>
@@ -14,27 +14,59 @@
 <script>
 export default {
     props: ['data'],
-    name: 'Hed'
+    name: 'Hed',
+    data() {
+        return {
+            rotatedClass: 'rotated'
+        }
+    },
+    mounted() {
+        let vm = this;
+
+        setTimeout(() => {
+            vm.rotatedClass = 'notRotated';
+        },1000);
+    }
 };
 </script>
 
 <style scoped>
-/*
-.rotate5 {
+.rotate5, .rotateNegative5, .inlineBlock {
+    transition: all 2s;
+}
+
+.rotated .rotate5 {
     display: inline-block;
     -ms-transform: rotate(5deg);
     -webkit-transform: rotate(5deg);
     transform: rotate(5deg);
 }
-.rotateNegative5 {
+.rotated .rotateNegative5 {
     display: inline-block;
     -ms-transform: rotate(-5deg);
     -webkit-transform: rotate(-5deg);
     transform: rotate(-5deg);
 }
-.inlineBlock {
+.rotated .inlineBlock {
     display: inline-block;
-}*/
+}
+
+
+.notRotated .rotate5 {
+    display: inline-block;
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+.notRotated .rotateNegative5 {
+    display: inline-block;
+    -ms-transform: rotate(-0deg);
+    -webkit-transform: rotate(-0deg);
+    transform: rotate(-0deg);
+}
+.notRotated .inlineBlock {
+    display: inline-block;
+}
 
 .floatedHed {
     position: absolute;
