@@ -244,8 +244,9 @@ h2 {
 }*/
 h2 {
     color: black;
+    /*
     margin-top: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 15px;*/
     line-height: 34px;
 }
 .stickyImage {

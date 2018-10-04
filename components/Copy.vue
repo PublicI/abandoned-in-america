@@ -51,7 +51,7 @@ export default {
     font-size: 58px;
     line-height: 51px;
     padding-top: 0;
-    padding-right: 8px;
+    padding-right: 5px;
     padding-left: 0;
 }
 </style>

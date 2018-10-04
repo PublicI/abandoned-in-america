@@ -16,6 +16,7 @@ export default {
 <style scoped>
 .byline {
     font-family: "ff-tisa-web-pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: MaisonNeue, Arial, Helvetica, Verdana, sans-serif;
     line-height: 22px;
     font-size: 18px;
     padding-bottom: 20px;

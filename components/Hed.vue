@@ -3,7 +3,7 @@
         <div :class="'hed centralColumn' + (data.image.location !== '' ? ' floatedHed' : '')">
             <div>
                 <h1 v-if="data.series && data.slug !== data.series.slug">{{data.hed}}</h1>
-                <h1 v-if="!data.series || data.slug === data.series.slug" :class="rotatedClass" style="font-size:9vw;line-height: 8.4vw;color: #E74C3C"><span class="rotate5">A</span><span class="rotateNegative5">B</span><span class="inlineBlock">A</span><span class="rotate5">N</span><span class="rotateNegative5">D</span><span class="inlineBlock">O</span><span class="rotate5">N</span><span class="rotateNegative5">E</span><span class="inlineBlock">D</span> IN AMERICA</h1>
+                <h1 v-if="!data.series || data.slug === data.series.slug" :class="rotatedClass" style="font-size:9vw;line-height: 8.4vw;color: #E74C3C">ABANDONED IN AMERICA</h1>
 
                 <h2>{{data.subhed}}</h2>
             </div>
@@ -19,18 +19,20 @@ export default {
         return {
             rotatedClass: 'notRotated'
         }
-    },
+    }
+    /*,
     mounted() {
         let vm = this;
 
         setTimeout(() => {
             vm.rotatedClass = 'rotated';
         },1000);
-    }
+    }*/
 };
 </script>
 
 <style scoped>
+/*
 .rotate5, .rotateNegative5, .inlineBlock {
     transition: all 2s ease-out;
 }
@@ -66,7 +68,7 @@ export default {
 }
 .notRotated .inlineBlock {
     display: inline-block;
-}
+}*/
 
 .floatedHed {
     position: absolute;
@@ -105,6 +107,7 @@ h1 {
 }
 h2 {
     color: #3c3c3c;
+    color: white;
 }
 .deathInThe {
     font-size: 5vw;
