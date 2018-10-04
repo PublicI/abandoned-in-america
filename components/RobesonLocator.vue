@@ -10,7 +10,7 @@
 <script>
 import * as d3 from 'd3';
 import * as topojson from 'topojson-client';
-import nc from '~/assets/nc_silhouette.json';
+import nc from '~/assets/north_carolina.json';
 import robeson from '~/assets/robeson_county.json';
 
 export default {
@@ -19,7 +19,7 @@ export default {
         let width = 800;
         let height = 600;
 
-        let ncShape = topojson.feature(nc, nc.objects.nc_silhouette);
+        let ncShape = topojson.feature(nc, nc.objects.north_carolina);
         let rbShape = topojson.feature(robeson, robeson.objects.robeson_county);
 
         let projection = d3.geoConicConformal()
