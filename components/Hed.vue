@@ -19,21 +19,22 @@ export default {
 </script>
 
 <style scoped>
+/*
 .rotate5 {
     display: inline-block;
-    -ms-transform: rotate(5deg); /* IE 9 */
-    -webkit-transform: rotate(5deg); /* Safari */
+    -ms-transform: rotate(5deg);
+    -webkit-transform: rotate(5deg);
     transform: rotate(5deg);
 }
 .rotateNegative5 {
     display: inline-block;
-    -ms-transform: rotate(-5deg); /* IE 9 */
-    -webkit-transform: rotate(-5deg); /* Safari */
+    -ms-transform: rotate(-5deg);
+    -webkit-transform: rotate(-5deg);
     transform: rotate(-5deg);
 }
 .inlineBlock {
     display: inline-block;
-}
+}*/
 
 .floatedHed {
     position: absolute;
