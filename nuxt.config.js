@@ -4,6 +4,7 @@ module.exports = {
     /*
      ** Headers of the page
      */
+    loading: false,
     head: {
         title: 'Abandoned in America',
         meta: [
@@ -43,6 +44,9 @@ module.exports = {
             }
         ]
     ],
+    render: {
+        ssr: false
+    },
     plugins: [
         { src: '~/plugins/pym.js', ssr: false },
         { src: '~/plugins/typekit.js', ssr: false },
@@ -58,7 +62,8 @@ module.exports = {
         minify: {
             collapseWhitespace: false,
             removeEmptyAttributes: false
-        }
+        },
+        routes: ['/fresno', '/yazoo', '/standing-rock', '/st-louis', '/presidio', '/lumberton']
     },
     router: {
         base: `/${pkg.name}/`
@@ -79,7 +84,7 @@ module.exports = {
          ** Run ESLINT on save
          */
         extend(config, ctx) {
-/*            config.module.rules.push({
+            /*            config.module.rules.push({
                 test: /\.(csv)$/,
                 loader: 'dsv-loader',
                 exclude: /(node_modules)/
@@ -90,7 +95,6 @@ module.exports = {
                 test: /\.csv$/,
                 use: [{ loader: 'raw-loader' }]
             });
-
 
             if (ctx.isClient && process.env.NODE_ENV !== 'production') {
                 config.module.rules.push({

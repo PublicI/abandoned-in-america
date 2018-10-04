@@ -5,7 +5,7 @@
 
             <copy :data="section" v-if="section.type === 'text' || section.type === 'lede'" />
 
-            <photo :data="section" v-if="section.type === 'image'" />
+            <photo :base="'/' + data.series.slug + '/'" :data="section" v-if="section.type === 'image'" />
 
             <snippet :data="section" v-if="section.type === 'snippet'" />
 
@@ -14,6 +14,24 @@
             <refer :data="section" v-if="section.type === 'refer'" />
 
             <quote :data="section" v-if="section.type === 'quote'" />
+
+            <yazoo :data="section" v-if="section.type === 'yazoo_locator'" :class="section.align" />
+
+            <robeson :data="section" v-if="section.type === 'robeson_locator'" :class="section.align" />
+
+            <stlouis :data="section" v-if="section.type === 'st_louis_locator'" :class="section.align" />
+
+            <standingrock :data="section" v-if="section.type === 'standing_rock_locator'" :class="section.align" />
+
+            <fresno :data="section" v-if="section.type === 'fresno_locator'" :class="section.align" />
+
+            <westfresno :data="section" v-if="section.type === 'west_fresno_locator'" :class="section.align" />
+
+            <presidio :data="section" v-if="section.type === 'presidio_locator'" :class="section.align" />
+
+            <div v-if="section.type === 'st_louis_hud'" :class="section.align"> 
+                <stlouishud :data="section" />
+            </div>
         </div>
     </div>
 </template>
@@ -26,6 +44,14 @@ import Timeline from '~/components/Timeline.vue';
 import Refer from '~/components/Refer.vue';
 import Quote from '~/components/Quote.vue';
 import Snippet from '~/components/Snippet.vue';
+import Yazoo from '~/components/YazooLocator.vue';
+import Robeson from '~/components/RobesonLocator.vue';
+import StLouis from '~/components/StLouisLocator.vue';
+import StandingRock from '~/components/StandingRockLocator.vue';
+import Fresno from '~/components/FresnoLocator.vue';
+import WestFresno from '~/components/WestFresnoLocator.vue';
+import Presidio from '~/components/PresidioLocator.vue';
+import StLouisHud from '~/components/StLouisHud.vue';
 
 export default {
     components: {
@@ -35,7 +61,15 @@ export default {
         Timeline,
         Refer,
         Quote,
-        Snippet
+        Snippet,
+        Yazoo,
+        Robeson,
+        stlouis: StLouis,
+        standingrock: StandingRock,
+        fresno: Fresno,
+        westfresno: WestFresno,
+        Presidio,
+        stlouishud: StLouisHud
     },
     props: ['data'],
     name: 'Sections'
@@ -43,5 +77,34 @@ export default {
 </script>
 
 <style scoped>
+.left {
+    width: 23%;
+    float: left;
+    clear: left;
+    margin-right: 1.5% !important;
+    margin-left: 1.5% !important;
+}
 
+.right {
+    width: 23%;
+    float: right;
+    clear: right;
+    margin-right: 1.5% !important;
+    margin-left: 1.5% !important;
+}
+@media (max-width: 650px) {
+    .left {
+        width: 100%;
+        float: none;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+    }
+
+    .right {
+        width: 100%;
+        float: none;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+    }
+}
 </style>

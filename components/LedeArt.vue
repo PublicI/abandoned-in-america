@@ -1,12 +1,12 @@
 <template>
     <div>
         <div class="ledeArt">
-            <img :src="data.image.location" :srcset="encodeURI(data.image.location.replace('img','resized').replace(/\.(jpg|png)$/,'-2880.$1')) + '  2880w, ' + encodeURI(data.image.location.replace('img','resized').replace(/\.(jpg|png)$/,'-1440.$1')) + '  1440w, ' + encodeURI(data.image.location.replace('img','resized').replace(/\.(jpg|png)$/,'-720.$1')) + '   720w'" />
+            <img v-if="data.image.location !== ''" :src="(data.series ? '/' + data.series.slug + '/' : '') + data.image.location" :srcset="encodeURI((data.series ? '/' + data.series.slug + '/' : '') + data.image.location.replace('img','resized').replace(/\.(jpg|png)$/,'-2880.$1')) + '  2880w, ' + (data.series ? '/' + data.series.slug + '/' : '') + encodeURI(data.image.location.replace('img','resized').replace(/\.(jpg|png)$/,'-1440.$1')) + '  1440w, ' + (data.series ? '/' + data.series.slug + '/' : '') + encodeURI(data.image.location.replace('img','resized').replace(/\.(jpg|png)$/,'-720.$1')) + '   720w'" />
 <!--
             <div class="scrim"></div>
-
-            <div class="cutline hideOnDesktop" v-if="data.image.cutline">{{data.image.cutline}}</div><div class="credit hideOnDesktop">{{data.image.credit}}</div>
 -->
+            <div class="cutline" v-if="data.image.cutline">{{data.image.cutline}}</div><div class="credit">{{data.image.credit}}</div>
+
             <hed :data="data" />
 
 
@@ -32,7 +32,7 @@ export default {
 <style scoped>
 .ledeArt {
     /* max-height: 900px; */
-    min-height: 900px;
+    /* min-height: 900px; */
     overflow: hidden;
 }
 

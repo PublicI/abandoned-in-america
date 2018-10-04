@@ -1,5 +1,5 @@
 <template>
-    <presidio />
+    <fresnoThematic />
 </template>
 
 <script>
@@ -11,9 +11,11 @@ import presidio from '~/components/PresidioLocator.vue'
 import stLouis from '~/components/StLouisLocator.vue'
 import fresno from '~/components/FresnoLocator.vue'
 import westFresno from '~/components/WestFresnoLocator.vue'
+import fresnoThematic from '~/components/FresnoThematic.vue'
 import stLouisHud from '~/components/StLouisHud.vue'
 export default {
     components: {
+        fresnoThematic,
         westFresno,
         fresno,
         yazoo,

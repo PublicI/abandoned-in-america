@@ -1,49 +1,110 @@
 <template>
     <div>
-        <div class="hed">
+        <div :class="'hed centralColumn' + (data.image.location !== '' ? ' floatedHed' : '')">
             <div>
-                <h1>{{data.hed}}</h1>
-                <!--
-                <h1>
-                    <div class="deathInThe">Death in the</div>
-                    <div>Trench</div>
-                </h1>
-                -->
-                <h3 class="hideOnMobile">{{data.subhed}}</h3>
+                <h1 v-if="data.series && data.slug !== data.series.slug">{{data.hed}}</h1>
+                <h1 v-if="!data.series || data.slug === data.series.slug" :class="rotatedClass" style="font-size:9vw;line-height: 8.4vw;color: #E74C3C"><span class="rotate5">A</span><span class="rotateNegative5">B</span><span class="inlineBlock">A</span><span class="rotate5">N</span><span class="rotateNegative5">D</span><span class="inlineBlock">O</span><span class="rotate5">N</span><span class="rotateNegative5">E</span><span class="inlineBlock">D</span> IN AMERICA</h1>
+
+                <h2>{{data.subhed}}</h2>
             </div>
         </div>
-        <h3 class="hideOnDesktop">{{data.subhed}}</h3>
     </div>
 </template>
 
 <script>
 export default {
     props: ['data'],
-    name: 'Hed'
+    name: 'Hed',
+    data() {
+        return {
+            rotatedClass: 'notRotated'
+        }
+    },
+    mounted() {
+        let vm = this;
+
+        setTimeout(() => {
+            vm.rotatedClass = 'rotated';
+        },1000);
+    }
 };
 </script>
 
 <style scoped>
-.hed {
+.rotate5, .rotateNegative5, .inlineBlock {
+    transition: all 2s ease-out;
+}
+
+.rotated .rotate5 {
+    display: inline-block;
+    -ms-transform: rotate(5deg);
+    -webkit-transform: rotate(5deg);
+    transform: rotate(5deg);
+}
+.rotated .rotateNegative5 {
+    display: inline-block;
+    -ms-transform: rotate(-5deg);
+    -webkit-transform: rotate(-5deg);
+    transform: rotate(-5deg);
+}
+.rotated .inlineBlock {
+    display: inline-block;
+}
+
+
+.notRotated .rotate5 {
+    display: inline-block;
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+.notRotated .rotateNegative5 {
+    display: inline-block;
+    -ms-transform: rotate(-0deg);
+    -webkit-transform: rotate(-0deg);
+    transform: rotate(-0deg);
+}
+.notRotated .inlineBlock {
+    display: inline-block;
+}
+
+.floatedHed {
     position: absolute;
-    z-index: 300;
-    top: 32%;
-    left: 38%;
+    top: 5vw;
+    left: 5vw;
+}
+.floatedHed h1 {
+    text-shadow: 1px 1px 1px #565656;
+    color: white;
+}
+.outline {
+    text-shadow:
+   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;
 }
 .hideOnDesktop {
     display: none;
 }
 h1 {
     /* font-family: adonis-web,serif; */
-    font-size: 10vw;
-    line-height: 10vw;
+    font-size: 5vw;
+    line-height: 5vw;
     /* text-shadow: 2px 2px 2px black; */
     max-width: 1300px;
     color: white;
     position: relative;
     font-family: tablet-gothic-narrow,Helvetica Neue,Helvetica,Arial,sans-serif;
-    font-weight: 300;
+    font-family: "balboa",sans-serif;
+    text-transform: uppercase;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 400;
     color: black;
+    padding-top: 10px;
+}
+h2 {
+    color: #3c3c3c;
 }
 .deathInThe {
     font-size: 5vw;
@@ -51,14 +112,6 @@ h1 {
     position: absolute;
     top: -5px;
     left: 15%;
-}
-h2 {
-    /* font-family: almaq-refined,sans-serif; */
-    text-transform: uppercase;
-    /* text-shadow: 2px 2px 2px black; */
-    /* color: #323232; */
-    max-width: 1300px;
-    color: white;
 }
 h3 {
     color: white;
@@ -98,19 +151,29 @@ h3 {
     }
 }
 @media (max-width: 500px) {
+    h1 {
+        /* font-family: adonis-web,serif; */
+        font-size: 10vw;
+        line-height: 10vw;
+    }
+    h2 {
+        font-size: 20px;
+        line-height: 22px;
+    }
     .hideOnMobile {
         display: none;
     }
     .hideOnDesktop {
         display: block;
     }
+    /*
     h3 {
         position: relative;
         top: -20px;
         left: 10px;
         font-size: 18px;
         line-height: 20px;
-    }
+    }*/
     .hed {
         top: 24%;
     }

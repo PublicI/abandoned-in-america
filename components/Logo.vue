@@ -68,10 +68,10 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .column .cls-1 {
     /* fill: rgba(130,130,130,0.8); */
-    fill: white;
+    fill: #E74C3C;
     /* transition: 1s; */
 }
 .highlight .cls-1 {
@@ -84,21 +84,25 @@ export default {
 }
 */
 .cls-2 {
-    fill: #E74C3C;
+    fill: white;
 }
 
 .cls-3 {
-    fill: white;
+    fill: black;
 }
 .logo {
     width: 100%;
-    height: 51px;
-    max-width: 200px;
+    height: 48px;
+    max-width: 180px;
+    /*
     position: absolute;
     top: 0;
-    left: 0;
+    left: 0; */
     padding: 5px;
     z-index: 350;
+}
+a, a:visited {
+    padding: 0 !important;
 }
 @media (max-width: 900px) {
     .logo {

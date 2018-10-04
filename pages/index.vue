@@ -1,118 +1,17 @@
 <template>
     <section>
         <div v-if="doc">
-            <!--
             <projectNav :data="doc" />
-            -->
 
-            <logo />
-
-            <!--
-
-            <ledeart :data="doc" />
-
-            -->
-
-            <!--
-
-            <div class="indexHead">
-
-                <img :src="doc.image" class="stickyImage" />
-
-                <div style="z-index:500;position:relative">
-
-                    <h1>
-                        <span class="hedArticle" style="position:relative;left:70px;top:40px">The</span><br>
-                        <span style="background-color:#FFB957;box-shadow: 5px 0 0 #FFB957, -5px 0 0 #FFB957;">United States</span><br>
-                        <span class="hedArticle" style="font-size:50px;position:relative;top:-45px;left:5px">of&nbsp;</span><span style="background-color:#FFB957;box-shadow: 5px 0 0 #FFB957, -5px 0 0 #FFB957;">Petroleum</span></span>
-                    </h1>
-
-                    <h2>{{doc.subhed}}</h2>
-
-                </div>
-
-
-            </div>
-            -->
-
-            <!--
+            <ledeArt :data="doc" />
 
             <social :data="doc" />
 
             <byline :data="doc" />
-            
-            -->
-
-
-
-            <div class="iconButtons">
-                <h4 style="color: white">{{doc.section}}</h4>
-
-                <h1>{{doc.hed}}</h1>
-
-                <!--
-
-                <div class="introLink"><a href="#intro">{{doc.promo}} &darr;</a><br><span style="font-size:23px;line-height:26px">or pick a break:</span></div>
-
-                -->
-
-                <div class="iconButtonsContainer">
-
-                    <div v-for="section in doc.sections" v-if="section.type == 'extender'" class="iconButtonContainer">
-                        <a :href="'#' + section.slug.replace(/ /g,'-').toLowerCase()" class="iconLink">&nbsp;</a>
-                        <div class="iconButton">
-                            <icon :data="section" />
-                            <a :href="'#' + section.slug.replace(/ /g,'-').toLowerCase()">{{section.slug}}</a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <a name="intro" />
-
-            <div class="centralColumn">
-                <h2>{{doc.subhed}}</h2>
-            </div>
-
-            <byline :data="doc" />
-
 
             <sections :data="doc" />
 
-            <div class="parts">
-                <div class="part" v-for="part in doc.parts" :style="'background-image:url(' + part.image.replace('img', 'resized').replace(/\.(jpg|png)$/, '-1440.$1') + ');background-size:cover'">
-                    <nuxt-link :to="part.slug">
-                        <div class="scrim"></div>
-
-                        <div class="text">
-                            <h2>{{part.name}}</h2>
-                            <h1>{{part.hed}}</h1>
-                        </div>
-
-                        <!--
-                        <img :src="part.image" class="image">
-                        --> 
-                    </nuxt-link>
-                </div>
-<!--
-                <div class="part">
-                    <div class="scrim"></div>
-
-                    <div class="text">
-                        <h1 style="color:black;text-shadow:none">{{doc.name}}</h1>
-                    </div>
-
-                    <img :src="doc.image.location" class="image">
-                </div>
--->
-            </div>
-
-            <!--
-            <no-ssr>
-                <back-to-top text="See all the breaks"></back-to-top>
-            </no-ssr>
-            -->
+            <parts :data="doc" />
 
         </div>
     </section>
@@ -125,20 +24,20 @@ import Sections from '~/components/Sections.vue';
 import Byline from '~/components/Byline.vue';
 import Social from '~/components/Social.vue';
 import Nav from '~/components/Nav.vue';
+import Parts from '~/components/Parts.vue';
 import LedeArt from '~/components/LedeArt.vue';
-import Icon from '~/components/Icon.vue';
 
 export default {
     name: 'index',
     components: {
-        Icon,
         Hed,
         Logo,
         Sections,
         Byline,
         Social,
         projectNav: Nav,
-        ledeart: LedeArt
+        ledeArt: LedeArt,
+        Parts
     },
     async asyncData ({ app, params }) {
         let data = await app.$axios.$get('/api/docs/index.json');
@@ -149,12 +48,12 @@ export default {
     },
     head () {
         return {
-            title: 'Congress snuck dozens of tax breaks into the budget deal | Center for Public Integrity',
+            title: this.doc.hed + ' | Center for Public Integrity',
             meta: [
                 {
                     hid: 'description',
                     name: 'description',
-                    content: 'Budget bill packed with special breaks for Washington insiders.'
+                    content: 'TKTK'
                 },
                 {
                     name: 'twitter:image',
@@ -174,15 +73,15 @@ export default {
                 },
                 {
                     property: 'og:title',
-                    content: 'Congress snuck dozens of tax breaks into the budget deal. Here\'s where they went.'
+                    content: this.doc.hed 
                 },
                 {
                     name: 'title',
-                    content: 'Congress snuck dozens of tax breaks into the budget deal. Here\'s where they went.'
+                    content: this.doc.hed
                 },
                 {
                     property: 'og:description',
-                    content: 'Budget bill packed with special breaks for Washington insiders.'
+                    content: 'TKTKZ'
                 },
                 {
                     property: 'og:url',
@@ -360,50 +259,6 @@ h2 {
     height:auto;
     position:absolute;
     z-index:200;
-}
-/*
-.stickyImage.unblur {
-    filter:blur(0);
-
-}*/
-.parts {
-    max-width: 1500px;
-    margin-left: auto;
-    margin-right: auto;
-}
-.part .image {
-    width: auto;
-    height: 100%;
-}
-.part a .image {
-    cursor: pointer;
-}
-.part {
-    height: 230px;
-    width: 30%;
-    position: relative;
-    margin-bottom: 20px;
-    float: left;
-    margin: 1%;
-    overflow: hidden;
-}
-.part .text {
-    position: absolute;
-    bottom: 0;
-    left: 10px;
-    padding: 20px;
-}
-.part .text h1 {
-    font-size: 30px;
-    line-height: 110%;
-}
-.part .text h2 {
-    font-size: 20px;
-    line-height: 120%;
-}
-.part:hover a .text h2, .part:hover a .text h1 {
-    text-decoration: underline;
-    text-decoration-color:#FFB957
 }
 
 @media (max-width: 900px) {
