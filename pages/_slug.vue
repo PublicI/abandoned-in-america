@@ -4,7 +4,7 @@
 
             <projectNav :data="doc.series" />
 
-            <hed :data="doc" />
+            <ledeArt :data="doc" />
 
             <social :data="doc" />
 
@@ -36,7 +36,7 @@ export default {
     components: {
         Logo,
         projectNav: Nav,
-        ledeart: LedeArt,
+        ledeArt: LedeArt,
         Sections,
         Byline,
         Next,

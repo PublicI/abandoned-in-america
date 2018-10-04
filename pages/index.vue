@@ -3,52 +3,11 @@
         <div v-if="doc">
             <projectNav :data="doc" />
 
-<!--
-            <logo />
--->
-
-            <hed :data="doc" />
-
-            <!--
-
-            <div class="indexHead">
-
-                <img :src="doc.image" class="stickyImage" />
-
-                <div style="z-index:500;position:relative">
-
-                    <h1>
-                        <span class="hedArticle" style="position:relative;left:70px;top:40px">The</span><br>
-                        <span style="background-color:#FFB957;box-shadow: 5px 0 0 #FFB957, -5px 0 0 #FFB957;">United States</span><br>
-                        <span class="hedArticle" style="font-size:50px;position:relative;top:-45px;left:5px">of&nbsp;</span><span style="background-color:#FFB957;box-shadow: 5px 0 0 #FFB957, -5px 0 0 #FFB957;">Petroleum</span></span>
-                    </h1>
-
-                    <h2>{{doc.subhed}}</h2>
-
-                </div>
-
-
-            </div>
-            -->
-
-            <!--
+            <ledeArt :data="doc" />
 
             <social :data="doc" />
 
             <byline :data="doc" />
-            
-            -->
-
-            <a name="intro" />
-
-            <!--
-            <div class="centralColumn">
-                <h2>{{doc.subhed}}</h2>
-            </div>
-            -->
-
-            <byline :data="doc" />
-
 
             <sections :data="doc" />
 
@@ -65,8 +24,8 @@ import Sections from '~/components/Sections.vue';
 import Byline from '~/components/Byline.vue';
 import Social from '~/components/Social.vue';
 import Nav from '~/components/Nav.vue';
-import LedeArt from '~/components/LedeArt.vue';
 import Parts from '~/components/Parts.vue';
+import LedeArt from '~/components/LedeArt.vue';
 
 export default {
     name: 'index',
@@ -77,7 +36,7 @@ export default {
         Byline,
         Social,
         projectNav: Nav,
-        ledeart: LedeArt,
+        ledeArt: LedeArt,
         Parts
     },
     async asyncData ({ app, params }) {
@@ -89,12 +48,12 @@ export default {
     },
     head () {
         return {
-            title: 'Congress snuck dozens of tax breaks into the budget deal | Center for Public Integrity',
+            title: this.doc.hed + ' | Center for Public Integrity',
             meta: [
                 {
                     hid: 'description',
                     name: 'description',
-                    content: 'Budget bill packed with special breaks for Washington insiders.'
+                    content: 'TKTK'
                 },
                 {
                     name: 'twitter:image',
@@ -114,15 +73,15 @@ export default {
                 },
                 {
                     property: 'og:title',
-                    content: 'Congress snuck dozens of tax breaks into the budget deal. Here\'s where they went.'
+                    content: this.doc.hed 
                 },
                 {
                     name: 'title',
-                    content: 'Congress snuck dozens of tax breaks into the budget deal. Here\'s where they went.'
+                    content: this.doc.hed
                 },
                 {
                     property: 'og:description',
-                    content: 'Budget bill packed with special breaks for Washington insiders.'
+                    content: 'TKTKZ'
                 },
                 {
                     property: 'og:url',

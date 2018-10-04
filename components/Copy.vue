@@ -23,6 +23,8 @@ export default {
 }
 .copy p {
     font-family: "ff-tisa-web-pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "nimbus-sans",sans-serif;
+    font-family: MaisonNeue, Arial, Helvetica, Verdana, sans-serif;
     font-weight: 400;
     line-height: 29px;
     font-size: 19px;
@@ -30,6 +32,9 @@ export default {
     color: rgb(50,50,50);
 }
 .copy h3 {
+    font-family: "balboa",sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
     color: black;
     text-shadow: none;
 }
@@ -40,13 +45,13 @@ export default {
     */
 }
 .lede p:first-child:first-letter {
-  color: #E74C3C;
-  float: left;
-  font-family: Georgia,serif;
-  font-size: 72px;
-  line-height: 60px;
-  padding-top: 6px;
-  padding-right: 8px;
-  padding-left: 3px;
+    color: #E74C3C;
+    float: left;
+    font-family: Georgia,serif;
+    font-size: 58px;
+    line-height: 51px;
+    padding-top: 0;
+    padding-right: 8px;
+    padding-left: 0;
 }
 </style>

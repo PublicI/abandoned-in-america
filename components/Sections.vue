@@ -5,7 +5,7 @@
 
             <copy :data="section" v-if="section.type === 'text' || section.type === 'lede'" />
 
-            <photo :data="section" v-if="section.type === 'image'" />
+            <photo :base="'/' + data.series.slug + '/'" :data="section" v-if="section.type === 'image'" />
 
             <snippet :data="section" v-if="section.type === 'snippet'" />
 
@@ -28,6 +28,10 @@
             <westfresno :data="section" v-if="section.type === 'west_fresno_locator'" :class="section.align" />
 
             <presidio :data="section" v-if="section.type === 'presidio_locator'" :class="section.align" />
+
+            <div v-if="section.type === 'st_louis_hud'" :class="section.align"> 
+                <stlouishud :data="section" />
+            </div>
         </div>
     </div>
 </template>
@@ -47,6 +51,7 @@ import StandingRock from '~/components/StandingRockLocator.vue';
 import Fresno from '~/components/FresnoLocator.vue';
 import WestFresno from '~/components/WestFresnoLocator.vue';
 import Presidio from '~/components/PresidioLocator.vue';
+import StLouisHud from '~/components/StLouisHud.vue';
 
 export default {
     components: {
@@ -63,7 +68,8 @@ export default {
         standingrock: StandingRock,
         fresno: Fresno,
         westfresno: WestFresno,
-        Presidio
+        Presidio,
+        stlouishud: StLouisHud
     },
     props: ['data'],
     name: 'Sections'

@@ -51,13 +51,15 @@ export default {
 <style scoped>
 
 .state {
-    fill: white;
+    fill: rgb(220,220,220);
     stroke: grey;
-    stroke-width: 2px;
+    stroke-width: 0;
 }
 
 .city {
-    fill: red;   
+    fill: none;
+    stroke-width: 5px;
+    stroke: #E74C3C;   
 }
 
 </style>

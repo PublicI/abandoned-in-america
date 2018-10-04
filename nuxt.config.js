@@ -63,7 +63,7 @@ module.exports = {
             collapseWhitespace: false,
             removeEmptyAttributes: false
         },
-        routes: ['/fresno', '/yazoo', '/standing-rock', '/st-louis', '/presidio', '/robeson']
+        routes: ['/fresno', '/yazoo', '/standing-rock', '/st-louis', '/presidio', '/lumberton']
     },
     router: {
         base: `/${pkg.name}/`
