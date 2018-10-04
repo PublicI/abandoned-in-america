@@ -3,7 +3,7 @@
         <div :class="'hed centralColumn' + (data.image.location !== '' ? ' floatedHed' : '')">
             <div>
                 <h1 v-if="data.slug !== 'abandoned-in-america'">{{data.hed}}</h1>
-                <h1 v-if="data.slug === 'abandoned-in-america'" style="font-size:10vw;line-height: 8.4vw;color: #E74C3C">ABANDONED IN AMERICA</h1>
+                <h1 v-if="data.slug === 'abandoned-in-america'" style="font-size:9vw;line-height: 8.4vw;color: #E74C3C"><span class="rotate5">A</span><span class="rotateNegative5">B</span><span class="inlineBlock">A</span><span class="rotate5">N</span><span class="rotateNegative5">D</span><span class="inlineBlock">O</span><span class="rotate5">N</span><span class="rotateNegative5">E</span><span class="inlineBlock">D</span> IN AMERICA</h1>
 
                 <h2>{{data.subhed}}</h2>
             </div>
@@ -19,6 +19,22 @@ export default {
 </script>
 
 <style scoped>
+.rotate5 {
+    display: inline-block;
+    -ms-transform: rotate(5deg); /* IE 9 */
+    -webkit-transform: rotate(5deg); /* Safari */
+    transform: rotate(5deg);
+}
+.rotateNegative5 {
+    display: inline-block;
+    -ms-transform: rotate(-5deg); /* IE 9 */
+    -webkit-transform: rotate(-5deg); /* Safari */
+    transform: rotate(-5deg);
+}
+.inlineBlock {
+    display: inline-block;
+}
+
 .floatedHed {
     position: absolute;
     top: 5vw;
