@@ -1,14 +1,13 @@
 <template>
     <div class="parts">
-        <div class="part" v-for="part in data.parts" :style="'background-image:url(' + (data.series ? '/' + data.series.slug + '/' : '') + encodeURI(part.image.replace('img', 'resized').replace(/\.(jpg|png)$/, '-1440.$1')) + ');background-size:cover'">
-            <nuxt-link :to="part.slug">
+        <nuxt-link :to="part.slug" class="part" v-for="part in data.parts" :style="'background-image:url(' + (data.series ? '/' + data.series.slug + '/' : '') + encodeURI(part.image.replace('img', 'resized').replace(/\.(jpg|png)$/, '-1440.$1')) + ');background-size:cover'">
+            <nuxt-link  :to="part.slug">
                 <div class="text">
                     <h2>{{part.hed}}</h2>
                     <h1>{{part.name}}</h1>
                 </div>
-
             </nuxt-link>
-        </div>
+        </nuxt-link>
     </div>
 
 </template>
@@ -34,6 +33,7 @@ export default {
     cursor: pointer;
 }
 .part {
+    display: block;
     height: 230px;
     width: 30%;
     position: relative;

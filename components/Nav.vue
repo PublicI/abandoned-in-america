@@ -90,7 +90,7 @@ a.current, a.current:visited {
 .hideOnDesktop {
     display: none;
 }
-@media (max-width: 900px) {
+@media (max-width: 1124px) {
     /*
     .nav {
         padding-top: 20px;
