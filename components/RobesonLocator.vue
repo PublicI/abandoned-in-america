@@ -45,16 +45,16 @@ export default {
 
 </script>
 
-<style>
+<style scoped>
 
 .state {
-    fill: white;
+    fill: rgb(220,220,220);
     stroke: grey;
-    stroke-width: 2px;
+    stroke-width: 0;
 }
 
 .county {
-    fill: red;   
+    fill: #E74C3C;   
 }
 
 </style>

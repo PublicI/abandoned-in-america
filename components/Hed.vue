@@ -2,8 +2,8 @@
     <div>
         <div :class="'hed centralColumn' + (data.image.location !== '' ? ' floatedHed' : '')">
             <div>
-                <h1 v-if="data.slug !== 'abandoned-in-america'">{{data.hed}}</h1>
-                <h1 v-if="data.slug === 'abandoned-in-america'" :class="rotatedClass" style="font-size:9vw;line-height: 8.4vw;color: #E74C3C"><span class="rotate5">A</span><span class="rotateNegative5">B</span><span class="inlineBlock">A</span><span class="rotate5">N</span><span class="rotateNegative5">D</span><span class="inlineBlock">O</span><span class="rotate5">N</span><span class="rotateNegative5">E</span><span class="inlineBlock">D</span> IN AMERICA</h1>
+                <h1 v-if="data.series && data.slug !== data.series.slug">{{data.hed}}</h1>
+                <h1 v-if="!data.series || data.slug === data.series.slug" :class="rotatedClass" style="font-size:9vw;line-height: 8.4vw;color: #E74C3C"><span class="rotate5">A</span><span class="rotateNegative5">B</span><span class="inlineBlock">A</span><span class="rotate5">N</span><span class="rotateNegative5">D</span><span class="inlineBlock">O</span><span class="rotate5">N</span><span class="rotateNegative5">E</span><span class="inlineBlock">D</span> IN AMERICA</h1>
 
                 <h2>{{data.subhed}}</h2>
             </div>
@@ -17,14 +17,14 @@ export default {
     name: 'Hed',
     data() {
         return {
-            rotatedClass: 'rotated'
+            rotatedClass: 'notRotated'
         }
     },
     mounted() {
         let vm = this;
 
         setTimeout(() => {
-            vm.rotatedClass = 'notRotated';
+            vm.rotatedClass = 'rotated';
         },1000);
     }
 };
@@ -32,7 +32,7 @@ export default {
 
 <style scoped>
 .rotate5, .rotateNegative5, .inlineBlock {
-    transition: all 2s;
+    transition: all 2s ease-out;
 }
 
 .rotated .rotate5 {

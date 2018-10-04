@@ -1,6 +1,6 @@
 <template>
     <div :class="(data.size ? data.size : 'centralColumn') + ' ' + data.align">
-        <img :src="'/abandoned-in-america/' + data.location" :srcset="encodeURI('/abandoned-in-america/' + data.location.replace('img','resized').replace(/\.(jpg|png)$/,'-2880.$1')) + '  2880w, /abandoned-in-america/' + encodeURI(data.location.replace('img','resized').replace(/\.(jpg|png)$/,'-1440.$1')) + '  1440w, /abandoned-in-america/' + encodeURI(data.location.replace('img','resized').replace(/\.(jpg|png)$/,'-720.$1')) + '   720w'" style="width:100%;height: auto">
+        <img :src="base + data.location" :srcset="encodeURI(base + data.location.replace('img','resized').replace(/\.(jpg|png)$/,'-2880.$1')) + '  2880w,' + base + encodeURI(data.location.replace('img','resized').replace(/\.(jpg|png)$/,'-1440.$1')) + '  1440w,' + base + encodeURI(data.location.replace('img','resized').replace(/\.(jpg|png)$/,'-720.$1')) + '   720w'" style="width:100%;height: auto">
 
         <div class="cutline"><span>{{data.cutline}}</span><br><span class="credit" v-html="data.credit"></span></div>
     </div>
@@ -8,7 +8,7 @@
 
 <script>
 export default {
-    props: ['data'],
+    props: ['data','base'],
     name: 'Photo'
 };
 </script>

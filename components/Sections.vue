@@ -5,7 +5,7 @@
 
             <copy :data="section" v-if="section.type === 'text' || section.type === 'lede'" />
 
-            <photo :data="section" v-if="section.type === 'image'" />
+            <photo :base="'/' + data.series.slug + '/'" :data="section" v-if="section.type === 'image'" />
 
             <snippet :data="section" v-if="section.type === 'snippet'" />
 
