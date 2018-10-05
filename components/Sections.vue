@@ -15,19 +15,19 @@
 
             <quote :data="section" v-if="section.type === 'quote'" />
 
-            <yazoo :data="section" v-if="section.type === 'yazoo_locator'" :class="section.align" />
+            <yazoo :data="section" v-if="section.type === 'yazoo_locator'" :class="'locator-' + section.align" />
 
-            <robeson :data="section" v-if="section.type === 'robeson_locator'" :class="section.align" />
+            <robeson :data="section" v-if="section.type === 'robeson_locator'" :class="'locator-' + section.align" />
 
-            <stlouis :data="section" v-if="section.type === 'st_louis_locator'" :class="section.align" />
+            <stlouis :data="section" v-if="section.type === 'st_louis_locator'" :class="'locator-' + section.align" />
 
-            <standingrock :data="section" v-if="section.type === 'standing_rock_locator'" :class="section.align" />
+            <standingrock :data="section" v-if="section.type === 'standing_rock_locator'" :class="'locator-' + section.align" />
 
-            <fresno :data="section" v-if="section.type === 'fresno_locator'" :class="section.align" />
+            <fresno :data="section" v-if="section.type === 'fresno_locator'" :class="'locator-' + section.align" />
 
-            <westfresno :data="section" v-if="section.type === 'west_fresno_locator'" :class="section.align" />
+            <westfresno :data="section" v-if="section.type === 'west_fresno_locator'" :class="'locator-' + section.align" />
 
-            <presidio :data="section" v-if="section.type === 'presidio_locator'" :class="section.align" />
+            <presidio :data="section" v-if="section.type === 'presidio_locator'" :class="'locator-' + section.align" />
 
             <div v-if="section.type === 'st_louis_hud'" :class="section.align"> 
                 <stlouishud :data="section" />
@@ -84,7 +84,7 @@ export default {
 </script>
 
 <style scoped>
-.left {
+.locator-left {
     width: 23%;
     float: left;
     clear: left;
@@ -92,26 +92,27 @@ export default {
     margin-left: 1.5% !important;
 }
 
-.right {
+.locator-right {
     width: 23%;
     float: right;
     clear: right;
     margin-right: 1.5% !important;
     margin-left: 1.5% !important;
 }
+
 @media (max-width: 650px) {
-    .left {
-        width: 100%;
+    .locator-left {
+        width: 80%;
         float: none;
-        margin-right: 0 !important;
-        margin-left: 0 !important;
+        margin-right: 10% !important;
+        margin-left: 10% !important;
     }
 
-    .right {
-        width: 100%;
+    .locator-right {
+        width: 80%;
         float: none;
-        margin-right: 0 !important;
-        margin-left: 0 !important;
+        margin-right: 10% !important;
+        margin-left: 10% !important;
     }
 }
 </style>
