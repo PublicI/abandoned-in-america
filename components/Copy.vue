@@ -22,9 +22,10 @@ export default {
     margin-top: 30px;
 }
 .copy p {
+    /*
     font-family: "ff-tisa-web-pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: MaisonNeue, Arial, Helvetica, Verdana, sans-serif; */
     font-family: "nimbus-sans",sans-serif;
-    font-family: MaisonNeue, Arial, Helvetica, Verdana, sans-serif;
     font-weight: 400;
     line-height: 29px;
     font-size: 19px;
