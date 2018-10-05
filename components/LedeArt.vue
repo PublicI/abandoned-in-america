@@ -5,6 +5,7 @@
 <!--
             <div class="scrim"></div>
 -->
+
             <div class="cutline" v-if="data.image.cutline">{{data.image.cutline}}</div><div class="credit">{{data.image.credit}}</div>
 
             <hed :data="data" />
@@ -38,6 +39,7 @@ export default {
 
 .cutline, .credit {
     font-family: "tablet-gothic-n2","tablet-gothic","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "nimbus-sans",sans-serif;
     font-weight: 300;
 
     line-height: 18px;
