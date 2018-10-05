@@ -27,7 +27,7 @@ export default {
     font-size: 40px;
     line-height: 38px;
     padding-top: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
 }
 .quoteAttrib {
     font-size: 17px;
