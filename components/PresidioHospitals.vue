@@ -1,8 +1,12 @@
 <template>
     <svg :viewBox="'0 0 '+width+' '+height">
         <svg :width="width" :height="height">
-            <path class="state" :d="state" />
-            <circle class="city" :cx="projected[0]" :cy="projected[1]" r="10" />
+            <path class="river" :d="river" />
+            <path class="route" v-for="path in routeA" :d="path" />
+            <path class="route" v-for="path in routeO" :d="path" />
+            <circle class="city" v-for="city in processedCoords" :cx="city.projected[0]" :cy="city.projected[1]" r="8" />
+            <text class="cityLabel" v-for="city in processedCoords" :x="city.city == 'Ojinaga' ? city.projected[0]-80 : city.projected[0]+15" :y="city.city == 'Ojinaga' ? city.projected[1]+30 : city.projected[1]-15">{{city.city}}</text>
+            <text class="riverLabel" x="50" y="250">Rio Grande</text>
         </svg>
     </svg>
 </template>
@@ -10,38 +14,55 @@
 <script>
 import * as d3 from 'd3';
 import * as topojson from 'topojson-client';
-import tx from '~/assets/tx_silhouette.json';
-import presidio from '~/assets/presidio_coords.csv';
+import rioGrande from '~/assets/presidio_thematic/rio_grande.json';
+import routes from '~/assets/presidio_thematic/to.json';
+import cities from '~/assets/presidio_thematic/cities.json';
+import extent from '~/assets/presidio_thematic/extent.json';
+import coordCsv from '~/assets/presidio_thematic/cities.csv';
 
 export default {
 
     data() {
         let width = 800;
         let height = 800;
+        console.log(coordCsv);
 
-        let txShape = topojson.feature(tx, tx.objects.texas);
+        let coords = d3.csvParse(coordCsv);
+        console.log(coords)
+
+        let rioGrandePath = topojson.feature(rioGrande, rioGrande.objects.rio_grande);
+        let toAlpine = topojson.feature(routes, routes.objects.to_alpine);
+        let toOjinaga = topojson.feature(routes, routes.objects.to_ojinaga);
+        let cityShapes = topojson.feature(cities, cities.objects.cities);
+        let extentShape = topojson.feature(extent, extent.objects.extent);
+//        console.log(toAlpine)
 
         let projection = d3.geoConicConformal()
             .parallels([26 + 10 / 60, 27 + 50 / 60])
             .rotate([98 + 30 / 60, 0])
-            .fitSize([width,height],txShape);
+            .fitSize([width-100,height+100],extentShape);
 
         let path = d3.geoPath()
             .projection(projection);
 
-        let state = path(txShape.features[0]);
+        let river = path(rioGrandePath.features[0]);
+        let routeA = toAlpine.features.map(path);
+        let routeO = toOjinaga.features.map(path);
 
-        let coords = presidio.split(',')
-                        .map(coord => +coord)
-                        .reverse();
+        function processCoords(coord) {
+            coord.projected = projection([+coord.long,+coord.lat]);
+            return coord
+        }
 
-        let projected = projection(coords);
+        let processedCoords = coords.map(processCoords);
 
         return {
             width,
             height,
-            state,
-            projected
+            river,
+            routeA,
+            routeO,
+            processedCoords
         }
     }
 };
@@ -50,14 +71,33 @@ export default {
 
 <style scoped>
 
-.state {
-    fill: white;
+.river {
+    fill: none;
+    stroke: lightgrey;
+    opacity: .7;
+    stroke-width: 7px;
+}
+
+.route {
+    fill: none;
     stroke: grey;
-    stroke-width: 2px;
+    stroke-width:4px;
 }
 
 .city {
-    fill: red;   
+    fill: pink;
+    stroke: red;
+    stroke-width:6px;  
+    opacity: 1;
+}
+
+.cityLabel {
+    font-size: 1.25em;
+}
+
+.riverLabel {
+    fill: grey;
+    font-style: oblique;
 }
 
 </style>
