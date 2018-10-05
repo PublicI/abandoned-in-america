@@ -32,6 +32,11 @@
             <div v-if="section.type === 'st_louis_hud'" :class="section.align"> 
                 <stlouishud :data="section" />
             </div>
+
+            <div v-if="section.type === 'presidio_hospitals'" :class="section.align"> 
+                <presidiohospitals :data="section" />
+            </div>
+
         </div>
     </div>
 </template>
@@ -51,6 +56,7 @@ import StandingRock from '~/components/StandingRockLocator.vue';
 import Fresno from '~/components/FresnoLocator.vue';
 import WestFresno from '~/components/WestFresnoLocator.vue';
 import Presidio from '~/components/PresidioLocator.vue';
+import PresidioHospitals from '~/components/PresidioHospitals.vue';
 import StLouisHud from '~/components/StLouisHud.vue';
 
 export default {
@@ -69,7 +75,8 @@ export default {
         fresno: Fresno,
         westfresno: WestFresno,
         Presidio,
-        stlouishud: StLouisHud
+        stlouishud: StLouisHud,
+        presidiohospitals: PresidioHospitals
     },
     props: ['data'],
     name: 'Sections'
