@@ -34,7 +34,7 @@ export default {
 }
 .part {
     display: block;
-    height: 230px;
+    height: 280px;
     width: 30%;
     position: relative;
     margin-bottom: 20px;
