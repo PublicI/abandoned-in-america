@@ -26,6 +26,7 @@ export default {
     font-family: "ff-tisa-web-pro","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-family: MaisonNeue, Arial, Helvetica, Verdana, sans-serif; */
     font-family: "nimbus-sans",sans-serif;
+    /* font-family: "franklin-gothic-condensed",sans-serif; */
     font-weight: 400;
     line-height: 29px;
     font-size: 19px;
@@ -50,8 +51,8 @@ export default {
     float: left;
     font-family: Georgia,serif;
     font-size: 58px;
-    line-height: 51px;
-    padding-top: 0;
+    line-height: 49px;
+    padding-top: 2px;
     padding-right: 5px;
     padding-left: 0;
 }

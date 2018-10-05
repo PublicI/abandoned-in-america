@@ -21,10 +21,11 @@ export default {
     float: right;
 }
 .quoteText {
-    color: #FFB957;
+    color: #E74C3C;
     font-family: adonis-web,serif;
+    font-family: "baskerville-urw",serif;
     font-size: 40px;
-    line-height: 45px;
+    line-height: 38px;
     padding-top: 10px;
     padding-bottom: 10px;
 }

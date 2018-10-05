@@ -21,7 +21,7 @@ export default {
     color: rgb(100,100,100);
 }
 .refer a, .refer a:visited {
-    color: #FFB957 !important;
+    color: #E74C3C !important;
 }
 @media (max-width: 650px) {
     .refer {
