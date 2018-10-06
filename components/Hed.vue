@@ -155,8 +155,10 @@ h3 {
     .hed {
         top: 24%;
     }
-    .deathInThe {
-        left: 20%;
+    .floatedHed {
+        position: absolute;
+        top: 3vw;
+        left: 3vw;
     }
 }
 </style>
