@@ -75,7 +75,6 @@ module.exports = {
      ** Add axios globally
      */
     build: {
-        analyze: true,
         /*
          ** Run ESLINT on save
          */
