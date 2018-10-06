@@ -3,7 +3,10 @@
         <div :class="'hed centralColumn' + (data.image.location !== '' ? ' floatedHed' : '')">
             <div>
                 <h1 v-if="data.series && data.slug !== data.series.slug">{{data.hed}}</h1>
-                <h1 v-if="!data.series || data.slug === data.series.slug" :class="rotatedClass" style="font-size:9vw;line-height: 8.4vw;color: #E74C3C">ABANDONED IN AMERICA</h1>
+                <div v-if="!data.series || data.slug === data.series.slug">
+                    <h1 class="projectHed">ABANDONED</h1>
+                    <h1 class="projectHed" style="position: relative; left: -1%">IN AMERICA</h1>
+                </div>
 
                 <h2>{{data.subhed}}</h2>
             </div>
@@ -12,6 +15,9 @@
 </template>
 
 <script>
+import FontFaceObserver from 'fontfaceobserver';
+import fitty from 'fitty';
+
 export default {
     props: ['data'],
     name: 'Hed',
@@ -19,57 +25,35 @@ export default {
         return {
             rotatedClass: 'notRotated'
         }
-    }
-    /*,
+    },
     mounted() {
         let vm = this;
 
-        setTimeout(() => {
-            vm.rotatedClass = 'rotated';
-        },1000);
-    }*/
+        vm.$nextTick(() => {
+            var font = new FontFaceObserver('balboa', {
+                weight: 400
+            });
+
+            font.load().then(() => {
+                fitty('.projectHed');
+            }, () => {
+                // console.log('Font is not available');
+            });
+        });
+    }
 };
 </script>
 
 <style scoped>
-/*
-.rotate5, .rotateNegative5, .inlineBlock {
-    transition: all 2s ease-out;
-}
-
-.rotated .rotate5 {
+.projectHed {
+    font-size:9vw;
+    line-height: 0.85;
+    color: #E74C3C;
+    margin: 0;
+    padding: 0;
     display: inline-block;
-    -ms-transform: rotate(5deg);
-    -webkit-transform: rotate(5deg);
-    transform: rotate(5deg);
+    white-space: nowrap;
 }
-.rotated .rotateNegative5 {
-    display: inline-block;
-    -ms-transform: rotate(-5deg);
-    -webkit-transform: rotate(-5deg);
-    transform: rotate(-5deg);
-}
-.rotated .inlineBlock {
-    display: inline-block;
-}
-
-
-.notRotated .rotate5 {
-    display: inline-block;
-    -ms-transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-}
-.notRotated .rotateNegative5 {
-    display: inline-block;
-    -ms-transform: rotate(-0deg);
-    -webkit-transform: rotate(-0deg);
-    transform: rotate(-0deg);
-}
-.notRotated .inlineBlock {
-    display: inline-block;
-}*/
-
 .floatedHed {
     position: absolute;
     top: 5vw;
@@ -155,7 +139,6 @@ h3 {
 }
 @media (max-width: 500px) {
     h1 {
-        /* font-family: adonis-web,serif; */
         font-size: 10vw;
         line-height: 10vw;
     }
@@ -169,14 +152,6 @@ h3 {
     .hideOnDesktop {
         display: block;
     }
-    /*
-    h3 {
-        position: relative;
-        top: -20px;
-        left: 10px;
-        font-size: 18px;
-        line-height: 20px;
-    }*/
     .hed {
         top: 24%;
     }
@@ -184,13 +159,4 @@ h3 {
         left: 20%;
     }
 }
-/*
-@media (max-width: 400px) {
-    h3 {
-        left: -10%;
-        width: 110%;
-        font-size: 16px;
-        line-height: 18px;
-    }
-}*/
 </style>
