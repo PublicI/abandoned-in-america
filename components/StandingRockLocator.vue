@@ -27,8 +27,6 @@ export default {
         let srHighlight = topojson.feature(overlap, overlap.objects.nd_sd_overlap);
         let outline = topojson.feature(master, master.objects.master_silhouette);
 
-        console.log(ndShape)
-
         let projection = d3.geoConicConformal()
             .parallels([47 + 26 / 60, 48 + 44 / 60])
             .rotate([100 + 30 / 60, 0])

@@ -22,7 +22,6 @@ export default {
     data() {
         let width = 800;
         let height = 800;
-        console.log(fresno)
         let fresnoShapes = topojson.feature(fresno, fresno.objects.clipped_tract_data);
         let roadPaths = topojson.feature(roads, roads.objects.highways);
         let swOutline = topojson.feature(borders, borders.objects.sw)

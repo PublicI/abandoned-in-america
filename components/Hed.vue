@@ -45,15 +45,6 @@ export default {
 </script>
 
 <style scoped>
-.projectHed {
-    font-size:9vw;
-    line-height: 0.85;
-    color: #E74C3C;
-    margin: 0;
-    padding: 0;
-    display: inline-block;
-    white-space: nowrap;
-}
 .floatedHed {
     position: absolute;
     top: 5vw;
@@ -72,6 +63,16 @@ export default {
 }
 .hideOnDesktop {
     display: none;
+}
+.projectHed {
+    font-size:9vw;
+    line-height: 0.85;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    white-space: nowrap;
+    color: #E74C3C !important;
+
 }
 h1 {
     /* font-family: adonis-web,serif; */

@@ -14,8 +14,11 @@
 
             <sections :data="doc" />
 
-            <parts :data="doc.series" />
+            <!--
+            <subscribe />
+            -->
 
+            <parts :data="doc.series" />
         </div>
     </section>
 </template>
@@ -30,6 +33,7 @@ import Next from '~/components/Next.vue';
 import Social from '~/components/Social.vue';
 import Hed from '~/components/Hed.vue';
 import Parts from '~/components/Parts.vue';
+import Subscribe from '~/components/Subscribe.vue';
 
 export default {
     name: 'slug',
@@ -42,7 +46,8 @@ export default {
         Next,
         Social,
         Hed,
-        Parts
+        Parts,
+        Subscribe
     },
     async asyncData ({ app, params }) {
         let data = await app.$axios.$get(`/api/docs/${params.slug}.json`);

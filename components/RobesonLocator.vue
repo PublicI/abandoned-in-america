@@ -33,7 +33,7 @@ export default {
         let state = path(ncShape.features[0]);
         let county = path(rbShape.features[0]);
         let viewDim = "0 0 "+width.toString()+" "+height.toString()
-        console.log(viewDim)
+        
         return {
             width,
             height,

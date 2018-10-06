@@ -23,10 +23,8 @@ export default {
         let height = 800;
 
         let fresnoShapes = topojson.feature(fresno, fresno.objects.fresno_shapes);
-        let roadPaths = topojson.feature(otherRoads, otherRoads.objects.non_west_roads)
-        let westRoadPaths = topojson.feature(westRoads, westRoads.objects.west_roads)
-
-        console.log(fresnoShapes)
+        let roadPaths = topojson.feature(otherRoads, otherRoads.objects.non_west_roads);
+        let westRoadPaths = topojson.feature(westRoads, westRoads.objects.west_roads);
 
         let projection = d3.geoConicConformal()
             .parallels([36, 37 + 15 / 60])
