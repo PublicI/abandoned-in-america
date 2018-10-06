@@ -13,6 +13,8 @@
 
             <refer :data="section" v-if="section.type === 'refer'" />
 
+            <aside :data="section" v-if="section.type === 'aside'" />
+
             <quote :data="section" v-if="section.type === 'quote'" />
 
             <yazoo :data="section" v-if="section.type === 'yazoo_locator'" :class="'locator-' + section.align" />
@@ -25,8 +27,6 @@
 
             <fresno :data="section" v-if="section.type === 'fresno_locator'" :class="'locator-' + section.align" />
 
-            <westfresno :data="section" v-if="section.type === 'west_fresno_locator'" :class="'locator-' + section.align" />
-
             <presidio :data="section" v-if="section.type === 'presidio_locator'" :class="'locator-' + section.align" />
 
             <div v-if="section.type === 'st_louis_hud'" :class="section.align"> 
@@ -37,6 +37,10 @@
                 <presidiohospitals :data="section" />
             </div>
 
+            <div v-if="section.type === 'fresno_thematic'" :class="section.align"> 
+                <fresnothematic :data="section" />
+            </div>
+
         </div>
     </div>
 </template>
@@ -44,6 +48,7 @@
 <script>
 import Extender from '~/components/Extender.vue';
 import Copy from '~/components/Copy.vue';
+import Aside from '~/components/Aside.vue';
 import Photo from '~/components/Photo.vue';
 import Timeline from '~/components/Timeline.vue';
 import Refer from '~/components/Refer.vue';
@@ -54,13 +59,14 @@ import Robeson from '~/components/RobesonLocator.vue';
 import StLouis from '~/components/StLouisLocator.vue';
 import StandingRock from '~/components/StandingRockLocator.vue';
 import Fresno from '~/components/FresnoLocator.vue';
-import WestFresno from '~/components/WestFresnoLocator.vue';
+import FresnoThematic from '~/components/FresnoThematic.vue';
 import Presidio from '~/components/PresidioLocator.vue';
 import PresidioHospitals from '~/components/PresidioHospitals.vue';
 import StLouisHud from '~/components/StLouisHud.vue';
 
 export default {
     components: {
+        Aside,
         Extender,
         Copy,
         Photo,
@@ -73,10 +79,10 @@ export default {
         stlouis: StLouis,
         standingrock: StandingRock,
         fresno: Fresno,
-        westfresno: WestFresno,
         Presidio,
         stlouishud: StLouisHud,
-        presidiohospitals: PresidioHospitals
+        presidiohospitals: PresidioHospitals,
+        fresnothematic: FresnoThematic
     },
     props: ['data'],
     name: 'Sections'
