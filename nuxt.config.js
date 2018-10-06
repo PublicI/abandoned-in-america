@@ -45,7 +45,7 @@ module.exports = {
         ]
     ],
     render: {
-        ssr: false
+        ssr: true
     },
     plugins: [
         { src: '~/plugins/pym.js', ssr: false },
@@ -63,7 +63,7 @@ module.exports = {
             collapseWhitespace: false,
             removeEmptyAttributes: false
         },
-        routes: ['/fresno', '/yazoo', '/standing-rock', '/st-louis', '/presidio', '/presidio-sidebar', '/lumberton']
+        routes: ['/walled-off', '/border-closing-history', '/disastrous-recovery', '/ballot-box-barriers', '/train-off-track', '/no-place-to-call-home', '/forgotten-and-failing']
     },
     router: {
         base: `/${pkg.name}/`
