@@ -1,7 +1,7 @@
 <template>
     <div class="parts">
-        <nuxt-link :to="part.slug" class="part" v-for="part in data.parts" :key="part.slug" :style="'background-image:url(/' + data.slug + '/' + encodeURI(part.image.replace('img', 'resized').replace(/\.(jpg|png)$/, '-1440.$1')) + ');background-size:cover'" v-if="!part.nav || part.nav !== 'false'">
-            <nuxt-link :to="part.slug">
+        <nuxt-link :to="{ name: 'slug', params: { slug: part.slug } }" class="part" v-for="part in data.parts" :key="part.slug" :style="'background-image:url(/' + data.slug + '/' + encodeURI(part.image.replace('img', 'resized').replace(/\.(jpg|png)$/, '-1440.$1')) + ');background-size:cover'" v-if="!part.nav || part.nav !== 'false'">
+            <nuxt-link :to="{ name: 'slug', params: { slug: part.slug } }">
                 <div class="text">
                     <h2>{{part.hed}}</h2>
                     <h1>{{part.name}}</h1>
