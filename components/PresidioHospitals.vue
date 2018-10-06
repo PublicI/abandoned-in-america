@@ -90,7 +90,7 @@ export default {
 
 .city {
     fill: white;
-    stroke: red;
+    stroke: #E74C3C;
     stroke-width:2.5px;  
     opacity: 1;
 }
