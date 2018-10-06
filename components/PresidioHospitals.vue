@@ -4,11 +4,12 @@
             <path class="river" :d="river" />
             <path class="route" v-for="path in routeA" :d="path" />
             <path class="route" v-for="path in routeO" :d="path" />
-            <circle class="city" v-for="city in processedCoords" :cx="city.projected[0]" :cy="city.projected[1]" r="8" />
-            <text class="cityLabel" v-for="city in processedCoords" :x="city.city == 'Ojinaga' ? city.projected[0]-80 : city.projected[0]+15" :y="city.city == 'Ojinaga' ? city.projected[1]+30 : city.projected[1]-15">{{city.city}}</text>
-            <text class="riverLabel" x="375" y="750">Mexico/US Border -- Rio Grande</text>
-            <text class="routeLabel" x="350" y="150">87 miles</text>
-            <text class="routeLabel" x="135" y="615">4 miles</text>
+            <circle class="city" v-for="city in processedCoords" :cx="city.projected[0]" :cy="city.projected[1]" r="5" />
+            <text class="cityLabel" v-for="city in processedCoords" :x="city.city == 'Ojinaga' ? city.projected[0]-65 : city.projected[0]+8" :y="city.city == 'Ojinaga' ? city.projected[1]+18 : city.projected[1]-8">{{city.city}}</text>
+            <text class="riverLabel" x="350" y="730">Rio Grande</text>
+            <text class="riverLabel" x="350" y="750">(U.S.-Mexico border)</text>
+            <text class="routeLabel" x="328" y="220">87 miles</text>
+            <text class="routeLabel" x="143" y="635">4 miles</text>
             <!--<line x1="175" y1="550" x2="195" y2="635" stroke="black" stroke-dasharray="9"/>-->
         </svg>
     </svg>
@@ -76,31 +77,45 @@ export default {
 
 .river {
     fill: none;
-    stroke: lightgrey;
+    stroke: rgb(195,195,195);
     opacity: .7;
-    stroke-width: 7px;
+    stroke-width: 5px;
 }
 
 .route {
     fill: none;
-    stroke: grey;
-    stroke-width:4px;
+    stroke: rgb(90,90,90);
+    stroke-width:2px;
 }
 
 .city {
-    fill: pink;
+    fill: white;
     stroke: red;
-    stroke-width:6px;  
+    stroke-width:2.5px;  
     opacity: 1;
 }
 
 .cityLabel {
-    font-size: 1.25em;
+    font-size: 17px;
+    font-weight: 400;
+    font-family: "nimbus-sans",sans-serif;
 }
 
 .riverLabel {
-    fill: lightgrey;
+    font-size: 16px;
+    font-family: "nimbus-sans",sans-serif;
+    fill: rgb(170,170,170);
     font-style: oblique;
+}
+
+.routeLabel {
+    font-size: 14px;
+    font-family: "nimbus-sans",sans-serif;
+    text-shadow:
+       -1px -1px 0 white,  
+        1px -1px 0 white,
+        -1px 1px 0 white,
+         1px 1px 0 white;
 }
 
 </style>
