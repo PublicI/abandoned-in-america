@@ -65,6 +65,10 @@ export default {
                     content: 'summary_large_image'
                 },
                 {
+                    property: 'og:type',
+                    content: 'article'
+                },
+                {
                     hid: 'description',
                     name: 'description',
                     content: this.doc.subhed + '.'
