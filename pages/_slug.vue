@@ -61,6 +61,10 @@ export default {
             title: `${this.doc.hed} | Center for Public Integrity`,
             meta: [
                 {
+                    name: 'twitter:card',
+                    content: 'summary'
+                },
+                {
                     hid: 'description',
                     name: 'description',
                     content: this.doc.subhed + '.'
