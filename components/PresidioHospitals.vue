@@ -4,7 +4,7 @@
             <path class="river" :d="river" />
             <path class="route" v-for="path in routeA" :d="path" />
             <path class="route" v-for="path in routeO" :d="path" />
-            <circle class="city" v-for="city in processedCoords" :cx="city.projected[0]" :cy="city.projected[1]" r="5" />
+            <circle class="city" v-for="city in processedCoords" :cx="city.projected[0]" :cy="city.projected[1]" r="6" />
             <text class="cityLabel" v-for="city in processedCoords" :x="city.city == 'Ojinaga' ? city.projected[0]-115 : city.projected[0]+8" :y="city.city == 'Ojinaga' ? city.projected[1]+28 : city.projected[1]-8">{{city.city}}</text>
             <text class="riverLabel" x="350" y="720">Rio Grande</text>
             <text class="riverLabel" x="350" y="750">(U.S.-Mexico border)</text>
@@ -89,8 +89,8 @@ export default {
 }
 
 .city {
-    fill: white;
-    stroke: red;
+    fill: #E74C3C;
+    stroke: white;
     stroke-width:2.5px;  
     opacity: 1;
 }
@@ -109,7 +109,7 @@ export default {
 }
 
 .routeLabel {
-    font-size: 27px;
+    font-size: 26px;
     font-family: "nimbus-sans",sans-serif;
     text-shadow:
        -1px -1px 0 white,  
