@@ -16,7 +16,7 @@ export default {
 
 <style scoped>
 .quote {
-    margin-left: 20px;
+    margin-left: 25px;
     width: 260px;
     float: right;
 }
@@ -24,10 +24,11 @@ export default {
     color: #E74C3C;
     font-family: adonis-web,serif;
     font-family: "baskerville-urw",serif;
-    font-size: 40px;
+    font-size: 38px;
     line-height: 38px;
     padding-top: 10px;
-    padding-bottom: 15px;
+    padding-bottom: 20px;
+    font-weight: 600;
 }
 .quoteAttrib {
     font-size: 17px;
