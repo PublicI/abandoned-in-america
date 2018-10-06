@@ -67,11 +67,11 @@ export default {
                 },
                 {
                     name: 'twitter:image',
-                    content: `https://apps.publicintegrity.org/${this.doc.series.slug}/${this.doc.image.location.replace('img', 'resized').replace(/\.(jpg|png)$/, '-1440.$1')}`
+                    content: `https://apps.publicintegrity.org/${this.doc.series.slug}/${encodeURI(this.doc.image.location.replace('img', 'resized').replace(/\.(jpg|png)$/, '-1440.$1'))}`
                 },
                 {
                     property: 'og:image',
-                    content: `https://apps.publicintegrity.org/${this.doc.series.slug}/${this.doc.image.location.replace('img', 'resized').replace(/\.(jpg|png)$/, '-1440.$1')}`
+                    content: `https://apps.publicintegrity.org/${this.doc.series.slug}/${encodeURI(this.doc.image.location.replace('img', 'resized').replace(/\.(jpg|png)$/, '-1440.$1'))}`
                 },
                 {
                     property: 'article:modified_time',
