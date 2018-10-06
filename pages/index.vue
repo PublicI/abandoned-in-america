@@ -53,15 +53,15 @@ export default {
                 {
                     hid: 'description',
                     name: 'description',
-                    content: 'TKTK'
+                    content: this.doc.description
                 },
                 {
                     name: 'twitter:image',
-                    content: 'https://apps.publicintegrity.org/tax-breaks-the-favored-few/img/tax-extenders.gif'
+                    content: 'https://apps.publicintegrity.org/abandoned-in-america-9CtJQQlNKL8A/resized/ST%20LOUIS:%20LATESHIA/SELECTS/IMG_0671-1440.jpg'
                 },
                 {
                     property: 'og:image',
-                    content: 'https://apps.publicintegrity.org/tax-breaks-the-favored-few/img/tax-extenders.gif'
+                    content: 'https://apps.publicintegrity.org/abandoned-in-america-9CtJQQlNKL8A/resized/ST%20LOUIS:%20LATESHIA/SELECTS/IMG_0671-1440.jpg'
                 },
                 {
                     property: 'article:modified_time',
@@ -81,7 +81,7 @@ export default {
                 },
                 {
                     property: 'og:description',
-                    content: 'TKTKZ'
+                    content: this.doc.description
                 },
                 {
                     property: 'og:url',
