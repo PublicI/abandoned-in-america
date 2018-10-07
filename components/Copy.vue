@@ -28,9 +28,8 @@ export default {
     font-family: "nimbus-sans",sans-serif;
     /* font-family: "franklin-gothic-condensed",sans-serif; */
     font-weight: 400;
-    line-height: 29px;
     font-size: 19px;
-    line-height: 26px;
+    line-height: 25px;
     color: rgb(50,50,50);
 }
 .copy h3 {
@@ -50,8 +49,8 @@ export default {
     color: #E74C3C;
     float: left;
     font-family: Georgia,serif;
-    font-size: 58px;
-    line-height: 49px;
+    font-size: 56px;
+    line-height: 47px;
     padding-top: 2px;
     padding-right: 5px;
     padding-left: 0;
