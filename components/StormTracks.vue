@@ -1,14 +1,13 @@
 <template>
     <div class="right">
-        <strong>Matthew</strong>
-
-        <video width="297" height="284" autoplay loop muted playsinline>
-          <source src="https://apps.publicintegrity.org/abandoned-in-america-9CtJQQlNKL8A/resized/ROBESON%20COUNTY:%20ASHLEY/SELECTS/matthew.mp4" type="video/mp4">
+        <strong>Matthew &mdash; October 2016</strong>
+        <video width="297" height="287" autoplay loop muted playsinline>
+          <source src="https://apps.publicintegrity.org/abandoned-in-america-9CtJQQlNKL8A/video/matthew.mp4" type="video/mp4">
         </video>
 
-        <strong>Florence</strong>
-        <video width="297" height="284" autoplay loop muted playsinline>
-          <source src="https://apps.publicintegrity.org/abandoned-in-america-9CtJQQlNKL8A/resized/ROBESON%20COUNTY:%20ASHLEY/SELECTS/florence.mp4" type="video/mp4">
+        <strong>Florence &mdash; September 2018</strong>
+        <video width="297" height="287" autoplay loop muted playsinline>
+          <source src="https://apps.publicintegrity.org/abandoned-in-america-9CtJQQlNKL8A/video/florence.mp4" type="video/mp4">
         </video>
     </div>
 </template>
