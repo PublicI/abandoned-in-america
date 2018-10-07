@@ -9,6 +9,8 @@
         <video width="297" height="287" autoplay loop muted playsinline>
           <source src="https://apps.publicintegrity.org/abandoned-in-america-9CtJQQlNKL8A/video/florence.mp4" type="video/mp4">
         </video>
+
+        <span class="source">NOAA</span>
     </div>
 </template>
 
@@ -21,6 +23,16 @@ export default {
 .label {
     font-family: "nimbus-sans",sans-serif;
     font-size: 16px;
+    line-height: 16px;
+}
+
+.source {
+    font-family: "nimbus-sans",sans-serif;
+    font-weight: 300;
+    line-height: 15px;
+    font-size: 15px;
+    color: rgb(100,100,100);
+    padding-top: 5px;
 }
 
 .left {
