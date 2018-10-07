@@ -2,12 +2,12 @@
     <div class="right">
         <strong>Matthew</strong>
 
-        <video width="297" height="284" autoplay loop muted>
+        <video width="297" height="284" autoplay loop muted playsinline>
           <source src="https://apps.publicintegrity.org/abandoned-in-america-9CtJQQlNKL8A/resized/ROBESON%20COUNTY:%20ASHLEY/SELECTS/matthew.mp4" type="video/mp4">
         </video>
 
         <strong>Florence</strong>
-        <video width="297" height="284" autoplay loop muted>
+        <video width="297" height="284" autoplay loop muted playsinline>
           <source src="https://apps.publicintegrity.org/abandoned-in-america-9CtJQQlNKL8A/resized/ROBESON%20COUNTY:%20ASHLEY/SELECTS/florence.mp4" type="video/mp4">
         </video>
     </div>
@@ -39,15 +39,15 @@ export default {
     .left {
         width: 100%;
         float: none;
-        margin-right: 1.5% !important;
-        margin-left: 1.5% !important;
+        margin-right: 2% !important;
+        margin-left: 2% !important;
     }
 
     .right {
         width: 100%;
         float: none;
-        margin-right: 1.5% !important;
-        margin-left: 1.5% !important;
+        margin-right: 2% !important;
+        margin-left: 2% !important;
     }
 }
 </style>
