@@ -41,6 +41,8 @@
                 <fresnothematic :data="section" />
             </div>
 
+            <stormTracks :data="section" v-if="section.type === 'storm_tracks'" />
+
         </div>
     </div>
 </template>
@@ -63,6 +65,7 @@ import FresnoThematic from '~/components/FresnoThematic.vue';
 import Presidio from '~/components/PresidioLocator.vue';
 import PresidioHospitals from '~/components/PresidioHospitals.vue';
 import StLouisHud from '~/components/StLouisHud.vue';
+import StormTracks from '~/components/StormTracks.vue';
 
 export default {
     components: {
@@ -82,7 +85,8 @@ export default {
         Presidio,
         stlouishud: StLouisHud,
         presidiohospitals: PresidioHospitals,
-        fresnothematic: FresnoThematic
+        fresnothematic: FresnoThematic,
+        stormTracks: StormTracks
     },
     props: ['data'],
     name: 'Sections'
