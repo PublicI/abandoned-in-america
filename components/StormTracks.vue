@@ -1,11 +1,11 @@
 <template>
     <div class="right">
-        <strong>Matthew</strong> &mdash; October 2016
+        <span class="label"><strong>Matthew</strong> &mdash; October 2016</span>
         <video width="297" height="287" autoplay loop muted playsinline>
           <source src="https://apps.publicintegrity.org/abandoned-in-america-9CtJQQlNKL8A/video/matthew.mp4" type="video/mp4">
         </video>
 
-        <strong>Florence</strong> &mdash; September 2018
+        <span class="label"><strong>Florence</strong> &mdash; September 2018</span>
         <video width="297" height="287" autoplay loop muted playsinline>
           <source src="https://apps.publicintegrity.org/abandoned-in-america-9CtJQQlNKL8A/video/florence.mp4" type="video/mp4">
         </video>
@@ -17,7 +17,12 @@ export default {
 };
 </script>
 
-<style>
+<style scoped="">
+.label {
+    font-family: "nimbus-sans",sans-serif;
+    font-size: 16px;
+}
+
 .left {
     width: 23%;
     float: left;
