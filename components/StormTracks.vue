@@ -1,11 +1,11 @@
 <template>
     <div class="right">
-        <strong>Matthew &mdash; October 2016</strong>
+        <strong>Matthew</strong> &mdash; October 2016
         <video width="297" height="287" autoplay loop muted playsinline>
           <source src="https://apps.publicintegrity.org/abandoned-in-america-9CtJQQlNKL8A/video/matthew.mp4" type="video/mp4">
         </video>
 
-        <strong>Florence &mdash; September 2018</strong>
+        <strong>Florence</strong> &mdash; September 2018
         <video width="297" height="287" autoplay loop muted playsinline>
           <source src="https://apps.publicintegrity.org/abandoned-in-america-9CtJQQlNKL8A/video/florence.mp4" type="video/mp4">
         </video>
