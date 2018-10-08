@@ -93,6 +93,8 @@ h1 {
 h2 {
     color: #3c3c3c;
     color: white;
+    font-family: "nimbus-sans",sans-serif;
+    font-weight: 400;
 }
 .deathInThe {
     font-size: 5vw;
