@@ -11,14 +11,15 @@ export default {
 
 <style>
 .refer {
-    font-size: 16px;
+    font-size: 25px;
     width: 250px;
     float: right;
     padding-bottom: 10px;
     margin-right: 80px;
     margin-left: 10px;
-    line-height: 132%;
+    line-height: 110%;
     color: rgb(100,100,100);
+    font-family: "nimbus-sans",sans-serif;
 }
 .refer a, .refer a:visited {
     color: #E74C3C !important;
