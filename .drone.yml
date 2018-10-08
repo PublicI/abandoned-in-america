@@ -29,7 +29,7 @@ pipeline:
     commands:
       - yarn push
     when:
-      branch: master
+      branch: preview
 
   # rebuild-cache:
   #   image: plugins/s3-cache:1
@@ -60,4 +60,4 @@ pipeline:
         failed publishing https://apps.publicintegrity.org/abandoned-in-america-9CtJQQlNKL8A/
       {{/success}}
     when:
-      branch: master
+      branch: preview
