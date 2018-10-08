@@ -32,10 +32,10 @@ export default {
     data() {
         let width = 800;
         let height = 800;
-        console.log(coordCsv);
+        // console.log(coordCsv);
 
         let coords = d3.csvParse(coordCsv);
-        console.log(coords)
+        // console.log(coords)
 
         let rioGrandePath = topojson.feature(rioGrande, rioGrande.objects.rio_grande);
         let toAlpine = topojson.feature(routes, routes.objects.to_alpine);

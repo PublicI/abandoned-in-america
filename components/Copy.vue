@@ -55,4 +55,11 @@ export default {
     padding-right: 5px;
     padding-left: 0;
 }
+a:visited {
+    color: #E74C3C;
+}
+a {
+    text-decoration: none;
+    color: #E74C3C;
+}
 </style>

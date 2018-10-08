@@ -4,7 +4,8 @@
 
         <ul :class="(expanded ? 'expanded' : 'hideOnMobile')">
             <li class="series"><nuxt-link :to="{ name: 'index' }" :class="'series' + ($route.path === '/' ? ' current' : '')">{{data.name}}</nuxt-link></li>
-            <li v-for="part in data.parts"><nuxt-link :to="{ name: 'slug', params: { slug: part.slug } }" :class="'chapter' + (part.slug == $route.params.slug ? ' current' : '')" v-if="!part.nav || part.nav !== 'false'">{{part.name}}</nuxt-link></li>
+            <li v-for="part in data.parts" v-if="(!part.nav || part.nav !== 'false') && (!part.live || part.live !== 'false')"><nuxt-link :to="{ name: 'slug', params: { slug: part.slug } }" :class="'chapter' + (part.slug == $route.params.slug ? ' current' : '')">{{part.name}}</nuxt-link></li>
+            <li v-for="part in data.parts" v-if="(!part.nav || part.nav !== 'false') && (part.live && part.live === 'false')"><span class="chapter notLive">{{part.name}}</span></li>
         </ul>
 
         <div class="menu hideOnDesktop" @click="expanded = !expanded">
@@ -42,7 +43,7 @@ export default {
 }
 .nav {
     position: relative;
-    color: white;
+    /* color: white; */
     /*
     position: absolute;
     top: 0;
@@ -75,15 +76,21 @@ li {
     border-left-width: 0;
     display: inline-block;
 }
-a, a:visited {
+a, a:visited, span {
     padding: 10px;
     padding-top: 15px;
     padding-bottom: 15px;
     display: inline-block;
     color: black;
+}
+
+a, a:visited {
     cursor: pointer;
 }
 
+.notLive {
+    color: rgb(180,180,180);
+}
 a.current, a.current:visited {
     color: #E74C3C;
 }

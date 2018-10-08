@@ -11,6 +11,8 @@
 
             <timeline :data="section" v-if="section.type === 'timeline'" />
 
+            <subscribe v-if="section.type === 'subscribe'" />
+
             <refer :data="section" v-if="section.type === 'refer'" />
 
             <aside :data="section" v-if="section.type === 'aside'" />
@@ -66,6 +68,7 @@ import Presidio from '~/components/PresidioLocator.vue';
 import PresidioHospitals from '~/components/PresidioHospitals.vue';
 import StLouisHud from '~/components/StLouisHud.vue';
 import StormTracks from '~/components/StormTracks.vue';
+import Subscribe from '~/components/Subscribe.vue';
 
 export default {
     components: {
@@ -86,7 +89,8 @@ export default {
         stlouishud: StLouisHud,
         presidiohospitals: PresidioHospitals,
         fresnothematic: FresnoThematic,
-        stormTracks: StormTracks
+        stormTracks: StormTracks,
+        Subscribe
     },
     props: ['data'],
     name: 'Sections'

@@ -13,6 +13,8 @@
 
             <parts :data="doc" />
 
+            <subscribe />
+
         </div>
     </section>
 </template>
@@ -26,6 +28,7 @@ import Social from '~/components/Social.vue';
 import Nav from '~/components/Nav.vue';
 import Parts from '~/components/Parts.vue';
 import LedeArt from '~/components/LedeArt.vue';
+import Subscribe from '~/components/Subscribe.vue';
 
 export default {
     name: 'index',
@@ -37,7 +40,8 @@ export default {
         Social,
         projectNav: Nav,
         ledeArt: LedeArt,
-        Parts
+        Parts,
+        Subscribe
     },
     async asyncData ({ app, params }) {
         let data = await app.$axios.$get('/api/docs/index.json');
