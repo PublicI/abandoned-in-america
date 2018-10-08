@@ -1,6 +1,6 @@
 <template>
     <div class="byline centralColumn">
-        <span v-if="!data.published">&mdash;</span><span v-if="data.published">by </span> <span v-for="(author,i) in data.authors"><strong>{{author}}</strong><span v-if="i !== data.authors.length-1">, </span></span><br>
+        <span v-if="!data.published">&mdash;</span><span v-if="data.published">by </span> <span v-for="(author,i) in data.authors"><strong v-html="author"></strong><span v-if="i !== data.authors.length-1">, </span></span><br>
         <span v-if="data.contributors"><span v-for="(contributor,i) in data.contributors"><strong v-html="contributor"></strong><span v-if="i !== data.contributors.length-1">, </span></span> contributed reporting</span>
         <div class="date">{{data.date}}</div>
     </div>
@@ -23,6 +23,9 @@ export default {
     font-size: 18px;
     padding-bottom: 20px;
     /* padding-top: 8px; */
+    color: black;
+}
+a, a:visited {
     color: black;
 }
 .date {
