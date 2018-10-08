@@ -126,6 +126,7 @@ export default {
     color: rgb(170,170,170);
     text-align: right;
     padding-bottom: 8px;
+    font-family: "nimbus-sans",sans-serif;
 }
 
 </style>
