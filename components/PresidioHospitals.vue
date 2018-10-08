@@ -1,6 +1,6 @@
 <template>
-    <div class="position: relative; padding: 0; padding-bottom: 100%">
-        <svg :viewBox="'0 0 '+width+' '+height" style="position: absolute; width: 100%; height: 100%; left: 0; right: 0">
+    <div class="scaling-svg-container">
+        <svg :viewBox="'0 0 '+width+' '+height" class="scaling-svg">
             <svg :width="width" :height="height">
                 <path class="river" :d="river" />
                 <path class="route" v-for="path in routeA" :d="path" />
@@ -77,7 +77,21 @@ export default {
 </script>
 
 <style scoped>
-
+.scaling-svg-container {
+ position: relative; 
+ height: 0; 
+ width: 100%; 
+ padding: 0;
+ padding-bottom: 100%; 
+ /* override this inline for aspect ratio other than square */
+}
+.scaling-svg {
+ position: absolute; 
+ height: 100%; 
+ width: 100%; 
+ left: 0; 
+ top: 0;
+}
 .river {
     fill: none;
     stroke: rgb(195,195,195);
