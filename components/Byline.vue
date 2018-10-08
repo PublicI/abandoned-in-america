@@ -25,8 +25,8 @@ export default {
     /* padding-top: 8px; */
     color: black;
 }
-a, a:visited {
-    color: black;
+.byline a, .byline a:visited {
+    color: black !important;
 }
 .date {
     font-size: 15px;
