@@ -53,6 +53,7 @@ export default {
     bottom: 0;
     left: 10px;
     padding: 20px;
+    font-family: "nimbus-sans",sans-serif;
 }
 .part .text h1 {
     font-size: 30px;
@@ -60,6 +61,8 @@ export default {
     color: black;
     padding: 4px;
     background-color: white;
+    font-family: "balboa",sans-serif;
+    text-transform: uppercase;
 }
 .part .text h2 {
     font-size: 20px;
@@ -67,6 +70,7 @@ export default {
     background-color: white;
     display: inline-block;
     padding: 4px;
+    font-family: "nimbus-sans",sans-serif;
 }
 .notLive {
     color: rgb(180,180,180) !important;
