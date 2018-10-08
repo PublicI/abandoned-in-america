@@ -69,11 +69,11 @@ export default {
                 },
                 {
                     name: 'twitter:image',
-                    content: `https://apps.publicintegrity.org/${this.doc.series.slug}/${encodeURI(this.doc.image.location.replace('img', 'resized').replace(/\.(jpg|png)$/, '-1440.$1'))}`
+                    content: this.doc.featured ? `https://apps.publicintegrity.org/${this.doc.series.slug}/${encodeURI(this.doc.featured.location.replace('img', 'resized').replace(/\.(jpg|png)$/, '-1440.$1'))}` : `https://apps.publicintegrity.org/${this.doc.series.slug}/${encodeURI(this.doc.image.location.replace('img', 'resized').replace(/\.(jpg|png)$/, '-1440.$1'))}`
                 },
                 {
                     property: 'og:image',
-                    content: `https://apps.publicintegrity.org/${this.doc.series.slug}/${encodeURI(this.doc.image.location.replace('img', 'resized').replace(/\.(jpg|png)$/, '-1440.$1'))}`
+                    content: this.doc.featured ? `https://apps.publicintegrity.org/${this.doc.series.slug}/${encodeURI(this.doc.featured.location.replace('img', 'resized').replace(/\.(jpg|png)$/, '-1440.$1'))}` : `https://apps.publicintegrity.org/${this.doc.series.slug}/${encodeURI(this.doc.image.location.replace('img', 'resized').replace(/\.(jpg|png)$/, '-1440.$1'))}`
                 },
                 {
                     property: 'article:modified_time',
