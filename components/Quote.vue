@@ -1,7 +1,7 @@
 <template>
     <div class="centralColumn">
         <div class="quote">
-            <div class="quoteText">&ldquo;{{data.text}}&rdquo;</div>
+            <div class="quoteText" v-html="'&ldquo;' + data.text + '&rdquo;'"></div>
             <!-- <div class="quoteAttrib">&mdash; {{data.credit}}</div> -->
         </div>
     </div>
