@@ -1,19 +1,21 @@
 <template>
-    <div class="scaling-svg-container">
-        <svg :viewBox="'0 0 '+width+' '+height" class="scaling-svg">
-            <svg :width="width" :height="height">
-                <path class="river" :d="river" />
-                <path class="route" v-for="path in routeA" :d="path" />
-                <path class="route" v-for="path in routeO" :d="path" />
-                <circle class="city" v-for="city in processedCoords" :cx="city.projected[0]" :cy="city.projected[1]" r="6" />
-                <text class="cityLabel" v-for="city in processedCoords" :x="city.city == 'Ojinaga' ? city.projected[0]-108 : city.projected[0]+8" :y="city.city == 'Ojinaga' ? city.projected[1]+25 : city.projected[1]-8">{{city.city}}</text>
-                <text class="riverLabel" x="350" y="720">Rio Grande</text>
-                <text class="riverLabel" x="350" y="750">(U.S.-Mexico border)</text>
-                <text class="routeLabel" x="285" y="220">87 miles</text>
-                <text class="routeLabel" x="110" y="633">4 miles</text>
-                <!--<line x1="175" y1="550" x2="195" y2="635" stroke="black" stroke-dasharray="9"/>-->
+    <div>
+        <div class="scaling-svg-container">
+            <svg :viewBox="'0 0 '+width+' '+height" class="scaling-svg">
+                <svg :width="width" :height="height">
+                    <path class="river" :d="river" />
+                    <path class="route" v-for="path in routeA" :d="path" />
+                    <path class="route" v-for="path in routeO" :d="path" />
+                    <circle class="city" v-for="city in processedCoords" :cx="city.projected[0]" :cy="city.projected[1]" r="6" />
+                    <text class="cityLabel" v-for="city in processedCoords" :x="city.city == 'Ojinaga' ? city.projected[0]-108 : city.projected[0]+8" :y="city.city == 'Ojinaga' ? city.projected[1]+25 : city.projected[1]-8">{{city.city}}</text>
+                    <text class="riverLabel" x="350" y="720">Rio Grande</text>
+                    <text class="riverLabel" x="350" y="750">(U.S.-Mexico border)</text>
+                    <text class="routeLabel" x="285" y="220">87 miles</text>
+                    <text class="routeLabel" x="110" y="633">4 miles</text>
+                    <!--<line x1="175" y1="550" x2="195" y2="635" stroke="black" stroke-dasharray="9"/>-->
+                </svg>
             </svg>
-        </svg>
+        </div>
         <div class="credit">Graphic by Rosie Cima</div>
     </div>
 </template>
