@@ -95,6 +95,7 @@ h2 {
     color: white;
     font-family: "nimbus-sans",sans-serif;
     font-weight: 400;
+    padding-right: 10px;
 }
 .deathInThe {
     font-size: 5vw;
