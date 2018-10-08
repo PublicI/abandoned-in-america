@@ -26,7 +26,7 @@ export default {
     color: black;
 }
 .byline a, .byline a:visited {
-    color: #E74C3C;
+    color: black;
 }
 .date {
     font-size: 15px;
