@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <svg :viewBox="'0 0 '+width+' '+height">
+    <div class="position: relative; padding: 0; padding-bottom: 100%">
+        <svg :viewBox="'0 0 '+width+' '+height" style="position: absolute; width: 100%; height: 100%; left: 0; right: 0">
             <svg :width="width" :height="height">
                 <path class="river" :d="river" />
                 <path class="route" v-for="path in routeA" :d="path" />
