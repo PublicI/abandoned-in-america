@@ -111,7 +111,7 @@ a.current, a.current:visited {
     li {
         display: block;
     }
-    a, a:visited {
+    a, a:visited, span {
         padding: 5px;
     }
     .hideOnMobile {

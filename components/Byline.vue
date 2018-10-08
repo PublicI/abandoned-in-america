@@ -13,7 +13,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .byline {
     /*
     font-family: "ff-tisa-web-pro","Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -26,7 +26,7 @@ export default {
     color: black;
 }
 .byline a, .byline a:visited {
-    color: black !important;
+    color: #E74C3C;
 }
 .date {
     font-size: 15px;
