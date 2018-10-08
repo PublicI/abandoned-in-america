@@ -22,6 +22,7 @@ export default {
 
 .cutline, .credit {
     font-family: "tablet-gothic-n2","tablet-gothic","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "nimbus-sans",sans-serif;
     font-weight: 300;
 
     line-height: 18px;

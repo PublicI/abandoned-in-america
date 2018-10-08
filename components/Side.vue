@@ -13,6 +13,7 @@ export default {
 
 <style>
 .side {
+    font-family: "nimbus-sans",sans-serif;
     font-size: 16px;
     width: 250px;
     float: right;
