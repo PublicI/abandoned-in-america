@@ -15,7 +15,7 @@
 
             <refer :data="section" v-if="section.type === 'refer'" />
 
-            <aside :data="section" v-if="section.type === 'aside'" />
+            <side :data="section" v-if="section.type === 'side'" />
 
             <quote :data="section" v-if="section.type === 'quote'" />
 
@@ -52,7 +52,7 @@
 <script>
 import Extender from '~/components/Extender.vue';
 import Copy from '~/components/Copy.vue';
-import Aside from '~/components/Aside.vue';
+import Side from '~/components/Side.vue';
 import Photo from '~/components/Photo.vue';
 import Timeline from '~/components/Timeline.vue';
 import Refer from '~/components/Refer.vue';
@@ -72,7 +72,7 @@ import Subscribe from '~/components/Subscribe.vue';
 
 export default {
     components: {
-        Aside,
+        Side,
         Extender,
         Copy,
         Photo,

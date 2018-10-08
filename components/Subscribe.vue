@@ -38,4 +38,10 @@ label {
     background-color: #E74C3C;
     border-color: #E74C3C;
 }
+
+@media (max-width: 640px) {
+    .email {
+        margin-bottom: 10px;
+    }
+}
 </style>

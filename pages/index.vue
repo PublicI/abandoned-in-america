@@ -69,11 +69,11 @@ export default {
                 },
                 {
                     name: 'twitter:image',
-                    content: 'https://apps.publicintegrity.org/abandoned-in-america-9CtJQQlNKL8A/resized/ST%20LOUIS:%20LATESHIA/SELECTS/IMG_0671-1440.jpg'
+                    content: `https://apps.publicintegrity.org/${this.doc.slug}/${encodeURI(this.doc.featured.location.replace('img', 'resized').replace(/\.(jpg|png)$/, '-1440.$1'))}`
                 },
                 {
                     property: 'og:image',
-                    content: 'https://apps.publicintegrity.org/abandoned-in-america-9CtJQQlNKL8A/resized/ST%20LOUIS:%20LATESHIA/SELECTS/IMG_0671-1440.jpg'
+                    content: `https://apps.publicintegrity.org/${this.doc.slug}/${encodeURI(this.doc.featured.location.replace('img', 'resized').replace(/\.(jpg|png)$/, '-1440.$1'))}`
                 },
                 {
                     property: 'article:modified_time',
