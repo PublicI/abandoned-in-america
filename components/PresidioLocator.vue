@@ -1,5 +1,6 @@
 <template>
-    <svg :viewBox="'0 0 '+width+' '+height">
+    <div class="scaling-svg-container">
+    <svg :viewBox="'0 0 '+width+' '+height" class="scaling-svg">
         <svg :width="width" :height="height">
             <path class="state" :d="state" />
             <circle class="city" :cx="projected[0]" :cy="projected[1]" r="18" />
@@ -49,7 +50,21 @@ export default {
 </script>
 
 <style scoped>
-
+.scaling-svg-container {
+ position: relative; 
+ height: 0; 
+ width: 100%; 
+ padding: 0;
+ padding-bottom: 100%; 
+ /* override this inline for aspect ratio other than square */
+}
+.scaling-svg {
+ position: absolute; 
+ height: 100%; 
+ width: 100%; 
+ left: 0; 
+ top: 0;
+}
 .state {
     fill: rgb(220,220,220);
     stroke: grey;
