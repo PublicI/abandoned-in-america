@@ -99,7 +99,7 @@ export default {
 
 <style scoped>
 .locator-left {
-    width: 23%;
+    width: 20%;
     float: left;
     clear: left;
     margin-right: 1.5% !important;
@@ -107,7 +107,7 @@ export default {
 }
 
 .locator-right {
-    width: 23%;
+    width: 20%;
     float: right;
     clear: right;
     margin-right: 1.5% !important;
@@ -116,17 +116,19 @@ export default {
 
 @media (max-width: 650px) {
     .locator-left {
-        width: 80%;
-        float: none;
-        margin-right: 10% !important;
-        margin-left: 10% !important;
+        width: 30%;
+        float: left;
+        clear: left;
+        margin-right: 1.5% !important;
+        margin-left: 1.5% !important;
     }
 
     .locator-right {
-        width: 80%;
-        float: none;
-        margin-right: 10% !important;
-        margin-left: 10% !important;
+        width: 30%;
+        float: right;
+        clear: right;
+        margin-right: 1.5% !important;
+        margin-left: 1.5% !important;
     }
 }
 </style>
