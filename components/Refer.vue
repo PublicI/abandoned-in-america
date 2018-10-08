@@ -12,11 +12,18 @@ export default {
 <style>
 .refer {
     font-size: 25px;
+    width: 100%;
+    float: none;
+    margin-right: 0;
+    margin-left: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    /* 
     width: 250px;
     float: right;
     padding-bottom: 10px;
     margin-right: 80px;
-    margin-left: 10px;
+    margin-left: 10px; */
     line-height: 110%;
     color: rgb(100,100,100);
     font-family: "nimbus-sans",sans-serif;
