@@ -1,7 +1,6 @@
 <template>
     <section>
         <div v-if="doc">
-
             <projectNav :data="doc.series" />
 
             <ledeArt :data="doc" />
