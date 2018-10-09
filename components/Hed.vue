@@ -2,6 +2,8 @@
     <div>
         <div :class="'hed centralColumn' + (data.image.location !== '' ? ' floatedHed' : '')">
             <div>
+                <!-- <h4 v-if="data.series">Part one of {{data.series.hed.toUpperCase()}}</h4> -->
+
                 <h1 v-if="data.series && data.slug !== data.series.slug">{{data.hed}}</h1>
                 <div v-if="!data.series || data.slug === data.series.slug">
                     <h1 class="projectHed">ABANDONED</h1>
@@ -53,6 +55,7 @@ export default {
 .floatedHed h1 {
     /* text-shadow: 1px 1px 1px #565656; */
     color: white;
+    text-shadow: 1px 1px 1px #000000;
 }
 .outline {
     text-shadow:
@@ -96,6 +99,7 @@ h2 {
     font-family: "nimbus-sans",sans-serif;
     font-weight: 400;
     padding-right: 10px;
+    text-shadow: 1px 1px 1px #000000;
 }
 .deathInThe {
     font-size: 5vw;
@@ -114,6 +118,14 @@ h3 {
     font-weight: 300;
     font-size: 18px;
     line-height: 20px;
+}
+h4 {
+/*    text-transform: uppercase; */
+    color:#E74C3C;
+    color: white;
+    font-size: 1vw;
+    font-family: "balboa",sans-serif;
+    padding-left: 5px;
 }
 @media (min-width: 1600px) {
     .deathInThe {

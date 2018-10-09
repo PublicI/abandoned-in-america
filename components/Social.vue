@@ -36,7 +36,7 @@ export default {
     float: right;
     padding-right: 10px;
     position: relative;
-    top: 10px;
+    top: 8px;
 }
 
 .resp-sharing-button__link {

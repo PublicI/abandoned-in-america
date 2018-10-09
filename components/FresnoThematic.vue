@@ -104,7 +104,7 @@ export default {
 
 </script>
 
-<style>
+<style scoped>
 
 .siteLabel{
     fill: rgb(100,100,100);

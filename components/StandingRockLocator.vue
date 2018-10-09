@@ -1,11 +1,15 @@
 <template>
-    <svg :viewBox="'0 0 '+width+' '+height">
-        <svg :width="width" :height="height">
-            <path class="res" :d="res" />
-            <path class="highlight" :d="highlight" />
-            <path class="state" :d="state" />
-        </svg>
-    </svg>
+    <div>
+        <div class="scaling-svg-container">
+            <svg :viewBox="'0 0 '+width+' '+height" class="scaling-svg">
+                <svg :width="width" :height="height">
+                    <path class="state" :d="state" />
+                    <path class="highlight" :d="highlight" />
+                    <path class="res" :d="res" />
+                </svg>
+            </svg>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -54,21 +58,35 @@ export default {
 </script>
 
 <style>
-
+.scaling-svg-container {
+ position: relative; 
+ height: 0; 
+ width: 100%; 
+ padding: 0;
+ padding-bottom: 100%; 
+ /* override this inline for aspect ratio other than square */
+}
+.scaling-svg {
+ position: absolute; 
+ height: 100%; 
+ width: 100%; 
+ left: 0; 
+ top: 0;
+}
 .state {
-    fill: none;
+    fill: rgb(220,220,220);
     stroke: grey;
-    stroke-width: 2px;
+    stroke-width: 0px;
 }
 
 .res {
-    fill: white;
+    fill: #E74C3C;
     stroke: red;
-    stroke-width: 2px;
+    stroke-width: 0px;
 }
 
 .highlight {
-    fill: red;   
+    fill: #E74C3C;
 }
 
 </style>
