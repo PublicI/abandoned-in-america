@@ -18,7 +18,7 @@ pipeline:
   generate:
     image: node:8.12.0
     environment:
-      - HOST=access-denied.apps.fivetwentyseven.com
+      - HOST=apps.publicintegrity.org
       - PORT=443
     commands:
       - yarn generate
