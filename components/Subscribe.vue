@@ -32,6 +32,7 @@ label {
     padding-bottom: 30px;
 }
 .email {
+    font-size: 16px;
     width: 300px !important;
 }
 .btn-primary {
