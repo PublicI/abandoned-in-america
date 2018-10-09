@@ -1,5 +1,5 @@
 <template>
-    <presidioHosp />
+    <fresnoThematic />
 </template>
 
 <script>
