@@ -1,10 +1,11 @@
 <template>
     <div>
         <div class="ledeArt">
-            <img v-if="data.image.location !== ''" :src="encodeURI((data.series ? '/' + data.series.slug + '/' : '') + data.image.location.replace('img','resized').replace(/\.(jpg|png)$/,'-2880.$1'))" :srcset="encodeURI((data.series ? '/' + data.series.slug + '/' : '') + data.image.location.replace('img','resized').replace(/\.(jpg|png)$/,'-2880.$1')) + '  2880w, ' + (data.series ? '/' + data.series.slug + '/' : '') + encodeURI(data.image.location.replace('img','resized').replace(/\.(jpg|png)$/,'-1440.$1')) + '  1440w, ' + (data.series ? '/' + data.series.slug + '/' : '') + encodeURI(data.image.location.replace('img','resized').replace(/\.(jpg|png)$/,'-720.$1')) + '   720w'" />
-<!--
-            <div class="scrim"></div>
--->
+            <div class="scrimContainer">
+                <img v-if="data.image.location !== ''" :src="encodeURI((data.series ? '/' + data.series.slug + '/' : '') + data.image.location.replace('img','resized').replace(/\.(jpg|png)$/,'-2880.$1'))" :srcset="encodeURI((data.series ? '/' + data.series.slug + '/' : '') + data.image.location.replace('img','resized').replace(/\.(jpg|png)$/,'-2880.$1')) + '  2880w, ' + (data.series ? '/' + data.series.slug + '/' : '') + encodeURI(data.image.location.replace('img','resized').replace(/\.(jpg|png)$/,'-1440.$1')) + '  1440w, ' + (data.series ? '/' + data.series.slug + '/' : '') + encodeURI(data.image.location.replace('img','resized').replace(/\.(jpg|png)$/,'-720.$1')) + '   720w'" />
+
+                <div class="scrim"></div>
+            </div>
 
             <div class="cutline" v-if="data.image.cutline">{{data.image.cutline}}</div><div class="credit">{{data.image.credit}}</div>
 
@@ -31,6 +32,10 @@ export default {
 </script>
 
 <style scoped>
+.scrimContainer {
+    position: relative;
+}
+
 .ledeArt {
     /* max-height: 900px; */
     /* min-height: 900px; */
@@ -74,17 +79,16 @@ img {
 }
 .scrim {
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
-    width: 100%;
-    height: 40%;
+    height: 100%;
+    width: 80%;
 
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+2,0.85+100 */
-    background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 2%, rgba(0,0,0,0.85) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 2%,rgba(0,0,0,0.85) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 2%,rgba(0,0,0,0.85) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#d9000000',GradientType=0 ); /* IE6-9 */
-
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.69+0,0+48 */
+    background: -moz-linear-gradient(-45deg, rgba(0,0,0,0.69) 0%, rgba(0,0,0,0) 48%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, rgba(0,0,0,0.69) 0%,rgba(0,0,0,0) 48%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, rgba(0,0,0,0.69) 0%,rgba(0,0,0,0) 48%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b0000000', endColorstr='#00000000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 .hideOnDesktop {
     display: none;
