@@ -58,11 +58,12 @@ export default {
     /* font-family: adonis-web,serif; */
     font-size: 17px;
     font-family: "balboa",sans-serif;
+    text-transform: uppercase;
 }
 .chapter {
     /* font-family: almaq-refined,sans-serif; */
     font-family: "balboa",sans-serif;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
 }
 ul {
     position: absolute;

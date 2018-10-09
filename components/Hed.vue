@@ -2,7 +2,7 @@
     <div>
         <div :class="'hed centralColumn' + (data.image.location !== '' ? ' floatedHed' : '')">
             <div>
-                <h4 v-if="data.series"><span>{{data.part}}</span><br><span class="project">{{data.series.hed.toUpperCase()}}</span></h4>
+                <h4 v-if="data.series"><span class="smaller">{{data.part}}</span><br><nuxt-link :to="{ name: 'index' }" class="project">{{data.series.hed.toUpperCase()}}</nuxt-link></h4>
 
                 <h1 v-if="data.series && data.slug !== data.series.slug">{{data.hed}}</h1>
                 <div v-if="!data.series || data.slug === data.series.slug">
@@ -51,6 +51,7 @@ export default {
     position: absolute;
     top: 5vw;
     left: 5vw;
+    z-index: 600;
 }
 .floatedHed h1 {
     /* text-shadow: 1px 1px 1px #565656; */
@@ -63,6 +64,9 @@ export default {
     1px -1px 0 #000,
     -1px 1px 0 #000,
      1px 1px 0 #000;
+}
+.smaller {
+    font-size: 80%;
 }
 .hideOnDesktop {
     display: none;
@@ -99,6 +103,8 @@ h2 {
     font-family: "nimbus-sans",sans-serif;
     font-weight: 400;
     padding-right: 10px;
+    font-size: 26px;
+    line-height: 28px;
     /* text-shadow: 1px 1px 1px #000000; */
 }
 .deathInThe {
@@ -126,7 +132,10 @@ h4 {
     font-family: "nimbus-sans",sans-serif;
     padding-left: 5px;
    /*  text-shadow: 1px 1px 1px #000000; */
-    line-height: 120%;
+    line-height: 100%;
+}
+h4 a, h4 a:visited {
+    color: white !important;
 }
 .project {
     font-family: "balboa",sans-serif;
