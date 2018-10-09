@@ -10,7 +10,7 @@ const awspublish = require('gulp-awspublish'),
     responsive = require('gulp-responsive');
 
 function bakeStory(slug) {
-    return axios.get('http://localhost:3000/' + pkg.name  + '/api/docs/' + slug + '.json').then(result => {
+    return axios.get('http://localhost:3000/' + pkg.name + '/api/docs/' + slug + '.json').then(result => {
         return new Promise((resolve, reject) => {
             fs.writeFileSync(
                 __dirname + '/static/docs/' + (slug ? slug : 'index') + '.json',

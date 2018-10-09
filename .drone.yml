@@ -18,7 +18,7 @@ pipeline:
   generate:
     image: node:8.12.0
     environment:
-      - HOST=access-denied.apps.fivetwentyseven.com
+      - HOST=apps.publicintegrity.org
       - PORT=443
     commands:
       - yarn generate
@@ -29,7 +29,7 @@ pipeline:
     commands:
       - yarn push
     when:
-      branch: preview
+      branch: [preview,master]
 
   # rebuild-cache:
   #   image: plugins/s3-cache:1
@@ -60,4 +60,4 @@ pipeline:
         failed publishing https://apps.publicintegrity.org/abandoned-in-america/
       {{/success}}
     when:
-      branch: preview
+      branch: [preview,master]
