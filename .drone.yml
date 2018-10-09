@@ -18,7 +18,7 @@ pipeline:
   generate:
     image: node:8.12.0
     environment:
-      - HOST=apps.publicintegrity.org
+      - HOST=access-denied.apps.fivetwentyseven.com
       - PORT=443
     commands:
       - yarn generate
@@ -29,7 +29,7 @@ pipeline:
     commands:
       - yarn push
     when:
-      branch: [preview,master]
+      branch: preview
 
   # rebuild-cache:
   #   image: plugins/s3-cache:1
@@ -55,9 +55,9 @@ pipeline:
     secrets: [ slack_webhook ]
     template: >
       {{#success build.status}}
-        published https://apps.publicintegrity.org/abandoned-in-america/
+        published https://apps.publicintegrity.org/abandoned-in-america-9CtJQQlNKL8A/
       {{else}}
-        failed publishing https://apps.publicintegrity.org/abandoned-in-america/
+        failed publishing https://apps.publicintegrity.org/abandoned-in-america-9CtJQQlNKL8A/
       {{/success}}
     when:
-      branch: [preview,master]
+      branch: preview

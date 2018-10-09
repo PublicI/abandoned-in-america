@@ -44,7 +44,7 @@ export default {
         Subscribe
     },
     async asyncData ({ app, params }) {
-        let data = await app.$axios.$get('/docs/index.json');
+        let data = await app.$axios.$get('/api/docs/index.json');
 
         return {
             doc: data
