@@ -2,12 +2,12 @@
     <div class="right">
         <span class="label"><strong>Matthew</strong> &mdash; October 2016</span>
         <video width="297" height="287" autoplay loop muted playsinline>
-          <source src="https://apps.publicintegrity.org/abandoned-in-america-9CtJQQlNKL8A/video/matthew.mp4" type="video/mp4">
+          <source src="https://apps.publicintegrity.org/abandoned-in-america/video/matthew.mp4" type="video/mp4">
         </video>
 
         <span class="label"><strong>Florence</strong> &mdash; September 2018</span>
         <video width="297" height="287" autoplay loop muted playsinline>
-          <source src="https://apps.publicintegrity.org/abandoned-in-america-9CtJQQlNKL8A/video/florence.mp4" type="video/mp4">
+          <source src="https://apps.publicintegrity.org/abandoned-in-america/video/florence.mp4" type="video/mp4">
         </video>
 
         <span class="source">NOAA</span>
