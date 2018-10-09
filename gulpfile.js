@@ -23,7 +23,7 @@ function bakeStory(slug) {
 }
 
 const slugs = [
-    ''
+    'index', 'walled-off', 'border-closing-history'
 ];
 
 gulp.task('bake-stories', () => {
