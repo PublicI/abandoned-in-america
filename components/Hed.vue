@@ -105,6 +105,7 @@ h2 {
     padding-right: 10px;
     font-size: 26px;
     line-height: 28px;
+    padding-bottom: 10px;
     /* text-shadow: 1px 1px 1px #000000; */
 }
 .deathInThe {
@@ -130,7 +131,7 @@ h4 {
     color:#E74C3C;
     color: white;
     font-family: "nimbus-sans",sans-serif;
-    padding-left: 5px;
+    padding-left: 4px;
    /*  text-shadow: 1px 1px 1px #000000; */
     line-height: 100%;
 }
@@ -170,7 +171,19 @@ h4 a, h4 a:visited {
         line-height: 18px;
     }
 }
-@media (max-width: 500px) {
+@media (max-width: 650px) {
+    .floatedHed {
+        position: relative;
+
+        top: 0;
+        left: 0;
+    }
+    .floatedHed h1, h2, h4 {
+        color: black;
+    }
+    h4 a, h4 a:visited {
+        color: black !important;
+    }
     h1 {
         font-size: 10vw;
         line-height: 10vw;
@@ -187,11 +200,6 @@ h4 a, h4 a:visited {
     }
     .hed {
         top: 24%;
-    }
-    .floatedHed {
-        position: absolute;
-        top: 3vw;
-        left: 3vw;
     }
 }
 </style>

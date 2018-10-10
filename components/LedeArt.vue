@@ -111,7 +111,7 @@ img {
         width: 100%;
     }
     .credit, .cutline {
-        padding-left: 10px;
+        padding-left: 15px;
     }
     .hideOnMobile {
         display: none;
