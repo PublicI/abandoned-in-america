@@ -13,7 +13,7 @@ pipeline:
     image: node:8.12.0-alpine
     commands:
       - yarn config set cache-folder .yarn-cache
-      - yarn install --pure-lockfile
+      - yarn install --pure-lockfile --prod
 
   bake:
     image: node:8.12.0-alpine

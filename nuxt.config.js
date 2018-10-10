@@ -48,9 +48,9 @@ module.exports = {
         { src: '~/plugins/chartbeat.js', ssr: false }
     ],
     axios: {
-        host: process.env.HOST || 'localhost',
+        host: 'apps.publicintegrity.org',
         prefix: `/${pkg.name}/`,
-        port: process.env.PORT || 3000,
+        port: 443,
         https: true
     },
     generate: {

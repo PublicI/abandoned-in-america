@@ -1,13 +1,7 @@
-const awspublish = require('gulp-awspublish'),
-    fs = require('fs'),
+const fs = require('fs'),
     pkg = require('./package.json'),
-    rename = require('gulp-rename'),
-    yaml = require('js-yaml'),
     gulp = require('gulp'),
-    axios = require('axios'),
-    imagemin = require('gulp-imagemin'),
-    imageminJpegRecompress = require('imagemin-jpeg-recompress'),
-    responsive = require('gulp-responsive');
+    axios = require('axios');
 
 function bakeStory(slug) {
     return axios
@@ -31,17 +25,26 @@ function bakeStory(slug) {
         });
 }
 
-const slugs = ['index', 'walled-off', 'border-closing-history', 'disastrous-recovery'];
+const slugs = [
+    'index',
+    'walled-off',
+    'border-closing-history',
+    'disastrous-recovery'
+];
 
 gulp.task('bake-stories', () => {
     return Promise.all(slugs.map(slug => bakeStory(slug)));
 });
 
-gulp.task('resize-img', () =>
-    gulp
-        .src('static/img/**/*.{png,jpg,JPG,jpeg}', {
-            base: 'static/img/'
-        })
+gulp.task('resize-img', () => {
+    const imagemin = require('gulp-imagemin'),
+        imageminJpegRecompress = require('imagemin-jpeg-recompress'),
+        responsive = require('gulp-responsive'),
+        rename = require('gulp-rename');
+
+    gulp.src('static/img/**/*.{png,jpg,JPG,jpeg}', {
+        base: 'static/img/'
+    })
         .pipe(
             rename(function(path) {
                 if (path.extname == '.JPG') {
@@ -95,5 +98,5 @@ gulp.task('resize-img', () =>
                 { verbose: true }
             )
         )
-        .pipe(gulp.dest('static/resized/'))
-);
+        .pipe(gulp.dest('static/resized/'));
+});
