@@ -46,7 +46,7 @@ export default {
         let colorScale = this.scale();
 
         let projRivers = riversArea.features.map(path);
-        console.log(projRivers)
+        // console.log(projRivers)
 
         let projMiss = missPath.features.map(path);
 
