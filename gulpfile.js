@@ -8,7 +8,7 @@ function bakeStory(slug) {
         .get(
             `https://${process.env.HOST ? process.env.HOST : 'localhost'}:${
                 process.env.PORT ? process.env.PORT : 3000
-            }/abandoned-in-america/api/docs/${slug}.json`
+            }/${pkg.name}/api/docs/${slug}.json`
         )
         .then(result => {
             return new Promise((resolve, reject) => {
