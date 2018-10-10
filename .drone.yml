@@ -72,9 +72,9 @@ pipeline:
     secrets: [ slack_webhook ]
     template: >
       {{#success build.status}}
-        published https://apps.publicintegrity.org/abandoned-in-america-9CtJQQlNKL8A/
+        published https://apps.publicintegrity.org/abandoned-in-america/
       {{else}}
-        failed publishing https://apps.publicintegrity.org/abandoned-in-america-9CtJQQlNKL8A/
+        failed publishing https://apps.publicintegrity.org/abandoned-in-america/
       {{/success}}
     when:
       branch: preview
