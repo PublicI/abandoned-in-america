@@ -14,7 +14,8 @@
         "push": "s3-deploy './dist/**' --cwd './dist/' --bucket apps.publicintegrity.org --gzip --filePrefix $npm_package_name --cache 120",
         "push-imgs": "s3-deploy './static/resized/**' --cwd './/static/resized/' --bucket apps.publicintegrity.org --gzip --filePrefix $npm_package_name/resized --cache 120",
         "resize-imgs": "gulp resize-img",
-        "start": "nuxt start"
+        "start": "nuxt start",
+        "bake": "gulp bake-stories"
     },
     "dependencies": {
         "@nuxtjs/axios": "^5.3.2",
