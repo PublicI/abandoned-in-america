@@ -40,7 +40,7 @@ module.exports = {
         ]
     ],
     render: {
-        ssr: false
+        ssr: true
     },
     plugins: [
         { src: '~/plugins/pym.js', ssr: false },
