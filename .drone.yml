@@ -29,7 +29,7 @@ pipeline:
     commands:
       - yarn push-data
     when:
-      branch: [preview,master]
+      branch: preview
 
   generate:
     image: node:8.12.0-alpine
@@ -46,7 +46,7 @@ pipeline:
     commands:
       - yarn push
     when:
-      branch: [preview,master]
+      branch: preview
 
   # rebuild-cache:
   #   image: plugins/s3-cache:1
@@ -77,4 +77,4 @@ pipeline:
         failed publishing https://apps.publicintegrity.org/abandoned-in-america/
       {{/success}}
     when:
-      branch: [preview,master]
+      branch: preview

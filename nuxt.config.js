@@ -43,14 +43,13 @@ module.exports = {
         ssr: true
     },
     plugins: [
-        { src: '~/plugins/pym.js', ssr: false },
         { src: '~/plugins/typekit.js', ssr: false },
         { src: '~/plugins/chartbeat.js', ssr: false }
     ],
     axios: {
-        host: 'apps.publicintegrity.org',
+        host: process.env.HOST || 'localhost',
         prefix: `/${pkg.name}/`,
-        port: 443,
+        port: process.env.PORT || 3000,
         https: true
     },
     generate: {
