@@ -40,7 +40,7 @@ module.exports = {
         ]
     ],
     render: {
-        ssr: true
+        ssr: false
     },
     plugins: [
         { src: '~/plugins/typekit.js', ssr: false },
