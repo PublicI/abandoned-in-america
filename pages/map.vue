@@ -1,5 +1,5 @@
 <template>
-    <fresnoThematic />
+    <stLouisHud />
 </template>
 
 <script>
