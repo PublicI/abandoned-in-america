@@ -24,6 +24,7 @@ export default {
     font-family: "nimbus-sans",sans-serif;
     font-size: 16px;
     line-height: 16px;
+    width: 100%;
 }
 
 .source {
@@ -53,17 +54,17 @@ export default {
 
 @media (max-width: 650px) {
     .left {
-        width: 100%;
+        width: 297px;
         float: none;
-        margin-right: 2% !important;
-        margin-left: 2% !important;
+        margin-right: auto !important;
+        margin-left: auto !important;
     }
 
     .right {
-        width: 100%;
+        width: 297px;
         float: none;
-        margin-right: 2% !important;
-        margin-left: 2% !important;
+        margin-right: auto !important;
+        margin-left: auto !important;
     }
 }
 </style>

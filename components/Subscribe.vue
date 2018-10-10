@@ -29,7 +29,7 @@ label {
     padding-bottom: 10px;
 }
 .mc_embed_signup {
-    padding-bottom: 30px;
+    padding-bottom: 10px;
 }
 .email {
     font-size: 16px;
