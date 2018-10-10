@@ -10,21 +10,28 @@ const awspublish = require('gulp-awspublish'),
     responsive = require('gulp-responsive');
 
 function bakeStory(slug) {
-    return axios.get('http://localhost:3000/' + pkg.name + '/api/docs/' + slug + '.json').then(result => {
-        return new Promise((resolve, reject) => {
-            fs.writeFileSync(
-                __dirname + '/static/docs/' + (slug ? slug : 'index') + '.json',
-                JSON.stringify(result.data)
-            );
+    return axios
+        .get(
+            `https://${process.env.HOST ? process.env.HOST : 'localhost'}:${
+                process.env.PORT ? process.env.PORT : 3000
+            }/${pkg.name}/api/docs/${slug}.json`
+        )
+        .then(result => {
+            return new Promise((resolve, reject) => {
+                fs.writeFileSync(
+                    __dirname +
+                        '/static/api/docs/' +
+                        (slug ? slug : 'index') +
+                        '.json',
+                    JSON.stringify(result.data, null, 2)
+                );
 
-            resolve();
+                resolve();
+            });
         });
-    });
 }
 
-const slugs = [
-    'index', 'walled-off', 'border-closing-history'
-];
+const slugs = ['index', 'walled-off', 'border-closing-history', 'disastrous-recovery'];
 
 gulp.task('bake-stories', () => {
     return Promise.all(slugs.map(slug => bakeStory(slug)));
@@ -35,14 +42,16 @@ gulp.task('resize-img', () =>
         .src('static/img/**/*.{png,jpg,JPG,jpeg}', {
             base: 'static/img/'
         })
-        .pipe(rename(function (path) {
-            if (path.extname == '.JPG') {
-                path.extname = ".jpg";
-            }
-            if (path.extname == '.jpeg') {
-                path.extname = ".jpg";
-            }
-        }))
+        .pipe(
+            rename(function(path) {
+                if (path.extname == '.JPG') {
+                    path.extname = '.jpg';
+                }
+                if (path.extname == '.jpeg') {
+                    path.extname = '.jpg';
+                }
+            })
+        )
         .pipe(
             responsive(
                 {
@@ -80,7 +89,7 @@ gulp.task('resize-img', () =>
                         method: 'smallfry',
                         quality: 'veryhigh'
                     }),*/
-                    imagemin.optipng(),
+                    imagemin.optipng()
                     // imagemin.svgo({ plugins: [{ cleanupIDs: false }] })
                 ],
                 { verbose: true }
