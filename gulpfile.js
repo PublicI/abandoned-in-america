@@ -29,7 +29,11 @@ const slugs = [
     'index',
     'walled-off',
     'border-closing-history',
-    'disastrous-recovery'
+    'disastrous-recovery',
+    'ballot-box-barriers',
+    'train-off-track',
+    'no-place-to-call-home',
+    'forgotten-and-failing'
 ];
 
 gulp.task('bake-stories', () => {

@@ -48,7 +48,7 @@ module.exports = {
     ],
     axios: {
         host: process.env.HOST || 'localhost',
-        prefix: `/${pkg.name}/`,
+        prefix: '/abandoned-in-america/',
         port: process.env.PORT || 3000,
         https: true
     },
@@ -57,7 +57,15 @@ module.exports = {
             collapseWhitespace: false,
             removeEmptyAttributes: false
         },
-        routes: ['/walled-off', '/border-closing-history', '/disastrous-recovery'] // , '/ballot-box-barriers', '/train-off-track', '/no-place-to-call-home', '/forgotten-and-failing'
+        routes: [
+            '/walled-off',
+            '/border-closing-history',
+            '/disastrous-recovery',
+            '/ballot-box-barriers',
+            '/train-off-track',
+            '/no-place-to-call-home',
+            '/forgotten-and-failing'
+        ]
     },
     router: {
         base: `/${pkg.name}/`
