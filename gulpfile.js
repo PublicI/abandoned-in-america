@@ -29,7 +29,8 @@ const slugs = [
     'index',
     'walled-off',
     'border-closing-history',
-    'disastrous-recovery'
+    'disastrous-recovery',
+    'ballot-box-barriers'
 ];
 
 gulp.task('bake-stories', () => {
