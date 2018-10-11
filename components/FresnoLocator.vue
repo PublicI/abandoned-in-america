@@ -19,7 +19,7 @@ export default {
         let width = 600;
         let height = 800;
 
-        let caShape = topojson.feature(ca, ca.objects.ca_silhouette);
+        let caShape = topojson.feature(ca, ca.objects.ne_10m_admin_1_states_provinces);
 
         let projection = d3.geoConicConformal()
             .parallels([36, 37 + 15 / 60])

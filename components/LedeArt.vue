@@ -13,9 +13,7 @@
 
 
         </div>
-<!--
-        <div class="cutline hideOnMobile" v-if="data.image.cutline">{{data.image.cutline}}</div><div class="credit hideOnMobile">{{data.image.credit}}</div>
--->
+
     </div>
 </template>
 

@@ -105,12 +105,13 @@ export default {
 .cityLabel {
     font-size: 14px;
     font-family: "nimbus-sans",sans-serif;
-    fill: red;
+    fill: black;
     font-style: bold;
 }
 
 .city {
-    stroke: red;
+    fill: none;
+    stroke: black;
     stroke-width:1.5;
 }
 

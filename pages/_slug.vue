@@ -24,7 +24,6 @@ import Nav from '~/components/Nav.vue';
 import LedeArt from '~/components/LedeArt.vue';
 import Sections from '~/components/Sections.vue';
 import Byline from '~/components/Byline.vue';
-import Next from '~/components/Next.vue';
 import Social from '~/components/Social.vue';
 import Hed from '~/components/Hed.vue';
 import Parts from '~/components/Parts.vue';
@@ -37,7 +36,6 @@ export default {
         ledeArt: LedeArt,
         Sections,
         Byline,
-        Next,
         Social,
         Hed,
         Parts

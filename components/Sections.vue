@@ -1,15 +1,11 @@
 <template>
     <div>
         <div v-for="section in data.sections">
-            <extender :data="section" v-if="section.type === 'extender'" />
-
             <copy :data="section" v-if="section.type === 'text' || section.type === 'lede'" />
 
             <photo :base="'/' + data.series.slug + '/'" :data="section" v-if="section.type === 'image'" />
 
             <snippet :data="section" v-if="section.type === 'snippet'" />
-
-            <timeline :data="section" v-if="section.type === 'timeline'" />
 
             <subscribe v-if="section.type === 'subscribe'" />
 
@@ -50,11 +46,9 @@
 </template>
 
 <script>
-import Extender from '~/components/Extender.vue';
 import Copy from '~/components/Copy.vue';
 import Side from '~/components/Side.vue';
 import Photo from '~/components/Photo.vue';
-import Timeline from '~/components/Timeline.vue';
 import Refer from '~/components/Refer.vue';
 import Quote from '~/components/Quote.vue';
 import Snippet from '~/components/Snippet.vue';
@@ -73,10 +67,8 @@ import Subscribe from '~/components/Subscribe.vue';
 export default {
     components: {
         Side,
-        Extender,
         Copy,
         Photo,
-        Timeline,
         Refer,
         Quote,
         Snippet,

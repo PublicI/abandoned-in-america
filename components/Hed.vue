@@ -131,7 +131,7 @@ h4 {
     color:#E74C3C;
     color: white;
     font-family: "nimbus-sans",sans-serif;
-    padding-left: 4px;
+    padding-left: 2px;
    /*  text-shadow: 1px 1px 1px #000000; */
     line-height: 100%;
 }

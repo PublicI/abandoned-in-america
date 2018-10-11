@@ -34,7 +34,7 @@ pipeline:
   generate:
     image: node:8.12.0-alpine
     environment:
-      - HOST=apps.publicintegrity.org
+      - HOST=access-denied.apps.fivetwentyseven.com
       - PORT=443
       - NODE_ENV=production
     commands:
@@ -72,9 +72,9 @@ pipeline:
     secrets: [ slack_webhook ]
     template: >
       {{#success build.status}}
-        published https://apps.publicintegrity.org/abandoned-in-america-9CtJQQlNKL8A/
+        published https://apps.publicintegrity.org/abandoned-in-america/
       {{else}}
-        failed publishing https://apps.publicintegrity.org/abandoned-in-america-9CtJQQlNKL8A/
+        failed publishing https://apps.publicintegrity.org/abandoned-in-america/
       {{/success}}
     when:
       branch: preview

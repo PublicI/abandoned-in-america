@@ -40,17 +40,16 @@ module.exports = {
         ]
     ],
     render: {
-        ssr: true
+        ssr: false
     },
     plugins: [
-        { src: '~/plugins/pym.js', ssr: false },
         { src: '~/plugins/typekit.js', ssr: false },
         { src: '~/plugins/chartbeat.js', ssr: false }
     ],
     axios: {
-        host: 'apps.publicintegrity.org',
+        host: process.env.HOST || 'localhost',
         prefix: `/${pkg.name}/`,
-        port: 443,
+        port: process.env.PORT || 3000,
         https: true
     },
     generate: {
@@ -58,7 +57,17 @@ module.exports = {
             collapseWhitespace: false,
             removeEmptyAttributes: false
         },
-        routes: ['/walled-off', '/border-closing-history', '/disastrous-recovery', '/ballot-box-barriers'] // , '/train-off-track', '/no-place-to-call-home', '/forgotten-and-failing'
+        routes: [
+            '/walled-off',
+            '/border-closing-history',
+            '/disastrous-recovery',
+            '/ballot-box-barriers',
+            /*
+            '/train-off-track',
+            '/no-place-to-call-home',
+            '/forgotten-and-failing'
+            */
+        ]
     },
     router: {
         base: `/${pkg.name}/`
