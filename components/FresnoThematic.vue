@@ -7,6 +7,7 @@
                 <path class="cityOutline" :d="city" />
                 <path class="highwayShroud" v-for="d in highways" :d="d" />
                 <path class="highway" v-for="d in highways" :d="d" />
+                <path class="swOutline" :d="sw" />
                 <path class="sw" :d="sw" />
                 <circle class="site" v-for="site in processedCoords" :cx="site.projected[0]" :cy="site.projected[1]" r="4.4" />
                 <text class="siteLabel" x="280" y="570">Proposed site of</text>
@@ -164,6 +165,12 @@ export default {
     stroke-width: 3px;
 }
 
+.fresnoThematic .swOutline {
+    fill: none;
+    stroke: white;
+    stroke-width: 5px;
+}
+
 .fresnoThematic .dataTract{
     stroke: white;
     stroke-width: 0px;
@@ -197,7 +204,7 @@ export default {
 .fresnoThematic .cityOutline {
     fill: none;
     stroke: rgb(170,170,170);
-    stroke-width: 1.5px;
+    stroke-width: 1px;
 }
 
 </style>
