@@ -1,17 +1,23 @@
 <template>
-    <svg :viewBox="'0 0 '+width+' '+height">
-        <g class="legendLinear" transform="translate(20,50)"></g>
-        <path class="dataTract" v-for="obj in processed" :d="obj.feature" :fill="colorScale(obj.percentSubsidized)" />
-        <path class="highway" v-for="d in highways" :d="d" />
-        <path class="sw" :d="sw" />
-        <circle class="site" v-for="site in processedCoords" :cx="site.projected[0]" :cy="site.projected[1]" r="4.4" />
-        <text class="siteLabel" x="280" y="570">Proposed site of</text>
-        <text class="siteLabel" x="280" y="580">Running Horse</text>
-        <text class="siteLabel" x="280" y="590">Golf Course</text>
-        <text class="siteLabel" x="409" y="564">Planned High Speed</text>
-        <text class="siteLabel" x="409" y="574">Rail Station</text>
-        <text class="swLabel" x="230" y="730">Southwest Fresno</text>
-    </svg>
+    <div class="bigger fresnoThematic">
+        <svg style="width: 100%;height: 800px">
+            <g class="legendLinear" transform="translate(20,50)"></g>
+            <svg style="width: 100%;height: 100%" :viewBox="'0 0 '+width+' '+height">
+                <path class="dataTract" v-for="obj in processed" :d="obj.feature" :fill="colorScale(obj.percentSubsidized)" />
+                <path class="cityOutline" :d="city" />
+                <path class="highwayShroud" v-for="d in highways" :d="d" />
+                <path class="highway" v-for="d in highways" :d="d" />
+                <path class="sw" :d="sw" />
+                <circle class="site" v-for="site in processedCoords" :cx="site.projected[0]" :cy="site.projected[1]" r="4.4" />
+                <text class="siteLabel" x="280" y="570">Proposed site of</text>
+                <text class="siteLabel" x="280" y="580">Running Horse</text>
+                <text class="siteLabel" x="280" y="590">Golf Course</text>
+                <text class="siteLabel" x="409" y="564">Planned High Speed</text>
+                <text class="siteLabel" x="409" y="574">Rail Station</text>
+                <text class="swLabel" x="230" y="730">Southwest Fresno</text>
+            </svg>
+        </svg>
+    </div>
 </template>
 
 <script>
@@ -20,6 +26,7 @@ import * as topojson from 'topojson-client';
 import fresno from '~/assets/fresno_thematic/clipped_tract_data.json';
 import roads from '~/assets/fresno_thematic/highways.json';
 import borders from '~/assets/fresno_thematic/output.json';
+import cityLimits from '~/assets/fresno_thematic/fresno_city_limits.json';
 import * as d3Chromatic from 'd3-scale-chromatic';
 import { legendColor } from 'd3-svg-legend';
 import coordCsv from '~/assets/fresno_thematic/development.csv';
@@ -32,6 +39,7 @@ export default {
         let fresnoShapes = topojson.feature(fresno, fresno.objects.clipped_tract_data);
         let roadPaths = topojson.feature(roads, roads.objects.highways);
         let swOutline = topojson.feature(borders, borders.objects.sw);
+        let cityOutline = topojson.feature(cityLimits, cityLimits.objects.fresno_city_limits);
 
         let coords = d3.csvParse(coordCsv);
 
@@ -58,10 +66,10 @@ export default {
 
         let colorScale = this.scale()
 
-
         let processed = processShapes(fresnoShapes.features,path);
         let highways = roadPaths.features.map(path);
         let sw = path(swOutline.features[0]);
+        let city = path(cityOutline);
 
         function processCoords(coord) {
             coord.projected = projection([+coord.long,+coord.lat]);
@@ -77,6 +85,7 @@ export default {
             colorScale,
             highways,
             sw,
+            city,
             processedCoords
         }
     },
@@ -84,10 +93,10 @@ export default {
         this.$nextTick(() => {
             let legendLinear = legendColor()
                 .title("Median income by census tract")
-                .shapeWidth(60)
+                .shapeWidth(55)
                 .cells([15000,20000,35000,60000,90000,120000])
                 .orient('horizontal')
-                .labelFormat('$0')
+                .labelFormat('$,')
                 .scale(this.scale());
 
             d3.select('.legendLinear').call(legendLinear);
@@ -95,66 +104,100 @@ export default {
     },
     methods: {
         scale() {
+            return d3
+                .scaleSequential(d3.interpolateReds)
+                .domain([10000, 120000]);
+                /*
             return d3.scaleLinear()
             .domain([10000, 120000])
-            .range(["white", "red"]);
+            .range(["white", "red"]);*/
         }
     }
 };
 
 </script>
 
-<style scoped>
+<style>
+.fresnoThematic.bigger {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
-.siteLabel{
+.fresnoThematic .siteLabel{
     fill: rgb(100,100,100);
     font-size: 11px;
     font-style: oblique;
+    font-family: "nimbus-sans",sans-serif;
+    text-shadow:
+       -1px -1px 0 white,  
+        1px -1px 0 white,
+        -1px 1px 0 white,
+         1px 1px 0 white;
 }
 
-.swLabel{
-    fill: rgb(100,100,100);
+.fresnoThematic .swLabel{
+    fill: black;
     text-transform: uppercase;
     font-size: 13px;
-    font-style: bold;
+    font-weight: bold;
+    font-family: "nimbus-sans",sans-serif;
 }
 
-.site {
-    fill: none;
-    stroke: red;
+.fresnoThematic .site {
+    fill: white;
+    stroke: black;
     opacity: 1;
-    stroke-width: 3px;
+    stroke-width: 2px;
 }
 
-.city {
+.fresnoThematic .city {
     fill: none;
     stroke: darkred;
     opacity: .7;
     stroke-width: 1.5px;
 }
 
-.sw {
+.fresnoThematic .sw {
     fill: none;
-    stroke: red;
+    stroke: rgb(50,50,50);
     stroke-width: 3px;
 }
 
-.dataTract{
-    stroke: grey;
-    stroke-width: .5px;
+.fresnoThematic .dataTract{
+    stroke: white;
+    stroke-width: 0px;
 }
 
-.highway{
+.fresnoThematic .highway {
     fill: none;
     stroke: white;
+    stroke-width: 1.5px;
+}
+
+.fresnoThematic .highwayShroud {
+    fill: none;
+    stroke: rgb(200,200,200);
     stroke-width: 2px;
 }
 
-.legendLinear .label {
+.fresnoThematic .legendLinear .label {
     font-family: tablet-gothic-n2,tablet-gothic,Helvetica Neue,Helvetica,Arial,sans-serif;
     font-size: 13px;
     line-height: 16px;
     fill: rgb(100,100,100);
+    font-family: "nimbus-sans",sans-serif;
+}
+
+.fresnoThematic .legendTitle {
+    font-family: "nimbus-sans",sans-serif;
+    font-weight: 400;
+}
+
+.fresnoThematic .cityOutline {
+    fill: none;
+    stroke: rgb(170,170,170);
+    stroke-width: 1.5px;
 }
 
 </style>
