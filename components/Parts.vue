@@ -65,7 +65,7 @@ export default {
     text-transform: uppercase;
 }
 .part .text h2 {
-    font-size: 20px;
+    font-size: 18px;
     line-height: 120%;
     background-color: white;
     display: inline-block;
