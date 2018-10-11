@@ -9,7 +9,8 @@
         <text class="riverLabel" x="470" y="520">Mississippi River</text>
         <text class="riverLabel" x="470" y="533">(border with IL)</text>
         <text class="cityLabel" x="495" y="430">City of St. Louis</text>
-        <text class="noData" x="205" y="325">Insufficient data</text>
+        <rect class="tract" x="40" y="123" height="15" width="30" />
+        <text class="noData" x="75" y="135">Insufficient data</text>
     </svg>
 </template>
 
@@ -96,21 +97,22 @@ export default {
 <style>
 
 .noData{
-    font-size: 14px;
-    font-family: "nimbus-sans",sans-serif;
-    fill: grey;
-    text-transform: uppercase;
+    font-family: tablet-gothic-n2,tablet-gothic,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-size: 13px;
+    line-height: 16px;
+    fill: rgb(100,100,100);
 }
 
 .cityLabel {
     font-size: 14px;
     font-family: "nimbus-sans",sans-serif;
-    fill: red;
+    fill: black;
     font-style: bold;
 }
 
 .city {
-    stroke: red;
+    stroke: black;
+    fill: none;
     stroke-width:1.5;
 }
 
