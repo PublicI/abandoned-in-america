@@ -1,6 +1,6 @@
 <template>
-    <div class="bigger fresnoThematic">
-        <svg style="width: 100%;height: 800px">
+    <div class="bigger fresnoThematic scaling-svg-container">
+        <svg class="scaling-svg">
             <g class="legendLinear" transform="translate(20,50)"></g>
             <svg style="width: 100%;height: 100%" :viewBox="'0 0 '+width+' '+height">
                 <path class="dataTract" v-for="obj in processed" :d="obj.feature" :fill="colorScale(obj.percentSubsidized)" />
@@ -119,6 +119,21 @@ export default {
 </script>
 
 <style>
+.scaling-svg-container {
+ position: relative; 
+ height: 0; 
+ width: 100%; 
+ padding: 0;
+ padding-bottom: 80%; 
+ /* override this inline for aspect ratio other than square */
+}
+.scaling-svg {
+ position: absolute; 
+ height: 100%; 
+ width: 100%; 
+ left: 0; 
+ top: 0;
+}
 .fresnoThematic.bigger {
     max-width: 1000px;
     margin-left: auto;

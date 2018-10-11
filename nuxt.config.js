@@ -48,7 +48,7 @@ module.exports = {
     ],
     axios: {
         host: process.env.HOST || 'localhost',
-        prefix: '/abandoned-in-america/',
+        prefix: `/${pkg.name}/`,
         port: process.env.PORT || 3000,
         https: true
     },
@@ -62,9 +62,11 @@ module.exports = {
             '/border-closing-history',
             '/disastrous-recovery',
             '/ballot-box-barriers',
+            /*
             '/train-off-track',
             '/no-place-to-call-home',
             '/forgotten-and-failing'
+            */
         ]
     },
     router: {

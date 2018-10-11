@@ -24,7 +24,7 @@ export default {
 
     data() {
         let width = 800;
-        let height = 600;
+        let height = 500;
 
         let ndShape = topojson.feature(nd, nd.objects.nd);
         let srShape = topojson.feature(sr, sr.objects.sr_silhouette);
