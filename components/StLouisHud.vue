@@ -7,6 +7,8 @@
         <path :class="'miss'" v-for="d in projMiss" :d="d" />
         <circle class="site" v-for="site in processedCoords" :cx="site.projected[0]" :cy="site.projected[1]" r="2" />
          <text class="cityLabel" v-for="site in processedCoords" :x="site.projected[0]+2" :y="site.projected[1]+8">{{site.order}}</text>
+        <circle class="site" cx="65" cy="150" r="2" />
+        <text class="noData" x="75" y="155">January Harris' residences</text>
         <text class="riverLabel" x="100" y="220">Missouri River</text>
         <text class="riverLabel" x="470" y="520">Mississippi River</text>
         <text class="riverLabel" x="470" y="533">(border with IL)</text>
