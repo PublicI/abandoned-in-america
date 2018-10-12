@@ -1,23 +1,27 @@
 <template>
-    <div class="bigger fresnoThematic scaling-svg-container">
-        <svg class="scaling-svg">
-            <g class="legendLinear" transform="translate(20,50)"></g>
-            <svg style="width: 100%;height: 100%" :viewBox="'0 0 '+width+' '+height">
-                <path class="dataTract" v-for="obj in processed" :d="obj.feature" :fill="colorScale(obj.percentSubsidized)" />
-                <path class="cityOutline" :d="city" />
-                <path class="highwayShroud" v-for="d in highways" :d="d" />
-                <path class="highway" v-for="d in highways" :d="d" />
-                <path class="swOutline" :d="sw" />
-                <path class="sw" :d="sw" />
-                <circle class="site" v-for="site in processedCoords" :cx="site.projected[0]" :cy="site.projected[1]" r="4.4" />
-                <text class="siteLabel" x="280" y="570">Proposed site of</text>
-                <text class="siteLabel" x="280" y="580">Running Horse</text>
-                <text class="siteLabel" x="280" y="590">Golf Course</text>
-                <text class="siteLabel" x="409" y="564">Planned High Speed</text>
-                <text class="siteLabel" x="409" y="574">Rail Station</text>
-                <text class="swLabel" x="230" y="730">Southwest Fresno</text>
+    <div class="bigger fresnoThematic">
+        <div class="scaling-svg-container">
+            <svg class="scaling-svg">
+                <g class="legendLinear" transform="translate(20,50)"></g>
+                <svg style="width: 100%;height: 100%" :viewBox="'0 0 '+width+' '+height">
+                    <path class="dataTract" v-for="obj in processed" :d="obj.feature" :stroke="colorScale(obj.percentSubsidized)" :fill="colorScale(obj.percentSubsidized)" />
+                    <path class="cityOutline" :d="city" />
+                    <path class="highwayShroud" v-for="d in highways" :d="d" />
+                    <path class="highway" v-for="d in highways" :d="d" />
+                    <path class="swOutline" :d="sw" />
+                    <path class="sw" :d="sw" />
+                    <text class="siteLabel" x="280" y="570">Proposed site of</text>
+                    <text class="siteLabel" x="280" y="580">Running Horse</text>
+                    <text class="siteLabel" x="280" y="590">Golf Course</text>
+                    <text class="siteLabel" x="409" y="564">Planned high speed</text>
+                    <text class="siteLabel" x="409" y="574">rail station</text>
+                    <text class="swLabel" x="230" y="730">Southwest Fresno</text>
+                    <circle class="siteShroud" v-for="site in processedCoords" :cx="site.projected[0]" :cy="site.projected[1]" r="6.4" />
+                    <circle class="site" v-for="site in processedCoords" :cx="site.projected[0]" :cy="site.projected[1]" r="4.4" />
+                </svg>
             </svg>
-        </svg>
+        </div>
+        <div class="credit">Graphic by Rosie Cima</div>
     </div>
 </template>
 
@@ -106,7 +110,7 @@ export default {
     methods: {
         scale() {
             return d3
-                .scaleSequential(d3.interpolateReds)
+                .scaleSequential(d3.interpolateBuPu)
                 .domain([10000, 120000]);
                 /*
             return d3.scaleLinear()
@@ -124,7 +128,7 @@ export default {
  height: 0; 
  width: 100%; 
  padding: 0;
- padding-bottom: 80%; 
+ padding-bottom: 110%; 
  /* override this inline for aspect ratio other than square */
 }
 .scaling-svg {
@@ -187,8 +191,13 @@ export default {
 }
 
 .fresnoThematic .dataTract{
-    stroke: white;
-    stroke-width: 0px;
+    /* stroke: white; */
+    stroke-width: 0.5px;
+}
+
+.fresnoThematic .siteShroud {
+    fill: white;
+    stroke-width: 0;
 }
 
 .fresnoThematic .highway {
@@ -218,8 +227,24 @@ export default {
 
 .fresnoThematic .cityOutline {
     fill: none;
-    stroke: rgb(170,170,170);
+    stroke: rgb(150,150,150);
     stroke-width: 1px;
 }
 
+.fresnoThematic .credit {
+    font-size: 15px;
+    color: rgb(170,170,170);
+    text-align: right;
+    padding-bottom: 8px;
+    font-family: "nimbus-sans",sans-serif;
+}
+
+@media (max-width: 650px) {
+    .left {
+        width: 297px;
+        float: none;
+        margin-right: auto !important;
+        margin-left: auto !important;
+    }
+}
 </style>

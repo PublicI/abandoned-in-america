@@ -93,7 +93,7 @@ export default {
 
 </script>
 
-<style>
+<style scoped>
 
 .noData{
     font-size: 14px;
