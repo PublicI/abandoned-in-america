@@ -16,7 +16,8 @@
                         <text class="siteLabel" x="280" y="590">Golf Course</text>
                         <text class="siteLabel" x="409" y="564">Planned high speed</text>
                         <text class="siteLabel" x="409" y="574">rail station</text>
-                        <text class="swLabel" x="230" y="730">Southwest Fresno</text>
+                        <text class="fresnoLabel" x="400" y="500">Fresno</text>
+                        <text class="swLabel" x="320" y="630">Southwest</text>
                         <circle class="siteShroud" v-for="site in processedCoords" :cx="site.projected[0]" :cy="site.projected[1]" r="6.4" />
                         <circle class="site" v-for="site in processedCoords" :cx="site.projected[0]" :cy="site.projected[1]" r="4.4" />
                     </g>
@@ -164,6 +165,24 @@ export default {
     font-size: 13px;
     font-weight: bold;
     font-family: "nimbus-sans",sans-serif;
+    text-shadow:
+       -1px -1px 0 white,  
+        1px -1px 0 white,
+        -1px 1px 0 white,
+         1px 1px 0 white;
+}
+
+.fresnoThematic .fresnoLabel{
+    fill: black;
+    /* text-transform: uppercase; */
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "nimbus-sans",sans-serif;
+    text-shadow:
+       -1px -1px 0 white,  
+        1px -1px 0 white,
+        -1px 1px 0 white,
+         1px 1px 0 white;
 }
 
 .fresnoThematic .site {
