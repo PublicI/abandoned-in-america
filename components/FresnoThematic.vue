@@ -47,7 +47,7 @@ export default {
 
     data() {
         let width = 800;
-        let height = 800;
+        let height = 900;
         let fresnoShapes = topojson.feature(fresno, fresno.objects.clipped_tract_data);
         let roadPaths = topojson.feature(roads, roads.objects.highways);
         let swOutline = topojson.feature(borders, borders.objects.sw);
@@ -146,7 +146,7 @@ export default {
  top: 0;
 }
 .fresnoThematic.bigger {
-    max-width: 800px;
+    max-width: 700px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -269,7 +269,7 @@ export default {
     font-family: "nimbus-sans",sans-serif;
 }
 
-@media (max-width: 650px) {
+@media (max-width: 550px) {
     .fresnoThematic.left {
         width: 297px;
         float: none;
