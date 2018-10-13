@@ -103,7 +103,7 @@ export default {
                 .shapeWidth(40)
                 .cells([15000,20000,35000,60000,90000,120000])
                 .orient('horizontal')
-                .labelFormat('$.0s')
+                .labelFormat('$.2s')
                 .scale(this.scale());
 
             d3.select('.legendLinear').call(legendLinear);
