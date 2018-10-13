@@ -11,15 +11,19 @@
                         <path class="highway" v-for="d in highways" :d="d" />
                         <path class="swOutline" :d="sw" />
                         <path class="sw" :d="sw" />
-                        <text class="siteLabel" x="280" y="570">Proposed site of</text>
-                        <text class="siteLabel" x="280" y="580">Running Horse</text>
-                        <text class="siteLabel" x="280" y="590">Golf Course</text>
-                        <text class="siteLabel" x="409" y="564">Planned high speed</text>
-                        <text class="siteLabel" x="409" y="574">rail station</text>
+                        <g class="desktopLabels">
+                            <text class="siteLabel" x="280" y="570">Proposed site of</text>
+                            <text class="siteLabel" x="280" y="580">Running Horse</text>
+                            <text class="siteLabel" x="280" y="590">Golf Course</text>
+                            <text class="siteLabel" x="409" y="564">Planned high speed</text>
+                            <text class="siteLabel" x="409" y="574">rail station</text>
+                        </g>
                         <text class="fresnoLabel" x="400" y="500">Fresno</text>
                         <text class="swLabel" x="320" y="630">Southwest</text>
-                        <circle class="siteShroud" v-for="site in processedCoords" :cx="site.projected[0]" :cy="site.projected[1]" r="6.4" />
-                        <circle class="site" v-for="site in processedCoords" :cx="site.projected[0]" :cy="site.projected[1]" r="4.4" />
+                        <g class="desktopLabels">
+                            <circle class="siteShroud" v-for="site in processedCoords" :cx="site.projected[0]" :cy="site.projected[1]" r="6.4" />
+                            <circle class="site" v-for="site in processedCoords" :cx="site.projected[0]" :cy="site.projected[1]" r="4.4" />
+                        </g>
                     </g>
                 </svg>
             </svg>
@@ -101,7 +105,7 @@ export default {
         this.$nextTick(() => {
             let legendLinear = legendColor()
                 .title("Median income by census tract")
-                .shapeWidth(40)
+                .shapeWidth(35)
                 .cells([15000,20000,35000,60000,90000,120000])
                 .orient('horizontal')
                 .labelFormat('$.2s')
@@ -276,7 +280,21 @@ export default {
         transform: translate(5px,5px);
     }
     .fresnoThematic .map {
-        transform: translate(20px,60px);
+        transform: translate(20px,80px);
+    }
+    .fresnoThematic .scaling-svg-container {
+     padding-bottom: 130%; 
+     /* override this inline for aspect ratio other than square */
+    }
+    .fresnoThematic .fresnoLabel {
+        font-size: 38px;
+    }
+    .fresnoThematic .swLabel{
+        font-size: 25px;
+        transform: translate(-65px,120px);
+    }
+    .desktopLabels {
+        display: none;
     }
 }
 </style>
