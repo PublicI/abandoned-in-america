@@ -122,7 +122,7 @@ export default {
 
 </script>
 
-<style>
+<style scoped>
 
 .noData{
     font-family: tablet-gothic-n2,tablet-gothic,Helvetica Neue,Helvetica,Arial,sans-serif;
