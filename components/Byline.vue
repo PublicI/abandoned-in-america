@@ -15,14 +15,10 @@ export default {
 
 <style>
 .byline {
-    /*
-    font-family: "ff-tisa-web-pro","Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-family: MaisonNeue, Arial, Helvetica, Verdana, sans-serif;*/
     font-family: "nimbus-sans",sans-serif;
     line-height: 22px;
     font-size: 18px;
     padding-bottom: 20px;
-    /* padding-top: 8px; */
     color: black;
 }
 .byline a, .byline a:visited {
