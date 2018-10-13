@@ -2,22 +2,24 @@
     <div class="bigger fresnoThematic">
         <div class="scaling-svg-container">
             <svg class="scaling-svg">
-                <g class="legendLinear" transform="translate(20,50)"></g>
+                <g class="legendLinear"></g>
                 <svg style="width: 100%;height: 100%" :viewBox="'0 0 '+width+' '+height">
-                    <path class="dataTract" v-for="obj in processed" :d="obj.feature" :stroke="colorScale(obj.percentSubsidized)" :fill="colorScale(obj.percentSubsidized)" />
-                    <path class="cityOutline" :d="city" />
-                    <path class="highwayShroud" v-for="d in highways" :d="d" />
-                    <path class="highway" v-for="d in highways" :d="d" />
-                    <path class="swOutline" :d="sw" />
-                    <path class="sw" :d="sw" />
-                    <text class="siteLabel" x="280" y="570">Proposed site of</text>
-                    <text class="siteLabel" x="280" y="580">Running Horse</text>
-                    <text class="siteLabel" x="280" y="590">Golf Course</text>
-                    <text class="siteLabel" x="409" y="564">Planned high speed</text>
-                    <text class="siteLabel" x="409" y="574">rail station</text>
-                    <text class="swLabel" x="230" y="730">Southwest Fresno</text>
-                    <circle class="siteShroud" v-for="site in processedCoords" :cx="site.projected[0]" :cy="site.projected[1]" r="6.4" />
-                    <circle class="site" v-for="site in processedCoords" :cx="site.projected[0]" :cy="site.projected[1]" r="4.4" />
+                    <g class="map">
+                        <path class="dataTract" v-for="obj in processed" :d="obj.feature" :stroke="colorScale(obj.percentSubsidized)" :fill="colorScale(obj.percentSubsidized)" />
+                        <path class="cityOutline" :d="city" />
+                        <path class="highwayShroud" v-for="d in highways" :d="d" />
+                        <path class="highway" v-for="d in highways" :d="d" />
+                        <path class="swOutline" :d="sw" />
+                        <path class="sw" :d="sw" />
+                        <text class="siteLabel" x="280" y="570">Proposed site of</text>
+                        <text class="siteLabel" x="280" y="580">Running Horse</text>
+                        <text class="siteLabel" x="280" y="590">Golf Course</text>
+                        <text class="siteLabel" x="409" y="564">Planned high speed</text>
+                        <text class="siteLabel" x="409" y="574">rail station</text>
+                        <text class="swLabel" x="230" y="730">Southwest Fresno</text>
+                        <circle class="siteShroud" v-for="site in processedCoords" :cx="site.projected[0]" :cy="site.projected[1]" r="6.4" />
+                        <circle class="site" v-for="site in processedCoords" :cx="site.projected[0]" :cy="site.projected[1]" r="4.4" />
+                    </g>
                 </svg>
             </svg>
         </div>
@@ -98,10 +100,10 @@ export default {
         this.$nextTick(() => {
             let legendLinear = legendColor()
                 .title("Median income by census tract")
-                .shapeWidth(55)
+                .shapeWidth(40)
                 .cells([15000,20000,35000,60000,90000,120000])
                 .orient('horizontal')
-                .labelFormat('$,')
+                .labelFormat('$.0s')
                 .scale(this.scale());
 
             d3.select('.legendLinear').call(legendLinear);
@@ -123,7 +125,7 @@ export default {
 </script>
 
 <style>
-.scaling-svg-container {
+.fresnoThematic .scaling-svg-container {
  position: relative; 
  height: 0; 
  width: 100%; 
@@ -131,7 +133,7 @@ export default {
  padding-bottom: 110%; 
  /* override this inline for aspect ratio other than square */
 }
-.scaling-svg {
+.fresnoThematic .scaling-svg {
  position: absolute; 
  height: 100%; 
  width: 100%; 
@@ -139,7 +141,7 @@ export default {
  top: 0;
 }
 .fresnoThematic.bigger {
-    max-width: 1000px;
+    max-width: 800px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -220,9 +222,14 @@ export default {
     font-family: "nimbus-sans",sans-serif;
 }
 
+.fresnoThematic .legendLinear {
+    transform: translate(35px,60px);
+}
+
 .fresnoThematic .legendTitle {
     font-family: "nimbus-sans",sans-serif;
     font-weight: 400;
+    transform: translate(0px,10px);
 }
 
 .fresnoThematic .cityOutline {
@@ -240,11 +247,17 @@ export default {
 }
 
 @media (max-width: 650px) {
-    .left {
+    .fresnoThematic.left {
         width: 297px;
         float: none;
         margin-right: auto !important;
         margin-left: auto !important;
+    }
+    .fresnoThematic .legendLinear {
+        transform: translate(5px,5px);
+    }
+    .fresnoThematic .map {
+        transform: translate(20px,60px);
     }
 }
 </style>
