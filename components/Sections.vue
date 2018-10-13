@@ -41,6 +41,8 @@
 
             <stormTracks :data="section" v-if="section.type === 'storm_tracks'" />
 
+            <loopingVideo :data="section" v-if="section.type === 'video'" />
+
         </div>
     </div>
 </template>
@@ -63,6 +65,7 @@ import PresidioHospitals from '~/components/PresidioHospitals.vue';
 import StLouisHud from '~/components/StLouisHud.vue';
 import StormTracks from '~/components/StormTracks.vue';
 import Subscribe from '~/components/Subscribe.vue';
+import LoopingVideo from '~/components/LoopingVideo.vue';
 
 export default {
     components: {
@@ -82,7 +85,8 @@ export default {
         presidiohospitals: PresidioHospitals,
         fresnothematic: FresnoThematic,
         stormTracks: StormTracks,
-        Subscribe
+        Subscribe,
+        loopingVideo: LoopingVideo
     },
     props: ['data'],
     name: 'Sections'
