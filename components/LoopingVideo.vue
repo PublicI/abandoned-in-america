@@ -18,7 +18,7 @@ export default {
     data() {
         return {
             muted: true,
-            safari: /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+            safari: /^((?!android).)*safari/i.test(navigator.userAgent)
         };
     },
     props: ['data'],
