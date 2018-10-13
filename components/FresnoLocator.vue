@@ -4,7 +4,7 @@
             <svg :viewBox="'0 0 '+width+' '+height" class="scaling-svg">
                 <svg :width="width" :height="height">
                     <path class="state" :d="state" />
-                    <circle class="city" :cx="projected[0]" :cy="projected[1]" r="10" />
+                    <circle class="city" :cx="projected[0]" :cy="projected[1]" r="13" />
                 </svg>
             </svg>
         </div>
