@@ -41,7 +41,8 @@
         "raw-loader": "^0.5.1",
         "s3-deploy": "^1.1.1",
         "source-map-support": "^0.4.15",
-        "topojson-client": "^3.0.0"
+        "topojson-client": "^3.0.0",
+        "vue-in-viewport-mixin": "^1.0.4"
     },
     "devDependencies": {
         "babel-eslint": "^9.0.0",
@@ -55,8 +56,8 @@
         "eslint-plugin-standard": "^4.0.0",
         "gulp-imagemin": "^4.1.0",
         "gulp-rename": "^1.4.0",
-        "imagemin-jpeg-recompress": "^5.1.0",
-        "gulp-responsive": "^2.11.0"
+        "gulp-responsive": "^2.11.0",
+        "imagemin-jpeg-recompress": "^5.1.0"
     },
     "engines": {
         "node": ">=8.12.0"
