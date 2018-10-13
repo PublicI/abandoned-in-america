@@ -110,7 +110,7 @@ export default {
     methods: {
         scale() {
             return d3
-                .scaleSequential(d3.interpolateBuPu)
+                .scaleSequential(d3.interpolateReds)
                 .domain([10000, 120000]);
                 /*
             return d3.scaleLinear()
