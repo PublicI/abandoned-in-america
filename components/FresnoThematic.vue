@@ -267,6 +267,7 @@ export default {
     text-align: right;
     padding-bottom: 8px;
     font-family: "nimbus-sans",sans-serif;
+    padding-right: 4px;
 }
 
 @media (max-width: 580px) {
