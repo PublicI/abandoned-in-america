@@ -23,7 +23,7 @@ export default {
     data() {
         return {
             muted: true,
-            safari: navigator && /^((?!chrome|android).)*safari/i.test(navigator.userAgent)
+            safari: typeof navigator !== 'undefined' && /^((?!chrome|android).)*safari/i.test(navigator.userAgent)
         };
     },
     props: ['data'],
