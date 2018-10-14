@@ -77,7 +77,7 @@ export default {
 
 .videoContainer {
     position: relative;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     cursor: pointer;
 }
 .audioButton {
