@@ -101,12 +101,8 @@ img {
         margin-top: 10px;
         margin-bottom: 10px;
     }*/
-    /*
     .scrim {
         display: none;
-    }*/
-    .scrim {
-        width: 100%;
     }
     .credit, .cutline {
         padding-left: 15px;
