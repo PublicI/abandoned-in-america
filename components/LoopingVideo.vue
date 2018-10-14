@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <div class="bigger videoContainer">
+    <div class="bigger">
+        <div class="videoContainer">
             <video @click="muted = (!safari ? !muted : true)" style="width: 100%;height: auto" id="loopingVideo" loop playsinline :muted="muted" :controls="safari">
               <source :src="data.location" type="video/mp4">
             </video>
