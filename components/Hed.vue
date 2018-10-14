@@ -102,7 +102,7 @@ h2 {
     color: white;
     font-family: "nimbus-sans",sans-serif;
     font-weight: 400;
-    padding-right: 10px;
+    padding-right: 7%;
     font-size: 26px;
     line-height: 28px;
     padding-bottom: 10px;
