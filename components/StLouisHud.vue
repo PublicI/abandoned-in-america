@@ -15,14 +15,17 @@
                         <circle class="site" v-for="site in processedCoords" :cx="site.projected[0]" :cy="site.projected[1]" r="4.4" />
 
                          <text class="siteLabel" v-for="site in processedCoords" :x="site.projected[0]+10" :y="site.projected[1]+5">{{site.order}}</text>
-                        <circle class="site" cx="65" cy="150" r="2" />
-                        <text class="noData" x="75" y="155">January Harris' residences</text>
+
+                        <g transform="translate(-19,15)">
+                            <circle class="site" cx="56" cy="150" r="4.4" />
+                            <text class="noData" x="75" y="155">January Harris' residences</text>
+                            <rect class="tract" x="40" y="120" height="15" width="30" />
+                            <text class="noData" x="75" y="132">Insufficient data</text>
+                        </g>
                         <text class="riverLabel" x="100" y="220">Missouri River</text>
                         <text class="riverLabel" x="470" y="520">Mississippi River</text>
                         <text class="riverLabel" x="470" y="533">(border with Illinois)</text>
                         <text class="cityLabel" x="495" y="430">City of St. Louis</text>
-                        <rect class="tract" x="40" y="123" height="15" width="30" />
-                        <text class="noData" x="75" y="135">Insufficient data</text>
                     </g>
                 </svg>
             </svg>
@@ -142,6 +145,7 @@ export default {
 <style>
 .stLouisHud .noData{
     font-family: tablet-gothic-n2,tablet-gothic,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-family: "nimbus-sans",sans-serif;
     font-size: 13px;
     line-height: 16px;
     fill: rgb(100,100,100);
@@ -164,6 +168,7 @@ export default {
     stroke: lightgrey;
     stroke-width: 2px;
 }
+
 
 .stLouisHud .river {
     fill: lightgrey;
@@ -236,5 +241,14 @@ export default {
     stroke: black;
     opacity: 1;
     stroke-width: 2px;
+}
+
+.stLouisHud .credit {
+    font-size: 15px;
+    color: rgb(170,170,170);
+    text-align: right;
+    padding-bottom: 8px;
+    font-family: "nimbus-sans",sans-serif;
+    padding-right: 4px;
 }
 </style>
