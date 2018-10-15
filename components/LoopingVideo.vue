@@ -146,8 +146,8 @@ export default {
 
 @media (max-width: 650px) {
     .cutline {
-        padding-left: 5px;
-        padding-right: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
     }
 }
 </style>

@@ -105,7 +105,7 @@ img {
         display: none;
     }
     .credit, .cutline {
-        padding-left: 15px;
+        padding-left: 10px;
     }
     .hideOnMobile {
         display: none;
