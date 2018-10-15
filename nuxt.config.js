@@ -40,7 +40,7 @@ module.exports = {
         ]
     ],
     render: {
-        ssr: true
+        ssr: false
     },
     plugins: [
         { src: '~/plugins/typekit.js', ssr: false },
@@ -65,10 +65,9 @@ module.exports = {
             '/border-closing-history',
             '/disastrous-recovery',
             '/ballot-box-barriers',
-            '/train-off-track'
-            /* ,
+            '/train-off-track',
             '/no-place-to-call-home',
-            '/forgotten-and-failing'*/
+            '/forgotten-and-failing'
         ]
     },
     router: {
