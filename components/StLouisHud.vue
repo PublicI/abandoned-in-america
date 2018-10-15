@@ -1,21 +1,34 @@
 <template>
-    <svg :viewBox="'0 0 '+width+' '+height">
-        <g class="legendLinear" transform="translate(40,50)"></g>
-        <path :class="obj.percentSubsidized > 0 ? 'dataTract' : 'tract'" v-for="obj in processed" :d="obj.feature" :fill="(obj.percentSubsidized > 0 || obj.percentSubsidized) ? colorScale(obj.percentSubsidized) : 'grey'" />
-        <path :class="'city'" :d="projCity" />
-        <path :class="'river'" v-for="r in projRivers" :d="r" />
-        <path :class="'miss'" v-for="d in projMiss" :d="d" />
-        <circle class="site" v-for="site in processedCoords" :cx="site.projected[0]" :cy="site.projected[1]" r="2" />
-         <text class="cityLabel" v-for="site in processedCoords" :x="site.projected[0]+2" :y="site.projected[1]+8">{{site.order}}</text>
-        <circle class="site" cx="65" cy="150" r="2" />
-        <text class="noData" x="75" y="155">January Harris' residences</text>
-        <text class="riverLabel" x="100" y="220">Missouri River</text>
-        <text class="riverLabel" x="470" y="520">Mississippi River</text>
-        <text class="riverLabel" x="470" y="533">(border with IL)</text>
-        <text class="cityLabel" x="495" y="430">City of St. Louis</text>
-        <rect class="tract" x="40" y="123" height="15" width="30" />
-        <text class="noData" x="75" y="135">Insufficient data</text>
-    </svg>
+    <div class="bigger stLouisHud">
+        <div class="scaling-svg-container">
+            <svg class="scaling-svg">
+                <g class="legendLinear"></g>
+                <svg style="width: 100%;height: 100%" :viewBox="'0 0 '+width+' '+height">
+                    <g class="map">
+                        <path :class="obj.percentSubsidized > 0 ? 'dataTract' : 'tract'" v-for="obj in processed" :d="obj.feature" :stroke="(obj.percentSubsidized > 0 || obj.percentSubsidized) ? colorScale(obj.percentSubsidized) : 'grey'" :fill="(obj.percentSubsidized > 0 || obj.percentSubsidized) ? colorScale(obj.percentSubsidized) : 'grey'" />
+                        <path class="river" v-for="r in projRivers" :d="r" />
+                        <path class="miss" v-for="d in projMiss" :d="d" />
+                        <path class="cityOutline" :d="projCity" />
+                        <path class="city" :d="projCity" />
+
+                        <circle class="siteShroud" v-for="site in processedCoords" :cx="site.projected[0]" :cy="site.projected[1]" r="6.4" />
+                        <circle class="site" v-for="site in processedCoords" :cx="site.projected[0]" :cy="site.projected[1]" r="4.4" />
+
+                         <text class="siteLabel" v-for="site in processedCoords" :x="site.projected[0]+10" :y="site.projected[1]+5">{{site.order}}</text>
+                        <circle class="site" cx="65" cy="150" r="2" />
+                        <text class="noData" x="75" y="155">January Harris' residences</text>
+                        <text class="riverLabel" x="100" y="220">Missouri River</text>
+                        <text class="riverLabel" x="470" y="520">Mississippi River</text>
+                        <text class="riverLabel" x="470" y="533">(border with Illinois)</text>
+                        <text class="cityLabel" x="495" y="430">City of St. Louis</text>
+                        <rect class="tract" x="40" y="123" height="15" width="30" />
+                        <text class="noData" x="75" y="135">Insufficient data</text>
+                    </g>
+                </svg>
+            </svg>
+        </div>
+        <div class="credit">Graphic by Rosie Cima</div>
+    </div>
 </template>
 
 <script>
@@ -45,7 +58,7 @@ export default {
 
     data() {
         let width = 670;
-        let height = 600;
+        let height = 700;
 
         let stlouisShapes = topojson.feature(stlouis, stlouis.objects.stlouis_tract_data);
         let cityLimits = topojson.feature(city, city.objects.city_limits);
@@ -113,78 +126,115 @@ export default {
     },
     methods: {
         scale() {
+            return d3
+                .scaleSequential(d3.interpolateReds)
+                .domain([0, 0.5]);
+                /*
             return d3.scaleLinear()
             .domain([0, 0.5])
-            .range(["#ffe5e5", "red"]);
+            .range(["#ffe5e5", "red"]);*/
         }
     }
 };
 
 </script>
 
-<style scoped>
-
-.noData{
+<style>
+.stLouisHud .noData{
     font-family: tablet-gothic-n2,tablet-gothic,Helvetica Neue,Helvetica,Arial,sans-serif;
     font-size: 13px;
     line-height: 16px;
     fill: rgb(100,100,100);
 }
 
-.cityLabel {
-    font-size: 14px;
-    font-family: "nimbus-sans",sans-serif;
-    fill: black;
-    font-style: bold;
-}
-
-.city {
-    stroke: black;
+.stLouisHud .city {
     fill: none;
-    stroke-width:1.5;
+    stroke: rgb(50,50,50);
+    stroke-width: 3px;
 }
 
-.miss {
+.stLouisHud .cityOutline {
+    fill: none;
+    stroke: white;
+    stroke-width: 5px;
+}
+
+.stLouisHud .miss {
     fill: none;
     stroke: lightgrey;
     stroke-width: 2px;
 }
 
-.river {
+.stLouisHud .river {
     fill: lightgrey;
-    opacity: 1;
 }
 
-.tract {
+.stLouisHud .tract {
     fill: white;
-    stroke: lightgrey;
-    stroke-width: 1px;
+    stroke: rgb(220,220,220);
+    stroke-width: 0.5;
 }
 
-.dataTract{
-    stroke: white;
+.stLouisHud .dataTract{
+    /* stroke: white; */
     stroke-width: .5px;
 }
-
-.legendLinear .title {
-    font-family: tablet-gothic-n2,tablet-gothic,Helvetica Neue,Helvetica,Arial,sans-serif;
-    font-size: 13px;
-    line-height: 16px;
-    fill: rgb(100,100,100);
-}
-
-.legendLinear .label {
-    font-family: tablet-gothic-n2,tablet-gothic,Helvetica Neue,Helvetica,Arial,sans-serif;
-    font-size: 13px;
-    line-height: 16px;
-    fill: rgb(100,100,100);
-}
-
-.riverLabel {
+.stLouisHud .riverLabel {
     font-size: 12px;
     font-family: "nimbus-sans",sans-serif;
     fill: rgb(170,170,170);
     font-style: oblique;
 }
 
+.stLouisHud .legendLinear .label {
+    font-family: tablet-gothic-n2,tablet-gothic,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-size: 13px;
+    line-height: 16px;
+    fill: rgb(100,100,100);
+    font-family: "nimbus-sans",sans-serif;
+}
+
+.stLouisHud .legendLinear {
+    transform: translate(35px,60px);
+}
+
+.stLouisHud .legendTitle {
+    font-family: "nimbus-sans",sans-serif;
+    font-weight: 400;
+    transform: translate(0px,10px);
+}
+
+.stLouisHud .cityLabel{
+    fill: black;
+    /* text-transform: uppercase; */
+    font-size: 18px;
+    font-weight: bold;
+    font-family: "nimbus-sans",sans-serif;
+    text-shadow:
+       -1px -1px 0 white,  
+        1px -1px 0 white,
+        -1px 1px 0 white,
+         1px 1px 0 white;
+}
+
+
+.stLouisHud .siteLabel {
+    fill: black;
+    /* text-transform: uppercase; */
+    font-size: 15px;
+    font-weight: bold;
+    font-family: "nimbus-sans",sans-serif;
+    text-shadow:
+       -1px -1px 0 white,  
+        1px -1px 0 white,
+        -1px 1px 0 white,
+         1px 1px 0 white;
+}
+
+.stLouisHud .site {
+    fill: white;
+    stroke: black;
+    opacity: 1;
+    stroke-width: 2px;
+}
 </style>
