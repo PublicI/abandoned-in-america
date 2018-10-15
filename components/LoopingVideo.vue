@@ -143,4 +143,11 @@ export default {
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
 }
+
+@media (max-width: 650px) {
+    .cutline {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
 </style>
