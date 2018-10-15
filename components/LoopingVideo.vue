@@ -6,7 +6,11 @@
             </video>
 
             <div id="audioButton" class="audioButton">
-                <svg fill="#FFFFFF" xmlns:x="http://ns.adobe.com/Extensibility/1.0/" xmlns:i="http://ns.adobe.com/AdobeIllustrator/10.0/" xmlns:graph="http://ns.adobe.com/Graphs/1.0/" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve"><switch><foreignObject requiredExtensions="http://ns.adobe.com/AdobeIllustrator/10.0/" x="0" y="0" width="1" height="1"></foreignObject><g i:extraneous="self"><g><path class="audioWave" d="M62.7,41c-1.1-0.9-2.7-0.7-3.6,0.4c-0.9,1.1-0.7,2.7,0.4,3.6c1.4,1.2,2.4,3,2.4,5c0,2.1-1,4-2.6,5.2     c-1,0.8-1.2,2.2-0.4,3.2l0.2,0.2c0.9,1,2.4,1.2,3.5,0.4C65.3,57,67,53.7,67,50C67,46.4,65.4,43.1,62.7,41z"></path><path class="audioWave" d="M68.6,33.8c-1.1-0.9-2.6-0.7-3.5,0.4l0,0c-0.9,1.1-0.8,2.7,0.3,3.5c3.6,2.9,5.9,7.3,5.9,12.3c0,4.9-2.3,9.4-5.9,12.3     c-1.1,0.9-1.2,2.5-0.3,3.5l0,0c0.9,1.1,2.5,1.3,3.5,0.4c4.7-3.8,7.8-9.7,7.8-16.2C76.3,43.5,73.3,37.6,68.6,33.8z"></path><path d="M47.8,29.9L34.7,39.9h-6.4c-1.7,0-3,1.3-3,3v14.1c0,1.7,1.3,3,3,3h6.4l13.1,10c2.3,1.8,5.6,0.1,5.6-2.8V32.6     C53.4,29.7,50.1,28.1,47.8,29.9z"></path><path d="M50,2.5C23.8,2.5,2.5,23.8,2.5,50c0,26.2,21.3,47.5,47.5,47.5S97.5,76.2,97.5,50C97.5,23.8,76.2,2.5,50,2.5z M50,90.1     c-22.1,0-40.1-18-40.1-40.1c0-22.1,18-40.1,40.1-40.1c22.1,0,40.1,18,40.1,40.1C90.1,72.1,72.1,90.1,50,90.1z"></path></g></g></switch></svg>
+
+                <svg fill="#FFFFFF" class="audioWave" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.1" x="0px" y="0px" viewBox="0 0 70 70"><g transform="translate(0,-982.36218)"><path style="color:#000000;enable-background:accumulate;" d="m 39,999.36218 -14,10.00002 -10,0 0,16 10,0 14,10 z m 8.8125,2.96872 c -0.8191,0.071 -1.56023,0.6995 -1.76444,1.4959 -0.20421,0.7965 0.14314,1.7039 0.82694,2.1604 1.98692,1.3574 4.12499,5.8837 4.125,11.375 3e-5,5.4911 -2.13803,9.9862 -4.125,11.3437 -0.98206,0.5322 -1.32836,1.9686 -0.69668,2.8898 0.63168,0.9212 2.09639,1.1158 2.94668,0.3915 3.85203,-2.6317 5.87503,-8.2025 5.875,-14.625 -1e-5,-6.4227 -2.02294,-12.0247 -5.875,-14.6563 -0.37615,-0.2722 -0.8493,-0.4074 -1.3125,-0.375 z m -5.0625,4 c -0.79703,0.079 -1.51621,0.6828 -1.73091,1.4544 -0.2147,0.7716 0.089,1.6605 0.73091,2.1394 0.82613,0.6513 2.25002,3.7171 2.25,7.4375 -1e-5,3.7206 -1.42395,6.7551 -2.25,7.4062 -0.83153,0.6527 -0.99146,2.0051 -0.33511,2.8337 0.65635,0.8286 2.00938,0.9826 2.83511,0.3226 2.67733,-2.1106 3.74999,-6.0347 3.75,-10.5625 2e-5,-4.5276 -1.07275,-8.4831 -3.75,-10.5938 -0.41435,-0.3385 -0.96861,-0.5002 -1.5,-0.4375 z" fill="#FFFFFF" stroke="none" marker="none" visibility="visible" display="inline" overflow="visible"></path></g></svg>
+
+                <svg fill="#FFFFFF" class="audioMuted" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.1" x="0px" y="0px" viewBox="0 0 70 70"><g transform="translate(0,-982.36218)"><path style="color:#000000;enable-background:accumulate;" d="m 38.999747,999.36218 -14,10.00002 -10,0 0,16 10,0 14,10 0,-36.00002 z m 5.9375,12.00002 c -0.49191,0 -0.99968,0.1873 -1.375,0.5625 -0.75063,0.7507 -0.75063,1.9681 0,2.7187 l 2.71875,2.7188 -2.71875,2.7187 c -0.75063,0.7505 -0.75063,1.9681 0,2.7188 0.75053,0.7505 1.96811,0.7505 2.71875,0 l 2.71875,-2.7188 2.71875,2.7188 c 0.75073,0.7505 1.96821,0.7505 2.71875,0 0.75067,-0.7507 0.75068,-1.9683 0,-2.7188 l -2.71875,-2.7187 2.71875,-2.7188 c 0.75068,-0.7506 0.75059,-1.968 0,-2.7187 -0.75061,-0.7505 -1.96812,-0.7505 -2.71875,0 l -2.71875,2.7187 -2.71875,-2.7187 c -0.37532,-0.3752 -0.85185,-0.5625 -1.34375,-0.5625 z" fill="#FFFFFF" stroke="none" marker="none" visibility="visible" display="inline" overflow="visible"></path></g></svg>
+
             </div>
         </div>
         <div class="cutline"><span>{{data.cutline}}</span><br><span class="credit" v-html="data.credit"></span></div>
@@ -77,8 +81,20 @@ export default {
 </script>
 
 <style scoped>
-.muted .audioWave {
+.videoContainer .audioWave {
+    display: block;
+}
+
+.videoContainer .audioMuted {
     display: none;
+}
+
+.videoContainer.muted .audioWave {
+    display: none;
+}
+
+.videoContainer.muted .audioMuted {
+    display: block;
 }
 
 .bigger {
@@ -120,10 +136,10 @@ export default {
 }
 .audioButton {
     position: absolute;
-    left: 20px;
-    bottom: 20px;
-    width: 30px;
-    height: 30px;
+    left: 18px;
+    bottom: 18px;
+    width: 35px;
+    height: 35px;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
 }
