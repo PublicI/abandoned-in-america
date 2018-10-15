@@ -25,7 +25,7 @@
                         <text class="riverLabel" x="100" y="220">Missouri River</text>
                         <text class="riverLabel" x="470" y="520">Mississippi River</text>
                         <text class="riverLabel" x="470" y="533">(border with Illinois)</text>
-                        <text class="cityLabel" x="495" y="430">City of St. Louis</text>
+                        <text class="cityLabel" x="470" y="330">City of St. Louis</text>
                     </g>
                 </svg>
             </svg>
