@@ -115,6 +115,9 @@ export default {
     /* margin-bottom: 20px; */
     cursor: pointer;
 }
+.videoContainer video {
+    -webkit-tap-highlight-color: transparent;
+}
 .audioButton {
     position: absolute;
     left: 20px;
@@ -122,5 +125,6 @@ export default {
     width: 30px;
     height: 30px;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 </style>
