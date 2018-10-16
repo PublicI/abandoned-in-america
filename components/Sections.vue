@@ -43,6 +43,8 @@
 
             <loopingVideo :data="section" v-if="section.type === 'video'" />
 
+            <soundcloud :data="section" v-if="section.type === 'soundcloud'" />
+
         </div>
     </div>
 </template>
@@ -66,6 +68,7 @@ import StLouisHud from '~/components/StLouisHud.vue';
 import StormTracks from '~/components/StormTracks.vue';
 import Subscribe from '~/components/Subscribe.vue';
 import LoopingVideo from '~/components/LoopingVideo.vue';
+import Soundcloud from '~/components/Soundcloud.vue';
 
 export default {
     components: {
@@ -86,7 +89,8 @@ export default {
         fresnothematic: FresnoThematic,
         stormTracks: StormTracks,
         Subscribe,
-        loopingVideo: LoopingVideo
+        loopingVideo: LoopingVideo,
+        soundcloud: Soundcloud
     },
     props: ['data'],
     name: 'Sections'
