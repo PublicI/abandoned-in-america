@@ -11,10 +11,16 @@
                         <path class="cityOutline" :d="projCity" />
                         <path class="city" :d="projCity" />
 
-                        <circle class="siteShroud" v-for="site in processedCoords" :cx="site.projected[0]" :cy="site.projected[1]" r="6.4" />
-                        <circle class="site" v-for="site in processedCoords" :cx="site.projected[0]" :cy="site.projected[1]" r="4.4" />
+                        <!--
+                        <circle class="siteShroud" v-for="site in processedCoords" :cx="site.projected[0]" :cy="site.projected[1]" r="6" />
+                        -->
+                        <circle class="site" v-for="site in processedCoords" :cx="site.projected[0]" :cy="site.projected[1]" r="5" />
 
-                         <text class="siteLabel" v-for="site in processedCoords" :x="site.projected[0]+10" :y="site.projected[1]+5">{{site.order}}</text>
+                        <text class="siteLabel" v-for="site in processedCoords" :x="site.projected[0]+10" :y="site.projected[1]+5">{{site.order}}</text>
+
+                        <!--
+                        <path :d="residencePath" stroke="black" fill="none" />
+                        -->
 
                         <g transform="translate(-19,15)">
                             <circle class="site" cx="56" cy="150" r="4.4" />
@@ -103,6 +109,23 @@ export default {
 
         let processedCoords = coords.map(processCoords);
 
+        let residencePath = d3.path();
+
+        let initial = true;
+
+        processedCoords.forEach((coord) => {
+            if (initial) {
+                residencePath.moveTo(coord.projected[0],coord.projected[1]);
+            }
+            else {
+                residencePath.lineTo(coord.projected[0],coord.projected[1]);
+            }
+
+            initial = false;
+        });
+
+        residencePath.closePath();
+
         return {
             width,
             height,
@@ -111,7 +134,8 @@ export default {
             projCity,
             projRivers,
             projMiss,
-            processedCoords
+            processedCoords,
+            residencePath: residencePath.toString()
         }
     },
     mounted() {
@@ -212,7 +236,7 @@ export default {
 .stLouisHud .cityLabel{
     fill: black;
     /* text-transform: uppercase; */
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     font-family: "nimbus-sans",sans-serif;
     text-shadow:
@@ -241,6 +265,11 @@ export default {
     stroke: black;
     opacity: 1;
     stroke-width: 2px;
+}
+
+.stLouisHud .siteShroud {
+    fill: white;
+    stroke-width: 0;
 }
 
 .stLouisHud .credit {
