@@ -2,15 +2,6 @@
     <div class="bigger stLouisHud">
         <div class="scaling-svg-container">
             <svg class="scaling-svg">
-                <g class="legendLinear"></g>
-
-                <g class="legendAddendum">
-                    <circle class="site" cx="56" cy="150" r="4.4" />
-                    <text class="noData" x="75" y="155">January Harris' residences</text>
-                    <rect class="tract" x="40" y="120" height="15" width="30" />
-                    <text class="noData" x="75" y="132">Insufficient data</text>
-                </g>
-
                 <svg style="width: 100%;height: 100%" :viewBox="'0 0 '+width+' '+height">
                     <g class="map">
                         <path :class="obj.percentSubsidized > 0 ? 'dataTract' : 'tract'" v-for="obj in processed" :d="obj.feature" :stroke="(obj.percentSubsidized > 0 || obj.percentSubsidized) ? colorScale(obj.percentSubsidized) : 'grey'" :fill="(obj.percentSubsidized > 0 || obj.percentSubsidized) ? colorScale(obj.percentSubsidized) : 'grey'" />
@@ -34,6 +25,16 @@
                         <text class="cityLabel" x="473" y="325">City of St. Louis</text>
                     </g>
                 </svg>
+
+                <g class="legendLinear"></g>
+
+                <g class="legendAddendum">
+                    <circle class="site" cx="56" cy="150" r="4.4" />
+                    <text class="noData" x="75" y="155">January Harris' residences</text>
+                    <rect class="tract" x="40" y="120" height="15" width="30" />
+                    <text class="noData" x="75" y="132">Insufficient data</text>
+                </g>
+
             </svg>
         </div>
         <div class="credit">Graphic by Rosie Cima</div>
@@ -167,6 +168,28 @@ export default {
 </script>
 
 <style>
+.stLouisHud .scaling-svg-container {
+ position: relative;
+ height: 0;
+ width: 100%;
+ padding: 0;
+ padding-bottom: 100%;
+ /* override this inline for aspect ratio other than square */
+}
+.stLouisHud .scaling-svg {
+ position: absolute;
+ height: 110%;
+ width: 100%;
+ left: 0;
+ top: 0;
+ overflow: hidden;
+}
+.stLouisHud.bigger {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .stLouisHud .noData{
     font-family: tablet-gothic-n2,tablet-gothic,Helvetica Neue,Helvetica,Arial,sans-serif;
     font-family: "nimbus-sans",sans-serif;
@@ -275,7 +298,7 @@ export default {
 .stLouisHud .credit {
     font-size: 15px;
     color: rgb(170,170,170);
-    text-align: right;
+    /* text-align: right; */
     padding-bottom: 8px;
     font-family: "nimbus-sans",sans-serif;
     padding-right: 4px;
@@ -285,7 +308,7 @@ export default {
     transform: translate(-5px,13px);
 }
 
-@media (max-width: 580px) {
+@media (max-width: 600px) {
     .stLouisHud .legendLinear {
         transform: translate(5px,5px);
     }
@@ -293,7 +316,7 @@ export default {
         transform: translate(-30px,-45px);
     }
     .stLouisHud .map {
-        transform: translate(20px,80px);
+        transform: translate(20px,50px);
     }
     .stLouisHud .scaling-svg-container {
      padding-bottom: 130%; 
