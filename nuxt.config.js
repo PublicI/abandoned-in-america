@@ -67,7 +67,8 @@ module.exports = {
             '/ballot-box-barriers',
             '/train-off-track',
             '/no-place-to-call-home',
-            '/forgotten-and-failing'
+            '/forgotten-and-failing',
+            '/stlouis-sidebar'
         ]
     },
     router: {

@@ -32,7 +32,8 @@ const slugs = [
     'disastrous-recovery',
     'ballot-box-barriers',
     'train-off-track',
-    'no-place-to-call-home'
+    'no-place-to-call-home',
+    'stlouis-sidebar'
     /*,
     'forgotten-and-failing'
     */
