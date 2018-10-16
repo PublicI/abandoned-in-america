@@ -1,0 +1,146 @@
+dist_num,dist_name,percent_african_american,grade,total_points
+130,Natchez-Adams School District,0.9062,D,515
+200,Alcorn School District,0.0321,B,637
+220,Corinth School District**,0.2947,C,555
+300,Amite County School District,0.8105,F,456
+400,Attala County School District,0.5495,C,587
+420,Kosciusko School District,0.5395,B,602
+500,Benton County School District,0.4643,C,557
+614,Cleveland School District,0.7088,C,550
+617,North Bolivar Consolidated School,0.977,F,445
+618,West Bolivar Consolidated School,0.9611,F,418
+700,Calhoun County School District,0.3186,C,585
+800,Carroll County School District,0.5573,D,526
+900,Chickasaw County School District,0.3992,C,594
+920,Houston School District,0.4353,B,635
+921,Okolona Separate School District,0.9484,C,571
+1000,Choctaw County School District,0.3544,C,590
+1100,Claiborne County School District,0.9919,D,530
+1211,Enterprise School District,0.0894,A,761
+1212,Quitman School District,0.5579,D,524
+1321,West Point Consolidated ,0.7838,C,571
+1400,Coahoma County School District,0.8967,F,450
+1420,Clarksdale Municipal School District,0.9607,F,425
+1500,Copiah County School District,0.5704,C,545
+1520,Hazlehurst City School District,0.8948,F,475
+1600,Covington County Schools,0.4944,D,533
+1700,Desoto County School District,0.363,A,672
+1800,Forrest County School District,0.4345,C,596
+1802,Forrest County AHS,0.284,B,606
+1820,Hattiesburg Public School District,0.9095,D,499
+1821,Petal School District,0.1701,A,750
+1900,Franklin County School District,0.4456,B,633
+2000,George County School District,0.0848,B,648
+2100,Greene County School District,0.1932,B,615
+2220,Grenada School District,0.4895,B,648
+2300,Hancock County School District,0.0789,B,622
+2320,Bay St Louis Waveland School District,0.2473,C,598
+2400,Harrison County School District,0.343,B,664
+2420,Biloxi Public School District,0.3418,A,710
+2421,Gulfport School District,0.5398,B,641
+2422,Long Beach School District,0.1724,A,691
+2423,Pass Christian Public School District,0.2868,A,685
+2500,Hinds County School District,0.8482,C,589
+2515,Reimagine Prep Charter School,0.9831,C,376
+2520,Jackson Public School District,0.9599,F,456
+2521,Clinton Public School District,0.5418,A,711
+2525,Midtown Public Charter School,0.9714,F,194
+2600,Holmes County School District,0.996,F,476
+2620,Durant Public School District,0.9705,F,481
+2700,Humphreys County School District,0.9727,F,444
+2900,Itawamba County School District,0.0697,B,608
+3000,Jackson County School District,0.1122,B,661
+3020,Moss Point Separate School District,0.7379,D,515
+3021,Ocean Springs School District,0.1285,A,723
+3022,Pascagoula Gautier School District,0.4487,B,616
+3111,East Jasper Consolidated ,0.9755,D,520
+3112,West Jasper Consolidated Schools,0.5681,B,629
+3200,Jefferson County School District,0.9853,F,447
+3300,Jefferson Davis County School District,0.866,D,514
+3400,Jones County School District,0.19,B,626
+3420,Laurel School District,0.8661,F,485
+3500,Kemper County School District,0.976,D,515
+3600,Lafayette County School District,0.2611,A,687
+3620,Oxford School District,0.3344,A,718
+3700,Lamar County School District,0.2549,A,698
+3711,Lumberton Public School District,0.4315,C,555
+3800,Lauderdale County School District,0.3037,B,620
+3820,Meridian Public School District,0.9054,F,470
+3900,Lawrence County School District,0.4078,C,562
+4000,Leake County School District,0.6031,D,506
+4100,Lee County School District,0.2846,C,589
+4111,Nettleton School District,0.2795,B,611
+4120,Tupelo Public School District,0.5146,B,646
+4200,Leflore County School District,0.9374,C,539
+4220,Greenwood Public School District,0.9295,D,503
+4300,Lincoln County School District,0.1305,C,597
+4320,Brookhaven School District,0.634,C,544
+4400,Lowndes County School District,0.3654,B,660
+4420,Columbus Municipal School District,0.9279,D,516
+4500,Madison County School District,0.3953,A,679
+4520,Canton Public School District,0.8793,D,506
+4600,Marion County School District,0.4127,C,573
+4620,Columbia School District,0.4712,B,603
+4700,Marshall County School District,0.4616,C,544
+4720,Holly Springs School District,0.9265,D,511
+4800,Monroe County School District,0.0742,B,632
+4820,Aberdeen School District,0.9591,C,544
+4821,Amory School District,0.3482,B,664
+4900,Montgomery County School District,0.8719,D,522
+4920,Winona Separate School District,0.5993,B,614
+5000,Neshoba County School District,0.1801,B,633
+5020,Philadelphia Public School District,0.7585,F,475
+5100,Newton County School District,0.2227,B,651
+5130,Newton Municipal School District,0.898,C,551
+5131,Union Public School District,0.2151,B,644
+5200,Noxubee County School District,0.9672,F,451
+5321,Starkville-Oktibbeha Consolidated ,0.6656,C,598
+5411,North Panola Schools,0.9549,C,544
+5412,South Panola School District,0.5571,B,625
+5500,Pearl River County School District,0.0337,B,653
+5520,Picayune School District,0.3457,C,593
+5530,Poplarville Separate School District,0.1115,B,641
+5600,Perry County School District,0.2861,D,504
+5620,Richton School District,0.207,B,619
+5711,North Pike School District,0.3579,B,615
+5712,South Pike School District,0.8572,F,488
+5720,Mccomb School District,0.9185,D,494
+5800,Pontotoc County School District,0.0967,B,603
+5820,Pontotoc City Schools,0.2814,A,671
+5900,Prentiss County School District,0.0384,B,667
+5920,Baldwyn School District,0.4456,B,601
+5921,Booneville School District,0.2336,A,709
+6000,Quitman County School District,0.9704,C,569
+6100,Rankin County School District,0.2304,A,690
+6120,Pearl Public School District,0.3539,B,653
+6200,Scott County School District,0.3772,C,578
+6220,Forest Municipal School District,0.4886,D,495
+6312,South Delta School District,0.9659,F,484
+6400,Simpson County School District,0.5048,D,511
+6500,Smith County School District,0.2866,B,603
+6600,Stone County School District,0.2116,B,636
+6711,Sunflower County Consolidated,0.9543,F,471
+6811,East Tallahatchie Consolidated ,0.7774,F,473
+6812,West Tallahatchie School District,0.9878,D,506
+6900,Tate County School District,0.3473,C,587
+6920,Senatobia Municipal School District,0.5434,B,606
+7011,North Tippah School District,0.0829,A,671
+7012,South Tippah School District,0.2245,B,599
+7100,Tishomingo County School District,0.022,A,669
+7200,Tunica County School District,0.9611,C,559
+7300,Union County School District,0.0678,A,693
+7320,New Albany Public Schools,0.2742,B,628
+7400,Walthall County School District,0.618,D,499
+7500,Vicksburg Warren School District,0.6471,D,500
+7611,Hollandale School District,0.9825,C,539
+7612,Leland School District,0.8993,C,536
+7613,Western Line School District,0.5668,C,551
+7620,Greenville Public Schools,0.9846,D,499
+7700,Wayne County School District,0.5587,D,534
+7800,Webster County School District,0.2238,B,643
+7900,Wilkinson County School District,0.9841,D,502
+8020,Louisville Municipal School District,0.6535,C,597
+8111,Coffeeville School District,0.8257,D,510
+8113,Water Valley School District,0.444,C,565
+8200,Yazoo County School District,0.5079,C,539
+8220,Yazoo City Municipal School District,0.9789,F,425
