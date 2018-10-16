@@ -11,12 +11,10 @@
                         <path class="cityOutline" :d="projCity" />
                         <path class="city" :d="projCity" />
 
-                        <!--
                         <circle class="siteShroud" v-for="site in processedCoords" :cx="site.projected[0]" :cy="site.projected[1]" r="6" />
-                        -->
-                        <circle class="site" v-for="site in processedCoords" :cx="site.projected[0]" :cy="site.projected[1]" r="5" />
+                        <circle class="site" v-for="site in processedCoords" :cx="site.projected[0]" :cy="site.projected[1]" r="4" />
 
-                        <text class="siteLabel" v-for="site in processedCoords" :x="site.projected[0]+10" :y="site.projected[1]+5">{{site.order}}</text>
+                        <text class="siteLabel" v-for="site in processedCoords" :x="site.projected[0]+10" :y="site.projected[1]+4">{{site.order}}</text>
 
                         <!--
                         <path :d="residencePath" stroke="black" fill="none" />
@@ -28,10 +26,10 @@
                             <rect class="tract" x="40" y="120" height="15" width="30" />
                             <text class="noData" x="75" y="132">Insufficient data</text>
                         </g>
-                        <text class="riverLabel" x="100" y="220">Missouri River</text>
-                        <text class="riverLabel" x="470" y="520">Mississippi River</text>
-                        <text class="riverLabel" x="470" y="533">(border with Illinois)</text>
-                        <text class="cityLabel" x="470" y="330">City of St. Louis</text>
+                        <text class="riverLabel" x="130" y="270">Missouri River</text>
+                        <text class="riverLabel" x="510" y="550">Mississippi River</text>
+                        <text class="riverLabel" x="510" y="563">(border with Illinois)</text>
+                        <text class="cityLabel" x="473" y="325">City of St. Louis</text>
                     </g>
                 </svg>
             </svg>
