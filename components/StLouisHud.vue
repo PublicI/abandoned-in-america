@@ -3,6 +3,14 @@
         <div class="scaling-svg-container">
             <svg class="scaling-svg">
                 <g class="legendLinear"></g>
+
+                <g class="legendAddendum">
+                    <circle class="site" cx="56" cy="150" r="4.4" />
+                    <text class="noData" x="75" y="155">January Harris' residences</text>
+                    <rect class="tract" x="40" y="120" height="15" width="30" />
+                    <text class="noData" x="75" y="132">Insufficient data</text>
+                </g>
+
                 <svg style="width: 100%;height: 100%" :viewBox="'0 0 '+width+' '+height">
                     <g class="map">
                         <path :class="obj.percentSubsidized > 0 ? 'dataTract' : 'tract'" v-for="obj in processed" :d="obj.feature" :stroke="(obj.percentSubsidized > 0 || obj.percentSubsidized) ? colorScale(obj.percentSubsidized) : 'grey'" :fill="(obj.percentSubsidized > 0 || obj.percentSubsidized) ? colorScale(obj.percentSubsidized) : 'grey'" />
@@ -20,12 +28,6 @@
                         <path :d="residencePath" stroke="black" fill="none" />
                         -->
 
-                        <g transform="translate(-19,15)">
-                            <circle class="site" cx="56" cy="150" r="4.4" />
-                            <text class="noData" x="75" y="155">January Harris' residences</text>
-                            <rect class="tract" x="40" y="120" height="15" width="30" />
-                            <text class="noData" x="75" y="132">Insufficient data</text>
-                        </g>
                         <text class="riverLabel" x="130" y="270">Missouri River</text>
                         <text class="riverLabel" x="510" y="550">Mississippi River</text>
                         <text class="riverLabel" x="510" y="563">(border with Illinois)</text>
@@ -278,4 +280,35 @@ export default {
     font-family: "nimbus-sans",sans-serif;
     padding-right: 4px;
 }
+
+.stLouisHud .legendAddendum {
+    transform: translate(-5px,13px);
+}
+
+@media (max-width: 580px) {
+    .stLouisHud .legendLinear {
+        transform: translate(5px,5px);
+    }
+    .stLouisHud .legendAddendum {
+        transform: translate(-30px,-45px);
+    }
+    .stLouisHud .map {
+        transform: translate(20px,80px);
+    }
+    .stLouisHud .scaling-svg-container {
+     padding-bottom: 130%; 
+     /* override this inline for aspect ratio other than square */
+    }
+    .stLouisHud .fresnoLabel {
+        font-size: 38px;
+    }
+    .stLouisHud .swLabel{
+        font-size: 25px;
+        transform: translate(-65px,120px);
+    }
+    .desktopLabels {
+        display: none;
+    }
+}
+
 </style>
