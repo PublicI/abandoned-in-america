@@ -33,10 +33,8 @@ const slugs = [
     'ballot-box-barriers',
     'train-off-track',
     'no-place-to-call-home',
-    'housing-tax-credits'
-    /*,
+    'housing-tax-credits',
     'forgotten-and-failing'
-    */
 ];
 
 gulp.task('bake-stories', () => {
