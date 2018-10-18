@@ -45,6 +45,10 @@
 
             <soundcloud :data="section" v-if="section.type === 'soundcloud'" />
 
+            <slideshow :data="section" v-if="section.type === 'slideshow'" />
+
+            <schoolRaceChart :data="section" v-if="section.type === 'school_race_chart'" />
+
         </div>
     </div>
 </template>
@@ -69,6 +73,8 @@ import StormTracks from '~/components/StormTracks.vue';
 import Subscribe from '~/components/Subscribe.vue';
 import LoopingVideo from '~/components/LoopingVideo.vue';
 import Soundcloud from '~/components/Soundcloud.vue';
+import Slideshow from '~/components/Slideshow.vue';
+import schoolRaceChart from '~/components/SchoolRaceChart.vue';
 
 export default {
     components: {
@@ -90,7 +96,9 @@ export default {
         stormTracks: StormTracks,
         Subscribe,
         loopingVideo: LoopingVideo,
-        soundcloud: Soundcloud
+        soundcloud: Soundcloud,
+        slideshow: Slideshow,
+        schoolRaceChart
     },
     props: ['data'],
     name: 'Sections'

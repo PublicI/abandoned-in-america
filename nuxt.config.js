@@ -44,7 +44,8 @@ module.exports = {
     },
     plugins: [
         { src: '~/plugins/typekit.js', ssr: false },
-        { src: '~/plugins/chartbeat.js', ssr: false }
+        { src: '~/plugins/chartbeat.js', ssr: false },
+        { src: '~/plugins/swiper.js', ssr: true }
     ],
     axios: {
         host: process.env.HOST || 'localhost',
