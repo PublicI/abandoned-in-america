@@ -23,6 +23,7 @@ export default {
       return {
         swiperOption: {
             pagination: {
+                clickable: true,
                 el: '.swiper-pagination'
             },
             navigation: {
@@ -54,7 +55,7 @@ export default {
     margin-right: auto;
 }
 
-.cutline, .credit {
+.slideshow .cutline, .slideshow .credit {
     font-family: "tablet-gothic-n2","tablet-gothic","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-family: "nimbus-sans",sans-serif;
     font-weight: 300;
@@ -66,18 +67,31 @@ export default {
     padding-top: 5px;
 }
 
-.credit {
+.swiper-container {
+    padding-top: 35px;
+}
+
+.swiper-button-disabled {
+    display: none;
+}
+
+.slideshow .credit {
     font-size: 13px;
     line-height: 16px;
     color: rgb(160,160,160);
     padding-left: 15px;
 }
 
-.cutline .credit {
+.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
+    bottom: initial;
+    top: 0px;
+}
+
+.slideshow .cutline .credit {
     padding-left: 0;
 }
 
-.swiper-pagination-bullet-active {
+.slideshow .swiper-pagination-bullet-active {
     background: rgb(50,50,50);
 }
 .swiper-button-next, .swiper-container-rtl .swiper-button-prev {

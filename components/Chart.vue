@@ -3,6 +3,8 @@
         <div v-for="chart in charts" class="chart">
             <highcharts :options="chart"></highcharts>
         </div>
+        <div class="credit">Graphic by Chris Zubak-Skees</div>
+
     </section>
 </template>
 
@@ -45,11 +47,17 @@ export default {
                     }
                 },
                 xAxis: {
-
+                    min: 0,
+                    max: 100,
                     tickLength: 0,
                     align: 'right',
                     title: {
-                        text: 'Percent of students who are black'
+                        text: 'Percent of students who are black',
+                        style: {
+                            fontSize: '14px',
+                            fontWeight: 'bold'
+                            // color: '#666'
+                        }
                     },
                     labels: {
                         // enabled: false,
@@ -129,7 +137,12 @@ export default {
                     // tickInterval: 15,
                     gridLineWidth: 0, // this.directLabel ? 0 : 1,
                     title: {
-                        text: 'Achievement score'
+                        text: 'Achievement score',
+                        style: {
+                            fontSize: '14px',
+                            fontWeight: 'bold'
+                            // color: '#666'
+                        }
                     },
                     labels: {
                         format: '{value}', // %
@@ -138,6 +151,7 @@ export default {
                 },
                 legend: {
                     enabled: true,
+                    verticalAlign: 'top',
                     itemHoverStyle: {
                         color: '#333333',
                         cursor: 'initial'
@@ -229,5 +243,11 @@ export default {
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+}
+.credit {
+    font-size: 15px;
+    color: rgb(170,170,170);
+    padding-bottom: 8px;
+    font-family: "nimbus-sans",sans-serif;
 }
 </style>
