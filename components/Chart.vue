@@ -193,6 +193,15 @@ export default {
                     scatter: {
                         marker: {
                             symbol: 'circle'
+                        },
+                        dataLabels: {
+                            align: 'left',
+                            verticalAlign: 'middle',
+                            y: -2,
+                            x: -3,
+                            formatter: function () {
+                                return this.point.label;
+                            }
                         }
                     },
                     series: {
@@ -210,9 +219,9 @@ export default {
                         },
                         marker: {
                             radius: 3,
-                            fillColor: '#000000',
+                            fillColor: '#FFFFFF',
                             lineWidth: 2,
-                            lineColor: '#FFFFFF' // inherit from series
+                            lineColor: '#333333' // inherit from series
                         }
                     }
                 },
@@ -245,6 +254,7 @@ export default {
     margin-right: auto;
 }
 .credit {
+    padding-left: 25px;
     font-size: 15px;
     color: rgb(170,170,170);
     padding-bottom: 8px;
