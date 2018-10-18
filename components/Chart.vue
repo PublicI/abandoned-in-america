@@ -195,6 +195,7 @@ export default {
                             }
                         },
                         marker: {
+                            radius: 3,
                             fillColor: '#000000',
                             lineWidth: 2,
                             lineColor: '#FFFFFF' // inherit from series
@@ -223,5 +224,10 @@ export default {
 <style>
 .highcharts-plot-band {
     opacity: 0.5;
+}
+.charts {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 </style>

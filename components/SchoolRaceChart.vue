@@ -16,7 +16,7 @@ export default {
                 let yazooRaceDataParsed = d3.csvParse(yazooRaceData);
 
                 return [{
-                        name: 'Districts',
+                        name: 'District',
                         data: yazooRaceDataParsed.map(row => {
                             return [+row.percent_african_american*100, +row.total_points];
                         })
