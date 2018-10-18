@@ -44,7 +44,8 @@ export default {
                     style: {
                         fontFamily: 'nimbus-sans',
                         fontSize: '13px'
-                    }
+                    },
+                    marginRight: 15
                 },
                 xAxis: {
                     min: 0,
