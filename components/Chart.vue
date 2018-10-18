@@ -256,7 +256,7 @@ export default {
 }
 .credit {
     padding-left: 25px;
-    font-size: 15px;
+    font-size: 13px;
     color: rgb(170,170,170);
     padding-bottom: 8px;
     font-family: "nimbus-sans",sans-serif;
