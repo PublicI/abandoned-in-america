@@ -45,6 +45,7 @@ module.exports = {
     plugins: [
         { src: '~/plugins/typekit.js', ssr: false },
         { src: '~/plugins/chartbeat.js', ssr: false },
+        { src: '~/plugins/pym.js', ssr: false },
         { src: '~/plugins/swiper.js', ssr: true }
     ],
     axios: {

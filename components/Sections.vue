@@ -45,9 +45,9 @@
 
             <soundcloud :data="section" v-if="section.type === 'soundcloud'" />
 
-            <slideshow :data="section" v-if="section.type === 'slideshow'" />
+            <slideshow :base="'/' + data.series.slug + '/'" :doc="section" v-if="section.type === 'slideshow'" />
 
-            <schoolRaceChart :data="section" v-if="section.type === 'school_race_chart'" />
+            <schoolRaceChart :base="'/' + data.series.slug + '/'" :data="section" v-if="section.type === 'school_race_chart'" />
 
         </div>
     </div>

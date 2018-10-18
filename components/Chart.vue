@@ -223,7 +223,7 @@ export default {
 
 <style>
 .highcharts-plot-band {
-    opacity: 0.5;
+    opacity: 0.4;
 }
 .charts {
     max-width: 800px;

@@ -1,8 +1,9 @@
 <template>
   <div v-swiper:mySwiper="swiperOption" @someSwiperEvent="callback">
     <div class="swiper-wrapper">
-      <div class="swiper-slide" v-for="banner in banners">
-        <img :src="banner">
+      <div class="swiper-slide" v-for="slide in doc.slides">
+        <img :src="encodeURI(base + slide.location.replace('img','resized').replace(/\.(jpg|png)$/,'-2880.$1'))" :srcset="encodeURI(base + slide.location.replace('img','resized').replace(/\.(jpg|png)$/,'-2880.$1')) + '  2880w,' + base + encodeURI(slide.location.replace('img','resized').replace(/\.(jpg|png)$/,'-1440.$1')) + '  1440w,' + base + encodeURI(slide.location.replace('img','resized').replace(/\.(jpg|png)$/,'-720.$1')) + '   720w'" style="width:100%;height: auto">
+
       </div>
     </div>
     <div class="swiper-pagination"></div>
@@ -12,9 +13,9 @@
 
 <script>
 export default {
+    props: ['doc','base'],
     data () {
       return {
-        banners: [ '/1.jpg', '/2.jpg', '/3.jpg' ],
         swiperOption: {
           pagination: {
             el: '.swiper-pagination'
