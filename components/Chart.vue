@@ -260,4 +260,11 @@ export default {
     padding-bottom: 8px;
     font-family: "nimbus-sans",sans-serif;
 }
+.highcharts-plot-band-label {
+    text-shadow:
+       -1px -1px 0 white,  
+        1px -1px 0 white,
+        -1px 1px 0 white,
+         1px 1px 0 white;
+}
 </style>

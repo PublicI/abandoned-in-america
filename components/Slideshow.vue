@@ -109,5 +109,10 @@ export default {
     .swiper-button-next, .swiper-container-rtl .swiper-button-prev, .swiper-button-prev, .swiper-container-rtl .swiper-button-next {
         top: 35%;
     }
+
+    .slideshow .cutline {
+        padding-left: 3px;
+        padding-right: 3px;
+    }
 }
 </style>
