@@ -39,6 +39,8 @@
                 <fresnothematic :data="section" />
             </div>
 
+            <list :data="section" v-if="section.type === 'list'" />
+
             <stormTracks :data="section" v-if="section.type === 'storm_tracks'" />
 
             <loopingVideo :data="section" v-if="section.type === 'video'" />
@@ -75,6 +77,7 @@ import LoopingVideo from '~/components/LoopingVideo.vue';
 import Soundcloud from '~/components/Soundcloud.vue';
 import Slideshow from '~/components/Slideshow.vue';
 import schoolRaceChart from '~/components/SchoolRaceChart.vue';
+import List from '~/components/List.vue';
 
 export default {
     components: {
@@ -98,7 +101,8 @@ export default {
         loopingVideo: LoopingVideo,
         soundcloud: Soundcloud,
         slideshow: Slideshow,
-        schoolRaceChart
+        schoolRaceChart,
+        List
     },
     props: ['data'],
     name: 'Sections'
