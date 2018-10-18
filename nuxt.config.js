@@ -70,7 +70,8 @@ module.exports = {
             '/train-off-track',
             '/no-place-to-call-home',
             '/forgotten-and-failing',
-            '/housing-tax-credits'
+            '/housing-tax-credits',
+            '/yazoo-education-history'
         ]
     },
     router: {
