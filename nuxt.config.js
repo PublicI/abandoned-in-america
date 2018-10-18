@@ -46,7 +46,7 @@ module.exports = {
         { src: '~/plugins/typekit.js', ssr: false },
         { src: '~/plugins/chartbeat.js', ssr: false },
         { src: '~/plugins/pym.js', ssr: false },
-        { src: '~/plugins/swiper.js', ssr: true }
+        { src: '~/plugins/swiper.js', ssr: false }
     ],
     axios: {
         host: process.env.HOST || 'localhost',
@@ -79,7 +79,11 @@ module.exports = {
     /*
      ** Global CSS
      */
-    css: ['~/assets/css/site.css', '~/assets/css/main.css'],
+    css: [
+        '~/assets/css/site.css',
+        '~/assets/css/main.css',
+        'swiper/dist/css/swiper.css'
+    ],
     serverMiddleware: [
         // API middleware
         '~/server/index.js'
