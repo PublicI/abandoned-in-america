@@ -40,7 +40,7 @@ module.exports = {
         ]
     ],
     render: {
-        ssr: true
+        ssr: false
     },
     plugins: [
         { src: '~/plugins/typekit.js', ssr: false },
@@ -69,7 +69,7 @@ module.exports = {
             '/ballot-box-barriers',
             '/train-off-track',
             '/no-place-to-call-home',
-            // '/forgotten-and-failing',
+            '/forgotten-and-failing',
             '/housing-tax-credits'
         ]
     },

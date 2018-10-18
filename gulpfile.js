@@ -34,7 +34,7 @@ const slugs = [
     'train-off-track',
     'no-place-to-call-home',
     'housing-tax-credits',
-    // 'forgotten-and-failing'
+    'forgotten-and-failing'
 ];
 
 gulp.task('bake-stories', () => {
