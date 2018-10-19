@@ -18,7 +18,12 @@ export default {
                 return [{
                         name: 'District',
                         data: yazooRaceDataParsed.map(row => {
-                            return [+row.percent_african_american*100, +row.total_points];
+                            return {
+                                label: (row.dist_name === 'Yazoo City Municipal School District' ? 'Yazoo City' : row.dist_name),
+                                x: +row.percent_african_american*100,
+                                y: +row.total_points,
+                                dataLabels: { enabled: (row.dist_name === 'Yazoo City Municipal School District') }
+                            };
                         })
                 }];
             }

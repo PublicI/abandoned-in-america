@@ -3,6 +3,8 @@
         <div v-for="chart in charts" class="chart">
             <highcharts :options="chart"></highcharts>
         </div>
+        <div class="credit">Graphic by Chris Zubak-Skees</div>
+
     </section>
 </template>
 
@@ -42,14 +44,21 @@ export default {
                     style: {
                         fontFamily: 'nimbus-sans',
                         fontSize: '13px'
-                    }
+                    },
+                    marginRight: 15
                 },
                 xAxis: {
-
+                    min: 0,
+                    max: 100,
                     tickLength: 0,
                     align: 'right',
                     title: {
-                        text: 'Percent of students who are black'
+                        text: 'Percent of students who are black',
+                        style: {
+                            fontSize: '14px',
+                            fontWeight: 'bold'
+                            // color: '#666'
+                        }
                     },
                     labels: {
                         // enabled: false,
@@ -129,7 +138,12 @@ export default {
                     // tickInterval: 15,
                     gridLineWidth: 0, // this.directLabel ? 0 : 1,
                     title: {
-                        text: 'Achievement score'
+                        text: 'Achievement score',
+                        style: {
+                            fontSize: '14px',
+                            fontWeight: 'bold'
+                            // color: '#666'
+                        }
                     },
                     labels: {
                         format: '{value}', // %
@@ -138,6 +152,7 @@ export default {
                 },
                 legend: {
                     enabled: true,
+                    verticalAlign: 'top',
                     itemHoverStyle: {
                         color: '#333333',
                         cursor: 'initial'
@@ -179,6 +194,15 @@ export default {
                     scatter: {
                         marker: {
                             symbol: 'circle'
+                        },
+                        dataLabels: {
+                            align: 'left',
+                            verticalAlign: 'middle',
+                            y: -2,
+                            x: -3,
+                            formatter: function () {
+                                return this.point.label;
+                            }
                         }
                     },
                     series: {
@@ -196,9 +220,9 @@ export default {
                         },
                         marker: {
                             radius: 3,
-                            fillColor: '#000000',
+                            fillColor: '#FFFFFF',
                             lineWidth: 2,
-                            lineColor: '#FFFFFF' // inherit from series
+                            lineColor: '#333333' // inherit from series
                         }
                     }
                 },
@@ -229,5 +253,19 @@ export default {
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+}
+.credit {
+    padding-left: 25px;
+    font-size: 13px;
+    color: rgb(170,170,170);
+    padding-bottom: 8px;
+    font-family: "nimbus-sans",sans-serif;
+}
+.highcharts-plot-band-label {
+    text-shadow:
+       -1px -1px 0 white,  
+        1px -1px 0 white,
+        -1px 1px 0 white,
+         1px 1px 0 white;
 }
 </style>
