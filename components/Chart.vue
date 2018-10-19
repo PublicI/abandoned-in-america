@@ -250,35 +250,35 @@ export default {
             if (!this.drawn) {
                 this.drawn = true;
 
-                chart.renderer.text('A', 80, 113)
+                chart.renderer.text('A', 78, 113)
                     .css({
                         fontWeight: 'bold',
                         fontSize: '14px'
                     })
                     .add();
 
-                chart.renderer.text('B', 80, 171)
+                chart.renderer.text('B', 78, 171)
                     .css({
                         fontWeight: 'bold',
                         fontSize: '14px'
                     })
                     .add();
 
-                chart.renderer.text('C', 80, 217)
+                chart.renderer.text('C', 78, 217)
                     .css({
                         fontWeight: 'bold',
                         fontSize: '14px'
                     })
                     .add();
 
-                chart.renderer.text('D', 80, 255)
+                chart.renderer.text('D', 78, 255)
                     .css({
                         fontWeight: 'bold',
                         fontSize: '14px'
                     })
                     .add();
 
-                chart.renderer.text('F', 80, 377)
+                chart.renderer.text('F', 78, 377)
                     .css({
                         fontWeight: 'bold',
                         fontSize: '14px'
