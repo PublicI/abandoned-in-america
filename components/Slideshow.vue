@@ -114,6 +114,7 @@ export default {
 }
 
 .slideshow {
+    position: relative;
     background-color: rgb(30,30,30);
     margin-bottom: 20px;
     padding-bottom: 10px;
