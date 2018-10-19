@@ -75,6 +75,7 @@ export default {
                 },
                 yAxis: {
                     plotBands: [{
+                        /*
                         label: {
                             style: {
                                 fontSize: '14px',
@@ -82,11 +83,12 @@ export default {
                             },
                             text: 'F',
                             align: 'left',
-                        },
+                        },*/
                         color: '#b30000', // Color value
                         from: 194, // Start of the plot band
                         to: 488 // End of the plot band
                     },{
+                        /*
                         label: {
                             style: {
                                 fontSize: '14px',
@@ -94,11 +96,12 @@ export default {
                             },
                             text: 'D',
                             align: 'left',
-                        },
+                        },*/
                         color: '#e34a33', // Color value
                         from: 494, // Start of the plot band
                         to: 534 // End of the plot band
                     },{
+                        /*
                         label: {
                             style: {
                                 fontSize: '14px',
@@ -106,11 +109,12 @@ export default {
                             },
                             text: 'C',
                             align: 'left',
-                        },
+                        },*/
                         color: '#fc8d59', // Color value
                         from: 536, // Start of the plot band
                         to: 598 // End of the plot band
                     },{
+                        /*
                         label: {
                             style: {
                                 fontSize: '14px',
@@ -118,11 +122,12 @@ export default {
                             },
                             text: 'B',
                             align: 'left',
-                        },
+                        },*/
                         color: '#fdcc8a', // Color value
                         from: 599, // Start of the plot band
                         to: 667 // End of the plot band
                     },{
+                        /*
                         label: {
                             style: {
                                 fontSize: '14px',
@@ -130,7 +135,7 @@ export default {
                             },
                             text: 'A',
                             align: 'left',
-                        },
+                        },*/
                         color: '#fef0d9', // Color value
                         from: 669, // Start of the plot band
                         to: 761 // End of the plot band
