@@ -151,6 +151,7 @@ export default {
                     }
                 },
                 legend: {
+                    padding: 0,
                     enabled: true,
                     verticalAlign: 'top',
                     itemHoverStyle: {
@@ -250,7 +251,7 @@ export default {
     opacity: 0.4;
 }
 .charts {
-    max-width: 800px;
+    max-width: 750px;
     margin-left: auto;
     margin-right: auto;
 }
