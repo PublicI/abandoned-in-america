@@ -27,6 +27,7 @@ import Byline from '~/components/Byline.vue';
 import Social from '~/components/Social.vue';
 import Hed from '~/components/Hed.vue';
 import Parts from '~/components/Parts.vue';
+import { mapMutations, mapState } from 'vuex';
 
 export default {
     name: 'slug',
@@ -40,12 +41,50 @@ export default {
         Hed,
         Parts
     },
+    computed: {
+        doc() {
+            if (this.result) {
+                return {
+                    doc: this.result
+                }
+            }
+
+            return {
+                doc: {
+                    slug: '',
+                    hed: null,
+                    series: this.series,
+                    image: {
+                        location: ''
+                    }
+                }
+            };
+        },
+        ...mapState({
+            series: 'series/series'
+        })
+    },
+    data() {
+        return {
+            result: null
+        };
+    },
+    /*
     async asyncData ({ app, params }) {
         let data = await app.$axios.$get(`/api/docs/${params.slug}.json`);
         
         return {
             doc: data
         };
+    },*/
+    async created() {
+        let data = await this.$axios.$get(`/api/docs/${this.params.slug}.json`);
+
+        if (data.series) {
+            this.setSeries(data.series);
+        }
+
+        this.result = data;
     },
     head () {
         return {
@@ -97,6 +136,11 @@ export default {
                     content: `https://apps.publicintegrity.org/${this.doc.series.slug}/${this.doc.slug}/`
                 }]
         };
+    },
+    methods: {
+        ...mapMutations({
+            setSeries: 'series/set'
+        })
     }
 };
 </script>
