@@ -52,6 +52,7 @@ export default {
     top: 5vw;
     left: 5vw;
     z-index: 600;
+    max-width: 48%;
 }
 .floatedHed h1 {
     /* text-shadow: 1px 1px 1px #565656; */
@@ -177,6 +178,7 @@ h4 a, h4 a:visited {
 
         top: 0;
         left: 0;
+        max-width: initial;
     }
     .floatedHed h1, h2, h4 {
         color: black;
