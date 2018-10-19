@@ -5,7 +5,7 @@
         <div class="swiper-slide" v-for="slide in doc.slides">
             <img :src="encodeURI(base + slide.location.replace('img','resized').replace(/\.(jpg|png)$/,'-2880.$1'))" :srcset="encodeURI(base + slide.location.replace('img','resized').replace(/\.(jpg|png)$/,'-2880.$1')) + '  2880w,' + base + encodeURI(slide.location.replace('img','resized').replace(/\.(jpg|png)$/,'-1440.$1')) + '  1440w,' + base + encodeURI(slide.location.replace('img','resized').replace(/\.(jpg|png)$/,'-720.$1')) + '   720w'" style="width:100%;height: auto">
 
-                <div class="cutline"><span>{{slide.cutline}}</span><br><span class="credit" v-html="slide.credit"></span></div>
+                <div class="cutline"><span v-html="'<p>' + slide.cutline.replace(/\n\W*\n/g,'</p>\n<p>') + '</p>'"></span><br><span class="credit" v-html="slide.credit"></span></div>
         </div>
     </div>
     <div class="swiper-button-prev" slot="button-prev"></div>
