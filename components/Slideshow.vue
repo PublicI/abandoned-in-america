@@ -51,7 +51,7 @@ export default {
 
 <style>
 .swiper-container {
-    max-width: 1000px;
+    max-width: 900px;
     margin-left: auto;
     margin-right: auto;
 }
