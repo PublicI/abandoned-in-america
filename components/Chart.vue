@@ -1,7 +1,7 @@
 <template>
     <section class="charts">
         <div v-for="chart in charts" class="chart">
-            <highcharts :options="chart"></highcharts>
+            <highcharts :options="chart" :callback="loaded"></highcharts>
         </div>
         <div class="credit">Graphic by Chris Zubak-Skees</div>
 
@@ -21,6 +21,11 @@ export default {
         grid: Boolean,
         suffix: String,
         directLabel: Boolean
+    },
+    data() {
+        return {
+            drawn: false
+        };
     },
     computed: {
         charts() {
@@ -238,6 +243,48 @@ export default {
             // let options = clone(this.chartOptions);
 
             return [options];
+        }
+    },
+    methods: {
+        loaded(chart) {
+            if (!this.drawn) {
+                this.drawn = true;
+
+                chart.renderer.text('A', 80, 113)
+                    .css({
+                        fontWeight: 'bold',
+                        fontSize: '14px'
+                    })
+                    .add();
+
+                chart.renderer.text('B', 80, 171)
+                    .css({
+                        fontWeight: 'bold',
+                        fontSize: '14px'
+                    })
+                    .add();
+
+                chart.renderer.text('C', 80, 217)
+                    .css({
+                        fontWeight: 'bold',
+                        fontSize: '14px'
+                    })
+                    .add();
+
+                chart.renderer.text('D', 80, 255)
+                    .css({
+                        fontWeight: 'bold',
+                        fontSize: '14px'
+                    })
+                    .add();
+
+                chart.renderer.text('F', 80, 377)
+                    .css({
+                        fontWeight: 'bold',
+                        fontSize: '14px'
+                    })
+                    .add();
+            }
         }
     },
     components: {
